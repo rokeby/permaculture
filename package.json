@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rokeby/permaculture/issues"
   },
-  "homepage": "https://github.com/rokeby/permaculture#readme"
+  "homepage": "https://github.com/rokeby/permaculture#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
