@@ -1,19 +1,27 @@
+import zones from './static/zones.js'
+
 function generateGrid(){
     //subdivide the document into 10x10 squares to use as co-ordinate system
-    squareSize = 17;
+    var squareSize = 17;
+    var leftMargin = ($(document).width() - Math.floor($(document).width()/squareSize)*squareSize)/2;
+    var topMargin = ($(document).height() - Math.floor($(document).height()/squareSize)*squareSize)/2;
 
-    // xnum = Math.floor($(document).width()/squareSize)
-    // ynum = Math.floor($(document).height()/squareSize)
+    var xnum = 110;
+    var ynum = 60;
 
-    // console.log('xnum ', xnum, 'ynum  ', ynum)
-    leftMargin = ($(document).width() - Math.floor($(document).width()/squareSize)*squareSize)/2;
-    topMargin = ($(document).height() - Math.floor($(document).height()/squareSize)*squareSize)/2;
+    for(var j=0; j<ynum; j++){
+        for(var i=0; i<xnum; i++){
+            var color;
+            if(zones.zones[j*xnum + i] === 1){
+                color='red';
+            }
 
-    xnum = 110;
-    ynum = 60;
+            else if(zones.zones[j*xnum + i] === 2){
+                color='blue';
+            }
 
-    for(j=0; j<ynum; j++){
-        for(i=0; i<xnum; i++){
+            else color='yellow';
+
             $('<div/>', {
                 id: i+xnum*j,
                 class: "gridElement"
@@ -23,12 +31,11 @@ function generateGrid(){
             'left':squareSize*i+leftMargin+'px',
             'top':squareSize*j+topMargin+'px',
             'position':'fixed',
+            'color': color,
             }).html('җ')
             .appendTo( 'body' );
         }
     }
-    gridSquares = xnum*ynum;
-    console.log(gridSquares);
 }
 
 generateGrid();

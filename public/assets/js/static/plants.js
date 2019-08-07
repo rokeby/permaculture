@@ -137,4 +137,4 @@ var plants = [
 ]
 
 
-module.exports = plants;
+export plants;
