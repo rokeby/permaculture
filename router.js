@@ -9,7 +9,7 @@ router.use(function timeLog (req, res, next) {
 
 // define the home page route
 router.get('/', function (req, res) {
-  res.send('<h1>sakiya simulation home page</h1>')
+  res.redirect('index.html')
 })
 
 // define the about route
