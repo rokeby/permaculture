@@ -30,10 +30,10 @@ function generateGrid(){
             'height': squareSize,
             'left':squareSize*i+leftMargin+'px',
             'top':squareSize*j+topMargin+'px',
-            'position':'fixed',
             'color': color,
+            'position':'absolute',
             }).html('җ')
-            .appendTo( 'body' );
+            .appendTo( '#container' );
         }
     }
 }
