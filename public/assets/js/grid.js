@@ -4,7 +4,6 @@ function generateGrid(){
 
     // xnum = Math.floor($(document).width()/squareSize)
     // ynum = Math.floor($(document).height()/squareSize)
-
     // console.log('xnum ', xnum, 'ynum  ', ynum)
     leftMargin = ($(document).width() - Math.floor($(document).width()/squareSize)*squareSize)/2;
     topMargin = ($(document).height() - Math.floor($(document).height()/squareSize)*squareSize)/2;
@@ -22,9 +21,9 @@ function generateGrid(){
             'height': squareSize,
             'left':squareSize*i+leftMargin+'px',
             'top':squareSize*j+topMargin+'px',
-            'position':'fixed',
+            'position':'absolute',
             }).html('җ')
-            .appendTo( 'body' );
+            .appendTo( '#container' );
         }
     }
     gridSquares = xnum*ynum;
