@@ -74,9 +74,30 @@ function getPlant(zone) {
     return plant;
 }
 
+function showInfo (cellID) {
+    var cell = cells[cellID];
+    $('.infopanel').children().remove()
+    $('.infopanel').toggle()
+    
+    var $substrateInfo =  $('<div/>', {
+        class: 'infobox',
+    }).appendTo('.infopanel')
+    
+    var $symbolInfo =  $('<div/>', {
+        class: 'symbolinfo',
+    })
+    // .css({
+    //     color: cell.substrate.color
+    // })
+    .appendTo('.infobox')
+    .html(cell.substrate.name + "   " + cell.substrate.symbol)
+    // if(cell.plant)
+    //     $plantInfo = 
+}
+
 function generateGrid(){
     //subdivide the document into 10x10 squares to use as co-ordinate system
-    var squareSize = 17;
+    var squareSize = 18;
     var leftMargin = ($(document).width() - Math.floor($(document).width()/squareSize)*squareSize)/2;
     var topMargin = ($(document).height() - Math.floor($(document).height()/squareSize)*squareSize)/2;
 
@@ -91,18 +112,17 @@ function generateGrid(){
             var symbol = substrate.symbol;
             var color = substrate.color;
 
-            var cellObjects = [];
-            cellObjects.push(substrate);
+            var cellObjects = {};
+            cellObjects.substrate = substrate;
 
             var divClass = "square zone" + zone + " " + substrate.name.replace(/\s/g, '');
-            console.log('zone is', zone) 
 
             if(Math.random() < substrate.fertility && zone !== 5){
                 plant = getPlant(zone);
                 symbol = plant.symbol;
                 divClass = divClass + " " + plant.name.replace(/\s/g, '');
                 
-                cellObjects.push(plant);
+                cellObjects.plant = plant;
 
                 var flower = getFlowers(plant);
 
@@ -112,7 +132,7 @@ function generateGrid(){
             $('<div/>', {
                 id: i+xnum*j,
                 class: divClass,
-                click: (function(){ console.log(cells[this.id])} )
+                click: (function(){ showInfo(this.id) } )
             }).css({
             'width': squareSize,
             'height': squareSize,

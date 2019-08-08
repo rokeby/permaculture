@@ -805,7 +805,7 @@ var plants = [
 		'temp': 'warm',
 		'personality': 'funny',
 		'flowering': [0], 
-		'symbol': '•',
+		'symbol': 'გ',
 		'color': '#ff0000',
 		'flower-color': '#ffffcc',
 		// 'flower-symbol': ,

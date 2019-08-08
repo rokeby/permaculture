@@ -14,6 +14,29 @@ body {
 	background-color: orange;
 }
 
+.infopanel {
+	height: 92vh;
+	top: 4vh;
+	right: 4vh;
+	width: 350px;
+	position: fixed;
+	background-color:  #e6e6e6;
+	z-index: 10;
+}
+
+.infobox {
+	position: relative;
+	width: 90%;
+	border: 3px solid white;
+	margin-top: 10px;
+	margin-left: 4%;
+}
+
+.symbolinfo {
+	font-size: 35px;
+	text-align: center;
+	margin: 0 auto;
+}
 
 /*rocks*/
 .zone1 {
