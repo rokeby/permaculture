@@ -92,6 +92,21 @@ var substrates = [
 		'color': '#99e6ff',
 	},
 
+	{
+		'name': 'water',
+		'1': 'none',
+		'2': 'none',
+		'3': 'none',
+		'4': 'none',
+		'5': 'none',
+		'6': 'high',
+		'type': 'water',
+		'personality': 'clingy',
+		'fertility': 0,
+		'symbol': '~',
+		'color': '#99e6ef',
+	},
+
 ]
 
 export default  substrates ;

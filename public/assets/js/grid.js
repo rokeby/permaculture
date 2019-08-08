@@ -1,6 +1,7 @@
 import zones from './static/zones.js';
 import plants from './static/plants.js';
 import substrates from './static/substrates.js';
+import animation from './animation.js';
 var cells = new Array(110*60);
 
 function getEntries(array, type, val) {
@@ -83,16 +84,32 @@ function showInfo (cellID) {
         class: 'infobox',
     }).appendTo('.infopanel')
     
-    var $symbolInfo =  $('<div/>', {
+    var $symbolInfo =  $('<p/>', {
         class: 'symbolinfo',
     })
     // .css({
     //     color: cell.substrate.color
     // })
-    .appendTo('.infobox')
+    .appendTo($substrateInfo)
     .html(cell.substrate.name + "   " + cell.substrate.symbol)
-    // if(cell.plant)
-    //     $plantInfo = 
+
+
+    if(cell.plant){
+        console.log('a plant!', cell.plant)
+        var $plantInfo = $('<div/>', {
+            class: 'infobox',
+        }).appendTo('.infopanel')
+
+        var $symbolInfo =  $('<p/>', {
+                class: 'symbolinfo',
+        })
+            // .css({
+            //     color: cell.substrate.color
+            // })
+        .appendTo($plantInfo)
+        .html(cell.plant.name + "   " + cell.plant.symbol)
+
+    }
 }
 
 function generateGrid(){
@@ -149,3 +166,4 @@ function generateGrid(){
 }
 
 generateGrid();
+animation.runMainLoop();
