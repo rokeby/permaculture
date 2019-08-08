@@ -31,6 +31,14 @@ function setDepth(zone) {
     return level;
 }
 
+function getFlowers(plant) {
+    var today = new Date();
+
+    //month +1 as zero index
+    var flowering = plant.flowering.some(x => x === today.getMonth() + 1 );
+    return flowering;
+}
+
 function getSubstrate(zone) {
     var level = rollDice();
     var entries = getEntries(substrates, zone, level);
@@ -74,10 +82,13 @@ function generateGrid(){
             if(Math.random() < substrate.fertility){
                 plant = getPlant(zone);
                 symbol = plant.symbol;
-                color = plant.color;
                 divClass = divClass + " " + plant.name.replace(/\s/g, '');
                 
                 cellObjects.push(plant);
+
+                var flower = getFlowers(plant);
+
+                color = flower ? plant["flower-color"] : plant["color"]
             }
 
             $('<div/>', {
