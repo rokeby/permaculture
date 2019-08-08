@@ -1,5 +1,6 @@
 var plants = [
-	'oak' {
+	{
+		'name': 'oak',
 		'1': 'med',
 		'2': 'high',
 		'3': 'low',
@@ -9,12 +10,13 @@ var plants = [
 		'temp': 'warm',
 		'personality': 'wise',
 		'flowering': [0], // doesn't flower
-		'symbol': '߷',
+		'symbol': 'ӂ',
 		'color': '#009933',
-		'flower-color'
+		'flower-color': '#009933',
 	},
 
-	'qaiqab' {
+	{
+		'name': 'qaiqab',
 		'1': 'low',
 		'2': 'med',
 		'3': 'low',
@@ -26,10 +28,11 @@ var plants = [
 		'flowering': [0],
 		'symbol': 'җ',
 		'color': '#e62e00',
-		'flower-color':
+		'flower-color':'#009933',
 	},
 
-	'spiny broom' {
+	{
+		'name': 'spiny broom',
 		'1': 'high',
 		'2': 'high',
 		'3': 'high',
@@ -44,7 +47,8 @@ var plants = [
 		'flower-color': ' #ffff00',
 	},
 
-	'pink rock rose' {
+	{
+		'name': 'pink rock rose',
 		'1': 'high',
 		'2': 'high',
 		'3': 'high',
@@ -59,7 +63,8 @@ var plants = [
 		'flower-color': '#ff99dd',
 	},
 
-	'gallipoli rose' {
+	{
+		'name': 'gallipoli rose',
 		'1': 'high',
 		'2': 'med',
 		'3': 'med',
@@ -74,7 +79,8 @@ var plants = [
 		'flower-color': '#ffffcc',
 	},
 
-	'sage' {
+	{
+		'name': 'sage', 
 		'1': 'med',
 		'2': 'high',
 		'3': 'high',
@@ -89,7 +95,8 @@ var plants = [
 		'flower-color': '#dd99ff',
 	},
 
-	'syrian pear' {
+	{
+		'name': 'syrian pear',
 		'1': 'med',
 		'2': 'low',
 		'3': 'low',
@@ -104,7 +111,8 @@ var plants = [
 		'flower-color': '#ffffcc',
 	},
 
-	'pistacia' {
+	{
+		'name':	'pistacia',
 		'1': 'med',
 		'2': 'low',
 		'3': 'low',
@@ -119,7 +127,8 @@ var plants = [
 		'flower-color': '#ff4d4d',
 	},
 
-	'hawthorn' {
+	{
+		'name': 'hawthorn',
 		'1': 'med',
 		'2': 'med',
 		'3': 'low',
@@ -137,4 +146,4 @@ var plants = [
 ]
 
 
-export plants;
+export default plants;
