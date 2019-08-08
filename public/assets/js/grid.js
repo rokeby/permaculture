@@ -56,7 +56,7 @@ function getSubstrate(zone) {
         var level = rollDice();
         entries = getEntries(substrates, zone, level);
     }while (entries.length === 0)
-    
+
     var substrate = entries[Math.floor(Math.random()*(entries.length))];
     
     //set substrate depth: random but as a function of zone
@@ -65,8 +65,10 @@ function getSubstrate(zone) {
 }
 
 function getPlant(zone) {
-    var level = rollDice();
-    var entries = getEntries(plants, zone, level);
+    do{
+        var level = rollDice();
+        var entries = getEntries(plants, zone, level);
+    } while (entries.length === 0)
     var plant = entries[Math.floor(Math.random()*(entries.length))];
 
     return plant;
@@ -92,9 +94,10 @@ function generateGrid(){
             var cellObjects = [];
             cellObjects.push(substrate);
 
-            var divClass = "square" + zone + " " + substrate.name.replace(/\s/g, '');
+            var divClass = "square zone" + zone + " " + substrate.name.replace(/\s/g, '');
+            console.log('zone is', zone) 
 
-            if(Math.random() < substrate.fertility){
+            if(Math.random() < substrate.fertility && zone !== 5){
                 plant = getPlant(zone);
                 symbol = plant.symbol;
                 divClass = divClass + " " + plant.name.replace(/\s/g, '');

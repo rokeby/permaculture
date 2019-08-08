@@ -88,8 +88,8 @@ var substrates = [
 		'type': 'water',
 		'personality': 'clingy',
 		'fertility': 0,
-		'symbol': '."',
-		'color': '#e6e600',
+		'symbol': '≈',
+		'color': '#99e6ff',
 	},
 
 ]

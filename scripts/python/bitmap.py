@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 import sys
 
-im = Image.open("zone-test.bmp")
+im = Image.open("../bitmap/5-zone.bmp")
 # print(im.format, im.size, im.mode)
 
 p = np.array(im)
@@ -12,12 +12,19 @@ zones = []
 
 for row in p:
 	for col in row:
-		if np.all(col == 255):
-			zones.append(1)
-		elif np.any(col == 255):
-			zones.append(2)
-		else: 
-			zones.append(3)
+		# print(col)
+		if np.array_equal(col, [0, 0, 0]):
+			zones.append(1) #rocky is black
+		elif np.array_equal(col, [255, 0, 0]):
+			zones.append(2) #soil is red
+		elif np.array_equal(col, [255, 255, 255]):
+			zones.append(3) #trees are white
+		elif np.array_equal(col, [0, 255, 0]):
+			zones.append(4) #farm is green
+		elif np.array_equal(col, [255, 255, 0]):
+			zones.append(5) #path is yellow
+		elif np.array_equal(col, [0, 255, 255]):
+			zones.append(6) #water is cyan
 
 np.set_printoptions(threshold=sys.maxsize)
 print(zones)

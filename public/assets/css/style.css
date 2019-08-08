@@ -10,19 +10,37 @@ body {
 	height: 100%;
 }
 
-.square1:hover , .square2:hover , .square3:hover {
+.square:hover {
 	background-color: orange;
 }
 
-.square1 {
-	background-color: #333333;
+
+/*rocks*/
+.zone1 {
+	background-color: #999999;
 }
 
-
-.square2 {
+/*soil*/
+.zone2 {
 	background-color:  #737373;
 }
 
-.square3 {
-	background-color: #999999;
+/*trees*/
+.zone3 {
+	background-color: #333333;
+}
+
+/*compost*/
+.zone4 {
+	background-color:  #4d1933;
+}
+
+/*path*/
+.zone5 {
+	background-color:  #d9d9bf;
+}
+
+/*water*/
+.zone6 {
+	background-color: #617dd1;
 }
