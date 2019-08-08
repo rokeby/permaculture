@@ -167,3 +167,4 @@ function generateGrid(){
 
 generateGrid();
 animation.runMainLoop();
+animation.goatEvent();
