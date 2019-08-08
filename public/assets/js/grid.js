@@ -44,7 +44,7 @@ function getSubstrate(zone) {
 function getPlant(zone) {
     var level = rollDice();
     var entries = getEntries(plants, zone, level);
-    var plant = entries[Math.floor(Math.random()*(entries.length-1))];
+    var plant = entries[Math.floor(Math.random()*(entries.length))];
 
     return plant;
 }
