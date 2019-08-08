@@ -13,8 +13,8 @@ function rollDice() {
     var rand = Math.random();
     var level;
 
-    if(rand < 0.6) level = 'high';
-    else if(rand < 0.9) level = 'med';
+    if(rand < 0.8) level = 'high';
+    else if(rand < 0.95) level = 'med';
     else level = 'low';
 
     return level;
@@ -33,15 +33,30 @@ function setDepth(zone) {
 
 function getFlowers(plant) {
     var today = new Date();
+    plant.flower = true;
 
     //month +1 as zero index
     var flowering = plant.flowering.some(x => x === today.getMonth() + 1 );
     return flowering;
 }
 
+function getFruits(plant) {
+    var today = new Date();
+    plant.fruit = true;
+
+    //month +1 as zero index
+    var fruiting = plant.fruiting.some(x => x === today.getMonth() + 1 );
+    return fruiting;
+}
+
 function getSubstrate(zone) {
-    var level = rollDice();
-    var entries = getEntries(substrates, zone, level);
+    var entries = [];
+
+    do{
+        var level = rollDice();
+        entries = getEntries(substrates, zone, level);
+    }while (entries.length === 0)
+    
     var substrate = entries[Math.floor(Math.random()*(entries.length))];
     
     //set substrate depth: random but as a function of zone
@@ -77,7 +92,7 @@ function generateGrid(){
             var cellObjects = [];
             cellObjects.push(substrate);
 
-            var divClass = "square " + substrate.name.replace(/\s/g, '');
+            var divClass = "square" + zone + " " + substrate.name.replace(/\s/g, '');
 
             if(Math.random() < substrate.fertility){
                 plant = getPlant(zone);

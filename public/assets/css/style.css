@@ -10,6 +10,19 @@ body {
 	height: 100%;
 }
 
-.square:hover {
+.square1:hover , .square2:hover , .square3:hover {
 	background-color: orange;
+}
+
+.square1 {
+	background-color: #333333;
+}
+
+
+.square2 {
+	background-color:  #737373;
+}
+
+.square3 {
+	background-color: #999999;
 }
