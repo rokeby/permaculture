@@ -9,3 +9,7 @@ body {
 	overflow-y: scroll;
 	height: 100%;
 }
+
+.square:hover {
+	background-color: orange;
+}

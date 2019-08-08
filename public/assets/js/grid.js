@@ -1,6 +1,7 @@
-import zones from './static/zones.js'
-import plants from './static/plants.js'
-import substrates from './static/substrates.js'
+import zones from './static/zones.js';
+import plants from './static/plants.js';
+import substrates from './static/substrates.js';
+var cells = new Array(110*60);
 
 function getEntries(array, type, val) {
   return array.filter(function (el) {
@@ -65,15 +66,24 @@ function generateGrid(){
             var symbol = substrate.symbol;
             var color = substrate.color;
 
+            var cellObjects = [];
+            cellObjects.push(substrate);
+
+            var divClass = "square " + substrate.name.replace(/\s/g, '');
+
             if(Math.random() < substrate.fertility){
                 plant = getPlant(zone);
                 symbol = plant.symbol;
                 color = plant.color;
+                divClass = divClass + " " + plant.name.replace(/\s/g, '');
+                
+                cellObjects.push(plant);
             }
 
             $('<div/>', {
                 id: i+xnum*j,
-                class: "gridElement"
+                class: divClass,
+                click: (function(){ console.log(cells[this.id])} )
             }).css({
             'width': squareSize,
             'height': squareSize,
@@ -83,6 +93,8 @@ function generateGrid(){
             'position':'absolute',
             }).html(symbol)
             .appendTo( '#container' );
+        
+        cells[j*xnum + i] = cellObjects;
         }
     }
 }

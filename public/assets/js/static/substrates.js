@@ -32,7 +32,7 @@ var substrates = [
 		'type': 'soil',
 		'personality': 'flighty',
 		'fertility': 0.8,
-		'symbol': '⁂',
+		'symbol': '."',
 		'color':'#66001a',
 	},
 
@@ -44,7 +44,7 @@ var substrates = [
 		'type': 'soil',
 		'personality': 'moody',
 		'fertility': 0.95,
-		'symbol': '⁂',
+		'symbol': '."',
 		'color': '#3b2b2f',
 	},
 
@@ -56,7 +56,7 @@ var substrates = [
 		'type': 'soil',
 		'personality': 'clingy',
 		'fertility': 0.3,
-		'symbol': '⁂',
+		'symbol': '."',
 		'color': '#e6e600',
 	},
 

@@ -122,7 +122,7 @@ var plants = [
 		'temp': 'warm',
 		'personality': 'pithy',
 		'flowering': [2, 3, 4], 
-		'symbol': 'څ',
+		'symbol': 'Ӵ',
 		'color': '#33cc33',
 		'flower-color': '#ff4d4d',
 	},
@@ -143,6 +143,37 @@ var plants = [
 		'flower-color': '#ff4d4d',
 	},
 
+	{
+		'name': 'carob',
+		'1': 'med',
+		'2': 'med',
+		'3': 'low',
+		'soil': 'deep',
+		'type': 'legume',
+		'water': 'med',
+		'temp': 'warm',
+		'personality': 'sweet',
+		'flowering': [8, 9, 10, 11], 
+		'symbol': 'Ӵ',
+		'color': '#009933',
+		'flower-color': '#ffff66',
+	},
+
+	{
+		'name': 'buckthorn',
+		'1': 'med',
+		'2': 'med',
+		'3': 'low',
+		'soil': 'shallow',
+		'type': 'shrub',
+		'water': 'dry',
+		'temp': 'warm',
+		'personality': 'moody',
+		'flowering': [1, 2], 
+		'symbol': 'څ',
+		'color': '#33cc33',
+		'flower-color': '#ffff99',
+	},
 ]
 
 
