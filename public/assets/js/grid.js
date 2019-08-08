@@ -110,6 +110,24 @@ function showInfo (cellID) {
         .html(cell.plant.name + "   " + cell.plant.symbol)
 
     }
+
+    if(cell.occupant){
+        console.log('a friend!', cell.occupant)
+        var $occupantInfo = $('<div/>', {
+            class: 'infobox',
+        }).appendTo('.infopanel')
+
+        var $symbolInfo =  $('<p/>', {
+                class: 'symbolinfo',
+        })
+            // .css({
+            //     color: cell.substrate.color
+            // })
+        .appendTo($occupantInfo)
+        .html(cell.occupant.name + "   " + cell.occupant.symbol)
+
+    }
+
 }
 
 function generateGrid(){
@@ -167,4 +185,5 @@ function generateGrid(){
 
 generateGrid();
 animation.runMainLoop();
-animation.goatEvent();
+
+export default cells;
