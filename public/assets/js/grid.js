@@ -95,7 +95,6 @@ function showInfo (cellID) {
 
 
     if(cell.plant){
-        console.log('a plant!', cell.plant)
         var $plantInfo = $('<div/>', {
             class: 'infobox',
         }).appendTo('.infopanel')
@@ -103,16 +102,12 @@ function showInfo (cellID) {
         var $symbolInfo =  $('<p/>', {
                 class: 'symbolinfo',
         })
-            // .css({
-            //     color: cell.substrate.color
-            // })
         .appendTo($plantInfo)
         .html(cell.plant.name + "   " + cell.plant.symbol)
 
     }
 
     if(cell.occupant){
-        console.log('a friend!', cell.occupant)
         var $occupantInfo = $('<div/>', {
             class: 'infobox',
         }).appendTo('.infopanel')
@@ -120,9 +115,6 @@ function showInfo (cellID) {
         var $symbolInfo =  $('<p/>', {
                 class: 'symbolinfo',
         })
-            // .css({
-            //     color: cell.substrate.color
-            // })
         .appendTo($occupantInfo)
         .html(cell.occupant.name + "   " + cell.occupant.symbol)
 
@@ -130,7 +122,7 @@ function showInfo (cellID) {
 
 }
 
-function generateGrid(){
+var generateGrid = new Promise( function(resolve, reject){
     //subdivide the document into 10x10 squares to use as co-ordinate system
     var squareSize = 18;
     var leftMargin = ($(document).width() - Math.floor($(document).width()/squareSize)*squareSize)/2;
@@ -150,6 +142,7 @@ function generateGrid(){
             var cellObjects = {};
             cellObjects.substrate = substrate;
 
+            substrate.speech = "ee well"
             var divClass = "square zone" + zone + " " + substrate.name.replace(/\s/g, '');
 
             if(Math.random() < substrate.fertility && zone !== 5){
@@ -161,7 +154,8 @@ function generateGrid(){
 
                 var flower = getFlowers(plant);
 
-                color = flower ? plant["flower-color"] : plant["color"]
+                color = flower ? plant["flower-color"] : plant["color"];
+                plant.speech = "oo hi"
             }
 
             $('<div/>', {
@@ -181,9 +175,12 @@ function generateGrid(){
         cells[j*xnum + i] = cellObjects;
         }
     }
-}
 
-generateGrid();
-animation.runMainLoop();
+    resolve('generated grid!!'); 
+})
+
+generateGrid.then(function(value) {
+    animation.runMainLoop();
+});
 
 export default cells;

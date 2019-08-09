@@ -1,6 +1,6 @@
 import cells from './grid.js';
 import animals from './static/animals.js';
-
+import conversation from './conversation.js';
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -48,8 +48,8 @@ function moveAnimals(animals) {
 		else{
 			cells[newCellNumber].occupant = animals[i];
 			$('#'+newCellNumber).html(animals[i].symbol).css({'color': animals[i].color})
+			conversation.animalVisit(animals[i], cells[newCellNumber]);
 		}
-
 	}
 }
 
@@ -92,6 +92,8 @@ async function goatEvent() {
 		moveAnimals(goats);
 		await sleep(1000);
 	} while(goats.length > 0);
+
+	console.log('goat zero we have reached goat zero', goats.length)
 }
 
 function reset() {
@@ -100,11 +102,15 @@ function reset() {
 
 function eachHour() {
 	console.log('an hour!!')
-	goatEvent();
 }
 
 function eachMinute() {
+	goatEvent();
+}
 
+function eachTenSeconds() {
+	//find some animals/plant's speech and print it
+	conversation.printSpeech();
 }
 
 function eachSecond() {
@@ -119,6 +125,10 @@ async function runMainLoop(){
 
 	while(true){
 		var today = new Date();
+
+		if(today.getSeconds()%10 === 0){
+			eachTenSeconds();
+		}
 
 		if(today.getSeconds() === 0){
 			eachMinute();

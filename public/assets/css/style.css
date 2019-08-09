@@ -37,6 +37,14 @@ body {
 	padding: 20px;
 }
 
+.speechbox {
+	background-color: white;
+	height: 20px;
+	width: 50px;
+	z-index: 10;
+	position: absolute;
+}
+
 /*rocks*/
 .zone1 {
 	background-color: #999999;
@@ -49,7 +57,7 @@ body {
 
 /*trees*/
 .zone3 {
-	background-color: #333333;
+	background-color: #535353;
 }
 
 /*compost*/
