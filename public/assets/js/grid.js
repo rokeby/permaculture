@@ -91,8 +91,7 @@ function showInfo (cellID) {
     //     color: cell.substrate.color
     // })
     .appendTo($substrateInfo)
-    .html(cell.substrate.name + "   " + cell.substrate.symbol)
-
+    .html(cell.substrate.name + "   " + "[" + cell.substrate.symbol + "]" + "<br>" + "a kind of " + cell.substrate.type)
 
     if(cell.plant){
         var $plantInfo = $('<div/>', {
@@ -103,9 +102,8 @@ function showInfo (cellID) {
                 class: 'symbolinfo',
         })
         .appendTo($plantInfo)
-        .html(cell.plant.name + "   " + cell.plant.symbol)
-
-    }
+        .html(cell.plant.name + "   " + "[" + cell.plant.symbol + "]" + "</br>" + "<i>" + cell.plant.latin + "</i>" + "</br>" + "a kind of " + cell.plant.type)
+      }
 
     if(cell.occupant){
         var $occupantInfo = $('<div/>', {
@@ -169,6 +167,7 @@ var generateGrid = new Promise( function(resolve, reject){
             'top':squareSize*j+topMargin+'px',
             'color': color,
             'position':'absolute',
+            'text-align' : 'center',
             }).html(symbol)
             .appendTo( '#container' );
         
