@@ -1,9 +1,10 @@
 import zones from './static/zones.js';
 import plantNames from './static/plants.js';
 import substrateNames from './static/substrates.js';
+import { xnum, ynum } from './static/constants.js';
 import animation from './animation.js';
 import { Plant, Substrate } from './static/classes.js';
-var cells = new Array(110*60);
+var cells = new Array(xnum*ynum);
 
 function getEntries(array, type, val) {
   return array.filter(function (el) {
@@ -132,9 +133,6 @@ var generateGrid = new Promise( function(resolve, reject){
     var leftMargin = ($(document).width() - Math.floor($(document).width()/squareSize)*squareSize)/2;
     var topMargin = ($(document).height() - Math.floor($(document).height()/squareSize)*squareSize)/2;
 
-    var xnum = 110;
-    var ynum = 60;
-
     for(var j=0; j<ynum; j++){
         for(var i=0; i<xnum; i++){
             var zone = zones.zones[j*xnum + i];
@@ -146,7 +144,6 @@ var generateGrid = new Promise( function(resolve, reject){
             var cellObjects = {};
             cellObjects.substrate = substrate;
 
-            // substrate.speech = "ee well"
             var divClass = "square zone" + zone + " " + substrate.name.replace(/\s/g, '');
 
             if(Math.random() < substrate.fertility && zone !== 5){
@@ -159,7 +156,6 @@ var generateGrid = new Promise( function(resolve, reject){
                 var flower = getFlowers(plant);
 
                 color = flower ? plant.flowercolor : plant["color"];
-                plant.speech = plant.symbol;
             }
 
             $('<div/>', {

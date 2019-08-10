@@ -1,5 +1,6 @@
 import { cells } from './grid.js';
 import animals from './static/animals.js';
+import { xnum, ynum } from './static/constants.js'
 import { printSpeech, animalVisit } from './conversation.js';
 
 function sleep(ms) {
@@ -22,7 +23,7 @@ function regrowCell(cellNumber){
 function moveAnimals(animals) {
 
 	for(var i=0; i<animals.length; i++){
-		regrowCell(animals[i].y*110+animals[i].x);
+		regrowCell(animals[i].y*xnum+animals[i].x);
 
 		var nextX, nextY, newCellNumber;
 		var nextStep = false;
@@ -31,9 +32,9 @@ function moveAnimals(animals) {
 			nextX = animals[i].x + Math.floor(Math.random()*3)-1;
 			nextY = animals[i].y + Math.floor(Math.random()*2)-1;
 
-			newCellNumber = nextY*110 + nextX;
+			newCellNumber = nextY*xnum + nextX;
 
-			if(newCellNumber > 60*110 || newCellNumber < 0)  nextStep = true
+			if(newCellNumber > ynum*xnum || newCellNumber < 0)  nextStep = true
 			else if(!cells[newCellNumber].occupant) nextStep = true
 
 		} while (nextStep === false)
@@ -42,7 +43,7 @@ function moveAnimals(animals) {
 		animals[i].y = nextY;
 
 		//if goat goes offscreen
-		if(newCellNumber > 60*110 || newCellNumber < 0)
+		if(newCellNumber > ynum*xnum || newCellNumber < 0)
 			animals.splice(i, 1);
 
 		else{
@@ -56,12 +57,12 @@ function moveAnimals(animals) {
 async function goatEvent() {
 	console.log('goat time');
 	//select a spawn cell from the bottom row
-	var cellNumber = 59*110 + Math.floor(Math.random()*90);
+	var cellNumber = (ynum-1)*xnum + Math.floor(Math.random()*90);
 	var spawnCell = cells[cellNumber];
 
 	var numGoats = Math.round(Math.random()*20)+10;
-	var goatX = cellNumber - 59*110;
-	var goatY = 59;
+	var goatX = cellNumber - (ynum-1)*xnum;
+	var goatY = ynum-1;
 
 	var goats = [];
 	//populate cells within 20 squares of the spawn cell with goats
@@ -71,7 +72,7 @@ async function goatEvent() {
 			var goat = {};
 			var x = goatX + Math.floor(Math.random()*15);
 			var y = goatY - Math.floor(Math.random()*5);
-			var cellNumber = y*110+x;
+			var cellNumber = y*xnum+x;
 
 			var shade = goatShades[Math.floor(Math.random()*(goatShades.length))];
 			goat.x = x;
