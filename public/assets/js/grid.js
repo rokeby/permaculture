@@ -65,7 +65,7 @@ function getSubstrate(zone) {
     //set substrate depth: random but as a function of zone
     var depth = setDepth(zone);
 
-    var substrate = new Substrate(2222, substrateType.name, substrateType.type, substrateType.personality, 
+    var substrate = new Substrate(substrateType.name, substrateType.type, substrateType.personality, 
         substrateType.fertility, substrateType.depth, substrateType.symbol, substrateType.color, substrateType.speech )
 
     return substrate;
@@ -79,7 +79,7 @@ function getPlant(zone) {
     var plantType = entries[Math.floor(Math.random()*(entries.length))];
     //here create new plant
 
-    var plant = new Plant(1111, plantType.name, plantType.arabic, plantType.type, plantType.soil, plantType.water, plantType.temp, 
+    var plant = new Plant(plantType.name, plantType.arabic, plantType.type, plantType.soil, plantType.water, plantType.temp, 
         plantType.personality, plantType.speech, plantType.symbol, plantType.color, plantType.flowering, plantType.flowercolor)
 
     if(plantType.notes) plant.notes = plantType.notes;
@@ -130,7 +130,9 @@ function showInfo (cellID) {
                 class: 'symbolinfo',
         })
         .appendTo($occupantInfo)
-        .html(cell.occupant.name + "   " + cell.occupant.symbol)
+        .html(cell.occupant.name + "   " + "[" + cell.occupant.symbol + "]" + "<br>" +
+            "<p class='artext' lang='ar'>" + cell.occupant.arabic + "</p>" + "<br>" +
+            "</br>" + "a kind of " + cell.occupant.type)
 
     }
 

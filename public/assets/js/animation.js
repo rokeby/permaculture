@@ -1,5 +1,6 @@
 import { cells } from './grid.js';
 import animals from './static/animals.js';
+import { Animal } from './static/classes.js';
 import { xnum, ynum } from './static/constants.js'
 import { printSpeech, animalVisit } from './conversation.js';
 
@@ -69,19 +70,15 @@ async function goatEvent() {
 	var goatShades = animals.goat.shades;
 
 	for(var i=0; i<numGoats; i++){
-			var goat = {};
 			var x = goatX + Math.floor(Math.random()*15);
 			var y = goatY - Math.floor(Math.random()*5);
 			var cellNumber = y*xnum+x;
 
 			var shade = goatShades[Math.floor(Math.random()*(goatShades.length))];
-			goat.x = x;
-			goat.y = y;
-			goat.color = shade;	
-			goat.symbol = animals.goat.symbol;
-			goat.name = "goat";
-			goats.push(goat);
+			var goat = new Animal(x, y, "damascus goat", animals.goat.arabic, 
+				animals.goat.type, animals.goat.personality, animals.goat.symbol, shade, animals.goat.speech);
 
+			goats.push(goat);
 			cells[cellNumber].occupant = goat;
 
 			$('#'+cellNumber).css({

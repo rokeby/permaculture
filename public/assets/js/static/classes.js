@@ -1,6 +1,6 @@
 class Plant {
-  constructor(id, name, arabic, type, soil, water, temp, personality, speech, symbol, color, flowering, flowercolor) {
-  	this.id = id;
+  constructor(name, arabic, type, soil, water, temp, personality, speech, symbol, color, flowering, flowercolor) {
+  	this.id = '';
   	this.name = name;
   	this.arabic = arabic;
   	this.type = type;
@@ -19,8 +19,8 @@ class Plant {
 }
 
 class Substrate {
-  constructor(id, name, type, personality, fertility, depth, symbol, color, speech) {
-  	this.id = id;
+  constructor(name, type, personality, fertility, depth, symbol, color, speech) {
+  	this.id = '';
   	this.name = name;
   	this.type = type;
   	this.personality = personality;
@@ -33,4 +33,21 @@ class Substrate {
 
 }
 
-export { Plant, Substrate };
+class Animal {
+  constructor(x, y, name, arabic, type, personality, symbol, color, speech) {
+    this.id = '';
+    this.x = x;
+    this.y = y;
+    this.name = name;
+    this.arabic = arabic;
+    this.type = type;
+    this.personality = personality;
+    this.symbol = symbol;
+    this.color = color;
+    this.speech = speech;
+    this.latin = '';    
+    this.notes = '';
+  }
+}
+
+export { Plant, Substrate, Animal };
