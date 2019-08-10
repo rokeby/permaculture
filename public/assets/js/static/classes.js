@@ -12,6 +12,8 @@ class Plant {
   	this.color = color;
   	this.flowering = flowering;
   	this.flowercolor = flowercolor;
+  	this.notes = '';
+  	this.latin = '';
   }
 }
 

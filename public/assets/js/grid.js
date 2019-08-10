@@ -82,6 +82,9 @@ function getPlant(zone) {
     var plant = new Plant(1111, plantType.name, plantType.type, plantType.soil, plantType.water, plantType.temp, 
         plantType.personality, plantType.speech, plantType.symbol, plantType.color, plantType.flowering, plantType.flowercolor)
 
+    if(plantType.notes) plant.notes = plantType.notes;
+    if(plantType.latin) plant.latin = plantType.latin;
+
     return plant;
 }
 
