@@ -1,6 +1,6 @@
-import cells from './grid.js';
+import { cells } from './grid.js';
 import animals from './static/animals.js';
-import conversation from './conversation.js';
+import { printSpeech, animalVisit } from './conversation.js';
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -48,7 +48,7 @@ function moveAnimals(animals) {
 		else{
 			cells[newCellNumber].occupant = animals[i];
 			$('#'+newCellNumber).html(animals[i].symbol).css({'color': animals[i].color})
-			conversation.animalVisit(animals[i], cells[newCellNumber]);
+			animalVisit(newCellNumber);
 		}
 	}
 }
@@ -110,7 +110,8 @@ function eachMinute() {
 
 function eachTenSeconds() {
 	//find some animals/plant's speech and print it
-	conversation.printSpeech();
+	printSpeech();
+
 }
 
 function eachSecond() {

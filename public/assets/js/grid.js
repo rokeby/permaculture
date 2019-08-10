@@ -1,7 +1,8 @@
 import zones from './static/zones.js';
-import plants from './static/plants.js';
-import substrates from './static/substrates.js';
+import plantNames from './static/plants.js';
+import substrateNames from './static/substrates.js';
 import animation from './animation.js';
+import { Plant, Substrate } from './static/classes.js';
 var cells = new Array(110*60);
 
 function getEntries(array, type, val) {
@@ -55,22 +56,30 @@ function getSubstrate(zone) {
 
     do{
         var level = rollDice();
-        entries = getEntries(substrates, zone, level);
+        entries = getEntries(substrateNames, zone, level);
     }while (entries.length === 0)
 
-    var substrate = entries[Math.floor(Math.random()*(entries.length))];
-    
+    var substrateType = entries[Math.floor(Math.random()*(entries.length))];
+
     //set substrate depth: random but as a function of zone
-    substrate.depth = setDepth(zone);
+    var depth = setDepth(zone);
+
+    var substrate = new Substrate(2222, substrateType.name, substrateType.type, substrateType.personality, 
+        substrateType.fertility, substrateType.depth, substrateType.symbol, substrateType.color, substrateType.speech )
+
     return substrate;
 }
 
 function getPlant(zone) {
     do{
         var level = rollDice();
-        var entries = getEntries(plants, zone, level);
+        var entries = getEntries(plantNames, zone, level);
     } while (entries.length === 0)
-    var plant = entries[Math.floor(Math.random()*(entries.length))];
+    var plantType = entries[Math.floor(Math.random()*(entries.length))];
+    //here create new plant
+
+    var plant = new Plant(1111, plantType.name, plantType.type, plantType.soil, plantType.water, plantType.temp, 
+        plantType.personality, plantType.speech, plantType.symbol, plantType.color, plantType.flowering, plantType.flowercolor)
 
     return plant;
 }
@@ -87,9 +96,6 @@ function showInfo (cellID) {
     var $symbolInfo =  $('<p/>', {
         class: 'symbolinfo',
     })
-    // .css({
-    //     color: cell.substrate.color
-    // })
     .appendTo($substrateInfo)
     .html(cell.substrate.name + "   " + cell.substrate.symbol)
 
@@ -142,7 +148,7 @@ var generateGrid = new Promise( function(resolve, reject){
             var cellObjects = {};
             cellObjects.substrate = substrate;
 
-            substrate.speech = "ee well"
+            // substrate.speech = "ee well"
             var divClass = "square zone" + zone + " " + substrate.name.replace(/\s/g, '');
 
             if(Math.random() < substrate.fertility && zone !== 5){
@@ -154,8 +160,8 @@ var generateGrid = new Promise( function(resolve, reject){
 
                 var flower = getFlowers(plant);
 
-                color = flower ? plant["flower-color"] : plant["color"];
-                plant.speech = "oo hi"
+                color = flower ? plant.flowercolor : plant["color"];
+                plant.speech = plant.symbol;
             }
 
             $('<div/>', {
@@ -183,4 +189,4 @@ generateGrid.then(function(value) {
     animation.runMainLoop();
 });
 
-export default cells;
+export { cells };

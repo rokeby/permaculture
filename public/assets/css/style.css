@@ -39,9 +39,8 @@ body {
 
 .speechbox {
 	background-color: white;
-	height: 20px;
-	width: 50px;
-	z-index: 10;
+	width: 60px;
+	z-index: 5;
 	position: absolute;
 }
 

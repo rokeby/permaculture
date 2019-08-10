@@ -1,14 +1,14 @@
-import cells from './grid.js';
+import { cells } from './grid.js';
 
 function printSpeech() {
 	var chosenAgent = false;
-	var speech;
-	var randCellNumber = Math.floor(Math.random()*60*110);
-	var randCell = cells[randCellNumber]
+	var speech, randCellNumber, randCell;
 
 	do{
 		//get a random cell
-		
+		randCellNumber = Math.floor(Math.random()*60*110);
+		randCell = cells[randCellNumber];
+
 		if(randCell.occupant){
 			if(randCell.occupant.speech) {
 				chosenAgent = true
@@ -31,6 +31,10 @@ function printSpeech() {
 
 	var cellPos = $("#"+randCellNumber).position();
 
+	// console.log('rand cell is', randCell)
+	// $("#"+randCellNumber).css({'background-color': 'pink'})
+
+	$('.speechbox').remove()
 	//put speech above cell
 	var $speechBox = $('<div/>', {
 			class: "speechbox",
@@ -44,18 +48,18 @@ function printSpeech() {
 
 }
 
-function animalVisit(animal, cell) {
+function animalVisit(cellNumber) {
 
-	animal.speech = "hello hello";
-	cell.occupant.speech = animal.speech;
-
-	if(cell.plant){
-		cell.plant.speech = "oo err";
+	if(cells[cellNumber].plant){
+		cells[cellNumber].plant.speech =  "oo err";
 	}
 
 	else {
-		cell.substrate.speech ="careful with those hooves";
+		cells[cellNumber].substrate.speech =  "careful with those hooves";
 	}
+
+	$('#' + cellNumber).css({'background-color': 'red'})
 }
 
-export default { animalVisit, printSpeech };
+
+export { animalVisit, printSpeech };

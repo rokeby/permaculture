@@ -1,4 +1,4 @@
-var substrates = [
+var substrateNames = [
 
 //zones: 1 rocky, 2 soil, 3 trees, 4 farm, 5 path, 6 spring
 
@@ -15,6 +15,7 @@ var substrates = [
 		'fertility': 0.1,
 		'symbol': 'ᗝ',
 		'color': '#ebebe0',
+		'speech': ['ee well']
 	},
 
 	{
@@ -30,6 +31,7 @@ var substrates = [
 		'fertility': 0.05,
 		'symbol': '⋂',
 		'color': '#b3b3cc',
+		'speech': ['ee well']
 	},
 
 	{
@@ -45,6 +47,7 @@ var substrates = [
 		'fertility': 0.8,
 		'symbol': '."',
 		'color':'#66001a',
+		'speech': ['ee well']
 	},
 
 	{
@@ -60,6 +63,7 @@ var substrates = [
 		'fertility': 0.95,
 		'symbol': '."',
 		'color': '#3b2b2f',
+		'speech': ['ee well']
 	},
 
 	{
@@ -75,6 +79,7 @@ var substrates = [
 		'fertility': 0.3,
 		'symbol': '."',
 		'color': '#e6e600',
+		'speech': ['ee well']
 	},
 
 	{
@@ -90,6 +95,7 @@ var substrates = [
 		'fertility': 0,
 		'symbol': '≈',
 		'color': '#99e6ff',
+		'speech': ['ee well']
 	},
 
 	{
@@ -105,8 +111,9 @@ var substrates = [
 		'fertility': 0,
 		'symbol': '~',
 		'color': '#99e6ef',
+		'speech': ['ee well']
 	},
 
 ]
 
-export default  substrates ;
+export default  substrateNames ;
