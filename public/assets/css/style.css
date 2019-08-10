@@ -15,7 +15,7 @@ body {
 }
 
 .infopanel {
-	height: 92vh;
+	height: auto;
 	top: 4vh;
 	right: 4vh;
 	width: 350px;
@@ -30,10 +30,12 @@ body {
 	border: 3px solid white;
 	margin-top: 10px;
 	margin-left: 4%;
+	margin-bottom: 4%;
 }
 
 .symbolinfo {
-	font-size: 35px;
+	font-family: courier;
+	font-size: 20px;
 	padding: 20px;
 }
 

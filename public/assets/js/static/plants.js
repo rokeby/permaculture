@@ -1,6 +1,7 @@
 var plantNames = [
 	{
 		'name': 'oak',
+		'latin': 'quercus calliprinos',
 		'1': 'med',
 		'2': 'low',
 		'3': 'high',
@@ -24,6 +25,7 @@ var plantNames = [
 
 	{
 		'name': 'qaiqab',
+		'latin': 'arbutus andrachne',
 		'1': 'low',
 		'2': 'low',
 		'3': 'med',
@@ -47,6 +49,7 @@ var plantNames = [
 
 	{
 		'name': 'spiny broom',
+		'latin': 'calicotome spinosa',
 		'1': 'high',
 		'2': 'high',
 		'3': 'med',
@@ -70,6 +73,7 @@ var plantNames = [
 
 	{
 		'name': 'pink rock rose',
+		'latin': 'cistus creticus ssp. incanus',
 		'1': 'high',
 		'2': 'high',
 		'3': 'low',
@@ -93,6 +97,7 @@ var plantNames = [
 
 	{
 		'name': 'gallipoli rose',
+		'latin': 'salvia cistus',
 		'1': 'high',
 		'2': 'med',
 		'3': 'low',
@@ -116,12 +121,13 @@ var plantNames = [
 
 	{
 		'name': 'sage', 
+		'latin': 'salvia officinalis',
 		'1': 'high',
 		'2': 'med',
 		'3': 'med',
 		'4': 'med',
 		'soil': 'shallow',
-		'type': 'shrub',
+		'type': 'herb',
 		'water': 'dry',
 		'temp': 'warm',
 		'personality': 'wise',
@@ -139,6 +145,7 @@ var plantNames = [
 
 	{
 		'name': 'syrian pear',
+		'latin': 'pyrus syriaca',
 		'1': 'low',
 		'2': 'low',
 		'3': 'med',
@@ -162,6 +169,7 @@ var plantNames = [
 
 	{
 		'name':	'pistacia',
+		'latin': 'pistacia palaestina',
 		'1': 'low',
 		'2': 'low',
 		'3': 'med',
@@ -185,6 +193,7 @@ var plantNames = [
 
 	{
 		'name': 'hawthorn',
+		'latin': 'crataegus monogyna',
 		'1': 'low',
 		'2': 'med',
 		'3': 'high',
@@ -208,6 +217,7 @@ var plantNames = [
 
 	{
 		'name': 'carob',
+		'latin': 'ceratonia siliqua',
 		'1': 'low',
 		'2': 'low',
 		'3': 'med',
@@ -232,6 +242,7 @@ var plantNames = [
 
 	{
 		'name': 'olive',
+		'latin': 'olea europaea',
 		'1': 'med',
 		'2': 'low',
 		'3': 'high',
@@ -256,6 +267,7 @@ var plantNames = [
 
 	{
 		'name': 'buckthorn',
+		'latin': 'rhamnus cathartica',
 		'1': 'low',
 		'2': 'med',
 		'3': 'low',
@@ -279,6 +291,7 @@ var plantNames = [
 
 	{
 		'name': 'almond',
+		'latin': 'prunus dulcis',
 		'1': 'low',
 		'2': 'low',
 		'3': 'med',
@@ -302,12 +315,13 @@ var plantNames = [
 
 	{
 		'name': 'winter crocus',
+		'latin': 'crocus hyemalis boiss. & blanche',
 		'1': 'low',
 		'2': 'high',
 		'3': 'low',
 		'4': 'low',
 		'soil': 'med',
-		'type': 'herbaceous',
+		'type': 'herb',
 		'water': 'moist',
 		'temp': 'cool',
 		'personality': 'cheery',
@@ -325,12 +339,13 @@ var plantNames = [
 
 	{
 		'name': 'orchid',
+		'latin': 'anacamptis papilionacea (L.)',
 		'1': 'low',
 		'2': 'med',
 		'3': 'low',
 		'4': 'low',
 		'soil': 'med',
-		'type': 'herbaceous',
+		'type': 'herb',
 		'water': 'moist',
 		'temp': 'med',
 		'personality': 'flighty',
@@ -348,12 +363,13 @@ var plantNames = [
 
 	{
 		'name': 'bee orchid',
+		'latin': 'ophrys apifera',
 		'1': 'low',
 		'2': 'med',
 		'3': 'low',
 		'4': 'low',
 		'soil': 'med',
-		'type': 'herbaceous',
+		'type': 'herb',
 		'water': 'med',
 		'temp': 'med',
 		'personality': 'shallow',
@@ -371,12 +387,13 @@ var plantNames = [
 
 	{
 		'name': 'anemone',
+		'latin': 'anemone coronaria L.',
 		'1': 'low',
 		'2': 'med',
 		'3': 'med',
 		'4': 'low',
 		'soil': 'shallow',
-		'type': 'herbaceous',
+		'type': 'herb',
 		'water': 'dry',
 		'temp': 'med',
 		'personality': 'sweet',
@@ -394,6 +411,7 @@ var plantNames = [
 
 	{
 		'name': 'palestinian vetch',
+		'latin': 'vicia palaestina',
 		'1': 'low',
 		'2': 'high',
 		'3': 'med',
@@ -417,6 +435,7 @@ var plantNames = [
 
 	{
 		'name': 'yellow vetch',
+		'latin': 'vicia lutea',
 		'1': 'low',
 		'2': 'high',
 		'3': 'low',
@@ -440,6 +459,7 @@ var plantNames = [
 
 	{
 		'name': 'arrowleaf clover',
+		'latin': 'trifolium Vesiculosum Savi.',
 		'1': 'med',
 		'2': 'high',
 		'3': 'med',
@@ -463,6 +483,7 @@ var plantNames = [
 
 	{
 		'name': 'helmet clover',
+		'latin': 'trifolium clypeatum',
 		'1': 'med',
 		'2': 'high',
 		'3': 'low',
@@ -486,6 +507,7 @@ var plantNames = [
 
 	{
 		'name': 'star clover',
+		'latin': 'trifolium stellatum',
 		'1': 'med',
 		'2': 'high',
 		'3': 'low',
@@ -509,6 +531,7 @@ var plantNames = [
 
 	{
 		'name': 'medick',
+		'latin': 'medicago lupulina',
 		'1': 'med',
 		'2': 'high',
 		'3': 'low',
@@ -532,6 +555,7 @@ var plantNames = [
 
 	{
 		'name': 'yellow restharrow',
+		'latin': 'ononis natrix',
 		'1': 'med',
 		'2': 'high',
 		'3': 'med',
@@ -555,6 +579,7 @@ var plantNames = [
 
 	{
 		'name': 'spiny restharrow',
+		'latin': 'ononis spinosa',
 		'1': 'med',
 		'2': 'high',
 		'3': 'low',
@@ -578,6 +603,7 @@ var plantNames = [
 
 	{
 		'name': 'wild pea',
+		'latin': 'pisum fulvum',
 		'1': 'med',
 		'2': 'high',
 		'3': 'low',
@@ -601,6 +627,7 @@ var plantNames = [
 
 	{
 		'name': 'fava bean',
+		'latin': 'vicia faba',
 		'1': 'med',
 		'2': 'high',
 		'3': 'low',
@@ -624,6 +651,7 @@ var plantNames = [
 
 	{
 		'name': 'sainfoin',
+		'latin': 'onobrychis',
 		'1': 'med',
 		'2': 'high',
 		'3': 'low',
@@ -647,6 +675,7 @@ var plantNames = [
 
 	{
 		'name': 'hoary mustard',
+		'latin': 'hirschfeldia incana',
 		'1': 'low',
 		'2': 'high',
 		'3': 'low',
@@ -670,12 +699,13 @@ var plantNames = [
 
 	{
 		'name': 'black mustard',
+		'latin': 'brassica nigra',
 		'1': 'low',
 		'2': 'high',
 		'3': 'low',
 		'4': 'low',
 		'soil': 'med',
-		'type': 'herbaceous',
+		'type': 'herb',
 		'water': 'med',
 		'temp': 'warm',
 		'personality': 'friendly',
@@ -693,12 +723,13 @@ var plantNames = [
 
 	{
 		'name': 'milk thistle',
+		'latin': 'silybum marianum',
 		'1': 'med',
 		'2': 'high',
 		'3': 'low',
 		'4': 'low',
 		'soil': 'deep',
-		'type': 'herbaceous',
+		'type': 'herb',
 		'water': 'med',
 		'temp': 'warm',
 		'personality': 'spiky',
@@ -716,6 +747,7 @@ var plantNames = [
 
 	{
 		'name': 'spiny burnet',
+		'latin': 'sarcopoterium',
 		'1': 'high',
 		'2': 'high',
 		'3': 'low',
@@ -730,6 +762,7 @@ var plantNames = [
 		'symbol': '෴',
 		'color': '#cccc00',
 		'flowercolor': '#ff9933',
+		'notes': 'a hateful plant'
 		// 'flower-symbol': ,
 		// 'fruiting': ,
 		// 'fruit-color': ,
@@ -739,6 +772,7 @@ var plantNames = [
 
 	{
 		'name': 'aleppo pine',
+		'latin': 'pinus halepensis',
 		'1': 'med',
 		'2': 'low',
 		'3': 'high',
@@ -762,6 +796,7 @@ var plantNames = [
 
 		{
 		'name': 'eucalyptus',
+		'latin': 'eucalyptus spp.',
 		'1': 'low',
 		'2': 'low',
 		'3': 'med',
@@ -785,6 +820,7 @@ var plantNames = [
 
 		{
 		'name': 'persian cypress',
+		'latin': 'cupressus sempervirens',
 		'1': 'med',
 		'2': 'low',
 		'3': 'high',
@@ -808,6 +844,7 @@ var plantNames = [
 
 	{
 		'name': 'stone pine',
+		'latin': 'pinus pinea',
 		'1': 'med',
 		'2': 'low',
 		'3': 'high',
@@ -831,6 +868,7 @@ var plantNames = [
 
 	{
 		'name': 'tomato',
+		'latin': 'solanum lycopersicum',
 		'1': 'none',
 		'2': 'low',
 		'3': 'low',
@@ -849,11 +887,35 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companion': 'lemon verbena',
+	},
+
+	{
+		'name': 'lemon verbena',
+		'latin': 'aloysia citrodora ',
+		'1': 'none',
+		'2': 'low',
+		'3': 'low',
+		'4': 'high',
+		'soil': 'med',
+		'type': 'herb',
+		'water': 'dry',
+		'temp': 'warm',
+		'personality': 'blunt',
+		'flowering': [0], 
+		'symbol': '۳',
+		'color': '#228B22',
+		'flower-color': '#228B22',
+		// 'flower-symbol': ,
+		// 'fruiting': ,
+		// 'fruit-color': ,
+		// 'fruit-symbol': ,
+		'companion': 'tomato',
 	},
 
 	{
 		'name': 'mallow',
+		'latin': 'malva pusilla',
 		'1': 'none',
 		'2': 'low',
 		'3': 'med',
@@ -877,6 +939,7 @@ var plantNames = [
 
 	{
 		'name': 'gourd',
+		'latin': 'lageneria siceraria',
 		'1': 'none',
 		'2': 'low',
 		'3': 'low',
@@ -900,6 +963,7 @@ var plantNames = [
 
 	{
 		'name': 'cucumber',
+		'latin': 'cucumis sativus',
 		'1': 'none',
 		'2': 'low',
 		'3': 'low',
@@ -923,6 +987,7 @@ var plantNames = [
 
 	{
 		'name': 'aubergine',
+		'latin': 'solanum melongena',
 		'1': 'none',
 		'2': 'low',
 		'3': 'low',
@@ -946,6 +1011,7 @@ var plantNames = [
 
 	{
 		'name': 'watermelon',
+		'latin': 'citrullus lanatus',
 		'1': 'none',
 		'2': 'low',
 		'3': 'low',

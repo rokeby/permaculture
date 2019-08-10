@@ -57,8 +57,6 @@ function animalVisit(cellNumber) {
 	else {
 		cells[cellNumber].substrate.speech =  "careful with those hooves";
 	}
-
-	$('#' + cellNumber).css({'background-color': 'red'})
 }
 
 
