@@ -2,6 +2,7 @@ var plantNames = [
 	{
 		'name': 'oak',
 		'latin': 'quercus calliprinos',
+		'arabic': 'البلوط الفلسطيني',
 		'1': 'med',
 		'2': 'low',
 		'3': 'high',
@@ -26,6 +27,7 @@ var plantNames = [
 	{
 		'name': 'qaiqab',
 		'latin': 'arbutus andrachne',
+		'arabic': 'قيقب',
 		'1': 'low',
 		'2': 'low',
 		'3': 'med',
@@ -50,6 +52,7 @@ var plantNames = [
 	{
 		'name': 'spiny broom',
 		'latin': 'calicotome spinosa',
+		'arabic': 'قنديل',
 		'1': 'high',
 		'2': 'high',
 		'3': 'med',
@@ -72,8 +75,34 @@ var plantNames = [
 	},
 
 	{
+		'name': 'prickly pear',
+		'latin': 'Opuntia ficus-indica',
+		'arabic': 'تين شوكي',
+		'1': 'high',
+		'2': 'med',
+		'3': 'low',
+		'4': 'low',
+		'soil': 'shallow',
+		'type': 'shrub',
+		'water': 'dry',
+		'temp': 'hot',
+		'personality': 'tough',
+		'speech': 'oo hi',
+		'flowering': [4, 3, 5, 6], // jan-april
+		'symbol': 'ღ',
+		'color': '#8cb319',
+		'flowercolor': ' #ff3399',
+		// 'flower-symbol': ,
+		// 'fruiting': ,
+		// 'fruit-color': ,
+		// 'fruit-symbol': ,
+		// 'companion': ,
+	},
+
+	{
 		'name': 'pink rock rose',
-		'latin': 'cistus creticus ssp. incanus',
+		'latin': 'cistus creticus',
+		'arabic': 'لبّيد احمر',
 		'1': 'high',
 		'2': 'high',
 		'3': 'low',
@@ -97,7 +126,8 @@ var plantNames = [
 
 	{
 		'name': 'gallipoli rose',
-		'latin': 'salvia cistus',
+		'latin': 'cistus salviifolius',
+		'arabic': 'لبّيد ابيض',
 		'1': 'high',
 		'2': 'med',
 		'3': 'low',
@@ -121,7 +151,8 @@ var plantNames = [
 
 	{
 		'name': 'sage', 
-		'latin': 'salvia officinalis',
+		'latin': 'salvia fruticosa mill.',
+		'arabic': 'ميرامية يونانية',
 		'1': 'high',
 		'2': 'med',
 		'3': 'med',
@@ -146,6 +177,7 @@ var plantNames = [
 	{
 		'name': 'syrian pear',
 		'latin': 'pyrus syriaca',
+		'arabic': 'اجاص بري',
 		'1': 'low',
 		'2': 'low',
 		'3': 'med',
@@ -170,6 +202,7 @@ var plantNames = [
 	{
 		'name':	'pistacia',
 		'latin': 'pistacia palaestina',
+		'arabic': 'البطم الفلسطيني',
 		'1': 'low',
 		'2': 'low',
 		'3': 'med',
@@ -194,6 +227,7 @@ var plantNames = [
 	{
 		'name': 'hawthorn',
 		'latin': 'crataegus monogyna',
+		'arabic': 'زعرور',
 		'1': 'low',
 		'2': 'med',
 		'3': 'high',
@@ -218,6 +252,7 @@ var plantNames = [
 	{
 		'name': 'carob',
 		'latin': 'ceratonia siliqua',
+		'arabic': 'خروب',
 		'1': 'low',
 		'2': 'low',
 		'3': 'med',
@@ -243,6 +278,7 @@ var plantNames = [
 	{
 		'name': 'olive',
 		'latin': 'olea europaea',
+		'arabic': 'زيتون بري',
 		'1': 'med',
 		'2': 'low',
 		'3': 'high',
@@ -267,7 +303,8 @@ var plantNames = [
 
 	{
 		'name': 'buckthorn',
-		'latin': 'rhamnus cathartica',
+		'latin': 'rhamnus lycioides',
+		'arabic': 'الس ّويد الفلسطيني',
 		'1': 'low',
 		'2': 'med',
 		'3': 'low',
@@ -290,8 +327,34 @@ var plantNames = [
 	},
 
 	{
+		'name': 'bougainvillea',
+		'latin': 'bougainvillea glabra',
+		'arabic': 'بوغنفيلية جرداء',
+		'1': 'none',
+		'2': 'none',
+		'3': 'low',
+		'4': 'none',
+		'soil': 'shallow',
+		'type': 'shrub',
+		'water': 'dry',
+		'temp': 'warm',
+		'personality': 'flighty',
+		'speech': 'oo hi',
+		'flowering': [2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 
+		'symbol': 'Ѫ',
+		'color': '#009f3c',
+		'flowercolor': '#e600e6',
+		// 'flower-symbol': ,
+		// 'fruiting': ,
+		// 'fruit-color': ,
+		// 'fruit-symbol': ,
+		// 'companion': ,
+	},
+
+	{
 		'name': 'almond',
 		'latin': 'prunus dulcis',
+		'arabic': 'لوز',
 		'1': 'low',
 		'2': 'low',
 		'3': 'med',
@@ -314,21 +377,47 @@ var plantNames = [
 	},
 
 	{
+		'name': 'cyclamen',
+		'latin': 'cyclamen persicum',
+		'arabic': 'سيكلامين',
+		'1': 'high',
+		'2': 'low',
+		'3': 'low',
+		'4': 'low',
+		'soil': 'shallow',
+		'type': 'flower',
+		'water': 'moist',
+		'temp': 'cool',
+		'personality': 'flighty',
+		'speech': 'oo hi',
+		'flowering': [12, 1, 2, 3, 4], 
+		'symbol': '၈',
+		'color': '#0d5959',
+		'flowercolor': '#ffe6ff',
+		// 'flower-symbol': ,
+		// 'fruiting': ,
+		// 'fruit-color': ,
+		// 'fruit-symbol': ,
+		// 'companion': ,
+	},
+
+	{
 		'name': 'winter crocus',
 		'latin': 'crocus hyemalis boiss. & blanche',
+		'arabic': 'الزعفران الشتوي ابيض',
 		'1': 'low',
 		'2': 'high',
 		'3': 'low',
 		'4': 'low',
 		'soil': 'med',
-		'type': 'herb',
+		'type': 'flower',
 		'water': 'moist',
 		'temp': 'cool',
 		'personality': 'cheery',
 		'speech': 'oo hi',
 		'flowering': [11, 12, 1, 2], 
 		'symbol': '၈',
-		'color': '#006600',
+		'color': '#00cc6c',
 		'flowercolor': '#ffffff',
 		// 'flower-symbol': ,
 		// 'fruiting': ,
@@ -340,12 +429,13 @@ var plantNames = [
 	{
 		'name': 'orchid',
 		'latin': 'anacamptis papilionacea (L.)',
+		'arabic': 'سحلب فراشي',
 		'1': 'low',
 		'2': 'med',
 		'3': 'low',
 		'4': 'low',
 		'soil': 'med',
-		'type': 'herb',
+		'type': 'flower',
 		'water': 'moist',
 		'temp': 'med',
 		'personality': 'flighty',
@@ -362,14 +452,15 @@ var plantNames = [
 	},
 
 	{
-		'name': 'bee orchid',
-		'latin': 'ophrys apifera',
+		'name': 'spider orchid',
+		'latin': 'ophrys sphegodes',
+		'arabic': 'اوركيد عنكبوت',
 		'1': 'low',
 		'2': 'med',
 		'3': 'low',
 		'4': 'low',
 		'soil': 'med',
-		'type': 'herb',
+		'type': 'flower',
 		'water': 'med',
 		'temp': 'med',
 		'personality': 'shallow',
@@ -388,12 +479,13 @@ var plantNames = [
 	{
 		'name': 'anemone',
 		'latin': 'anemone coronaria L.',
+		'arabic': 'شقائق النعمان',
 		'1': 'low',
 		'2': 'med',
 		'3': 'med',
 		'4': 'low',
 		'soil': 'shallow',
-		'type': 'herb',
+		'type': 'flower',
 		'water': 'dry',
 		'temp': 'med',
 		'personality': 'sweet',
@@ -412,6 +504,7 @@ var plantNames = [
 	{
 		'name': 'palestinian vetch',
 		'latin': 'vicia palaestina',
+		'arabic': 'البيقية الفلسطينية',
 		'1': 'low',
 		'2': 'high',
 		'3': 'med',
@@ -434,8 +527,9 @@ var plantNames = [
 	},
 
 	{
-		'name': 'yellow vetch',
-		'latin': 'vicia lutea',
+		'name': 'hairy yellow vetch',
+		'latin': 'vicia hybrida',
+		'arabic': 'البيقية الهجينة',
 		'1': 'low',
 		'2': 'high',
 		'3': 'low',
@@ -459,7 +553,8 @@ var plantNames = [
 
 	{
 		'name': 'arrowleaf clover',
-		'latin': 'trifolium Vesiculosum Savi.',
+		'latin': 'trifolium clusii godr. & gren.',
+		'arabic': 'نفل',
 		'1': 'med',
 		'2': 'high',
 		'3': 'med',
@@ -484,6 +579,7 @@ var plantNames = [
 	{
 		'name': 'helmet clover',
 		'latin': 'trifolium clypeatum',
+		'arabic': 'النفل المدرع',
 		'1': 'med',
 		'2': 'high',
 		'3': 'low',
@@ -506,8 +602,9 @@ var plantNames = [
 	},
 
 	{
-		'name': 'star clover',
-		'latin': 'trifolium stellatum',
+		'name': 'eastern star clover',
+		'latin': 'trifolium dasyurum',
+		'arabic': 'النفل الداسيوري',
 		'1': 'med',
 		'2': 'high',
 		'3': 'low',
@@ -531,7 +628,8 @@ var plantNames = [
 
 	{
 		'name': 'medick',
-		'latin': 'medicago lupulina',
+		'latin': 'medicago turbinata',
+		'arabic': 'برسيم',
 		'1': 'med',
 		'2': 'high',
 		'3': 'low',
@@ -554,8 +652,9 @@ var plantNames = [
 	},
 
 	{
-		'name': 'yellow restharrow',
-		'latin': 'ononis natrix',
+		'name': 'sticky restharrow',
+		'latin': 'ononis viscosa',
+		'arabic': 'بسلة كهرمانية',
 		'1': 'med',
 		'2': 'high',
 		'3': 'med',
@@ -578,8 +677,9 @@ var plantNames = [
 	},
 
 	{
-		'name': 'spiny restharrow',
-		'latin': 'ononis spinosa',
+		'name': 'two-flowered restharrow',
+		'latin': 'ononis biflora',
+		'arabic': 'شبرق ثنائي الزهار',
 		'1': 'med',
 		'2': 'high',
 		'3': 'low',
@@ -604,6 +704,7 @@ var plantNames = [
 	{
 		'name': 'wild pea',
 		'latin': 'pisum fulvum',
+		'arabic': 'نفل',
 		'1': 'med',
 		'2': 'high',
 		'3': 'low',
@@ -626,8 +727,9 @@ var plantNames = [
 	},
 
 	{
-		'name': 'fava bean',
-		'latin': 'vicia faba',
+		'name': 'purple broad bean',
+		'latin': 'vicia narbonensis',
+		'arabic': 'البيقية النربونية',
 		'1': 'med',
 		'2': 'high',
 		'3': 'low',
@@ -652,6 +754,7 @@ var plantNames = [
 	{
 		'name': 'sainfoin',
 		'latin': 'onobrychis',
+		'arabic': 'عنبريس',
 		'1': 'med',
 		'2': 'high',
 		'3': 'low',
@@ -673,9 +776,36 @@ var plantNames = [
 		// 'companion': ,
 	},
 
+
+	{
+		'name': 'prickly asparagus',
+		'latin': 'asparagus aphyllus',
+		'arabic': 'هليون',
+		'1': 'low',
+		'2': 'high',
+		'3': 'low',
+		'4': 'low',
+		'soil': 'med',
+		'type': 'shrub',
+		'water': 'med',
+		'temp': 'warm',
+		'personality': 'mean',
+		'speech': 'oo hi',
+		'flowering': [9, 10, 11], 
+		'symbol': '҂',
+		'color': '#b0c13a',
+		'flowercolor': '#ffff99',
+		// 'flower-symbol': ,
+		// 'fruiting': ,
+		// 'fruit-color': ,
+		// 'fruit-symbol': ,
+		// 'companion': ,
+	},
+
 	{
 		'name': 'hoary mustard',
-		'latin': 'hirschfeldia incana',
+		'latin': 'sinapis incana',
+		'arabic': 'خزامي',
 		'1': 'low',
 		'2': 'high',
 		'3': 'low',
@@ -700,6 +830,7 @@ var plantNames = [
 	{
 		'name': 'black mustard',
 		'latin': 'brassica nigra',
+		'arabic': 'خردل',
 		'1': 'low',
 		'2': 'high',
 		'3': 'low',
@@ -724,6 +855,7 @@ var plantNames = [
 	{
 		'name': 'milk thistle',
 		'latin': 'silybum marianum',
+		'arabic': 'خرفيش',
 		'1': 'med',
 		'2': 'high',
 		'3': 'low',
@@ -747,7 +879,8 @@ var plantNames = [
 
 	{
 		'name': 'spiny burnet',
-		'latin': 'sarcopoterium',
+		'latin': 'sarcopoterium spinosum',
+		'arabic': 'النتش',
 		'1': 'high',
 		'2': 'high',
 		'3': 'low',
@@ -773,6 +906,7 @@ var plantNames = [
 	{
 		'name': 'aleppo pine',
 		'latin': 'pinus halepensis',
+		'arabic': 'صنوبر حلبي',
 		'1': 'med',
 		'2': 'low',
 		'3': 'high',
@@ -795,8 +929,9 @@ var plantNames = [
 	},
 
 		{
-		'name': 'eucalyptus',
-		'latin': 'eucalyptus spp.',
+		'name': 'red river gum tree',
+		'latin': 'eucalyptus camaldulensis',
+		'arabic': 'كافور كينيا',
 		'1': 'low',
 		'2': 'low',
 		'3': 'med',
@@ -821,6 +956,7 @@ var plantNames = [
 		{
 		'name': 'persian cypress',
 		'latin': 'cupressus sempervirens',
+		'arabic': 'سرو',
 		'1': 'med',
 		'2': 'low',
 		'3': 'high',
@@ -845,6 +981,7 @@ var plantNames = [
 	{
 		'name': 'stone pine',
 		'latin': 'pinus pinea',
+		'arabic': 'صنوبر مثمر',
 		'1': 'med',
 		'2': 'low',
 		'3': 'high',
@@ -869,6 +1006,7 @@ var plantNames = [
 	{
 		'name': 'tomato',
 		'latin': 'solanum lycopersicum',
+		'arabic': 'بندورة',
 		'1': 'none',
 		'2': 'low',
 		'3': 'low',
@@ -892,7 +1030,8 @@ var plantNames = [
 
 	{
 		'name': 'lemon verbena',
-		'latin': 'aloysia citrodora ',
+		'latin': 'aloysia citrodora',
+		'arabic': 'لويزة ليمونية',
 		'1': 'none',
 		'2': 'low',
 		'3': 'low',
@@ -916,6 +1055,7 @@ var plantNames = [
 	{
 		'name': 'mallow',
 		'latin': 'malva pusilla',
+		'arabic': 'خبيزة',
 		'1': 'none',
 		'2': 'low',
 		'3': 'med',
@@ -938,8 +1078,9 @@ var plantNames = [
 	},
 
 	{
-		'name': 'gourd',
+		'name': 'calabash gourd',
 		'latin': 'lageneria siceraria',
+		'arabic': 'كالاباش خياري',
 		'1': 'none',
 		'2': 'low',
 		'3': 'low',
@@ -964,6 +1105,7 @@ var plantNames = [
 	{
 		'name': 'cucumber',
 		'latin': 'cucumis sativus',
+		'arabic': 'خيار',
 		'1': 'none',
 		'2': 'low',
 		'3': 'low',
@@ -975,7 +1117,7 @@ var plantNames = [
 		'personality': 'friendly',
 		'speech': 'oo hi',
 		'flowering': [0], 
-		'symbol': 'ღ',
+		'symbol': 'ல',
 		'color': '#00e600',
 		'flowercolor': '#00e600',
 		// 'flower-symbol': ,
@@ -988,6 +1130,7 @@ var plantNames = [
 	{
 		'name': 'aubergine',
 		'latin': 'solanum melongena',
+		'arabic': 'باذنجان',
 		'1': 'none',
 		'2': 'low',
 		'3': 'low',
@@ -1012,6 +1155,7 @@ var plantNames = [
 	{
 		'name': 'watermelon',
 		'latin': 'citrullus lanatus',
+		'arabic': 'بلدي بطيخ',
 		'1': 'none',
 		'2': 'low',
 		'3': 'low',

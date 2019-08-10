@@ -4,6 +4,10 @@ var personalities = {
 	 	'keywords': []
 	 },
 
+	 'tough': {
+	 	'keywords': []
+	 },
+
 	 'obnoxious': {
 	 	'keywords': []
 	 },
