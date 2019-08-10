@@ -114,8 +114,8 @@ function showInfo (cellID) {
                 class: 'symbolinfo',
         })
         .appendTo($plantInfo)
-        .html(cell.plant.name + "   " + "[" + cell.plant.symbol + "]" + "</br>" 
-            + "</br>" + cell.plant.arabic + "</br>" +
+        .html(cell.plant.name + "   " + "[" + cell.plant.symbol + "]" + "<br>" +
+            "<p class='artext' lang='ar'>" + cell.plant.arabic + "</p>" + "<br>" +
             "<i>" + cell.plant.latin + "</i>" + "</br>" + "a kind of " + cell.plant.type)
       
         if(cell.plant.notes !== '') $symbolInfo.append("</br> </br>" + cell.plant.notes)

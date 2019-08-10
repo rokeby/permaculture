@@ -48,6 +48,13 @@ body {
 	width: 60px;
 	z-index: 5;
 	position: absolute;
+	font-family: courier;
+}
+
+.artext {
+	margin-top:0px;
+	margin-bottom: 0px;
+	float: right;
 }
 
 /*rocks*/
