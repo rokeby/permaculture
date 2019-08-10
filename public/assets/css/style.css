@@ -22,6 +22,12 @@ body {
 	position: fixed;
 	background-color:  #e6e6e6;
 	z-index: 10;
+	font-size: 20px;
+	font-family: courier;	
+}
+
+.infotitle {
+	padding: 20px;
 }
 
 .infobox {
@@ -34,8 +40,6 @@ body {
 }
 
 .symbolinfo {
-	font-family: courier;
-	font-size: 20px;
 	padding: 20px;
 }
 

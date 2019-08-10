@@ -1,4 +1,4 @@
-import zones from './static/zones.js';
+import { zones, zoneNames } from './static/zones.js';
 import plantNames from './static/plants.js';
 import substrateNames from './static/substrates.js';
 import { xnum, ynum } from './static/constants.js';
@@ -79,7 +79,7 @@ function getPlant(zone) {
     var plantType = entries[Math.floor(Math.random()*(entries.length))];
     //here create new plant
 
-    var plant = new Plant(1111, plantType.name, plantType.type, plantType.soil, plantType.water, plantType.temp, 
+    var plant = new Plant(1111, plantType.name, plantType.arabic, plantType.type, plantType.soil, plantType.water, plantType.temp, 
         plantType.personality, plantType.speech, plantType.symbol, plantType.color, plantType.flowering, plantType.flowercolor)
 
     if(plantType.notes) plant.notes = plantType.notes;
@@ -93,6 +93,8 @@ function showInfo (cellID) {
     $('.infopanel').children().remove()
     $('.infopanel').toggle()
     
+    $('.infopanel').html("<p style='padding:20px'> in " + cell.zoneName + "...</p>")
+
     var $substrateInfo =  $('<div/>', {
         class: 'infobox',
     }).appendTo('.infopanel')
@@ -112,8 +114,9 @@ function showInfo (cellID) {
                 class: 'symbolinfo',
         })
         .appendTo($plantInfo)
-        .html(cell.plant.name + "   " + "[" + cell.plant.symbol + "]" + "</br>" + "<i>" + 
-            cell.plant.latin + "</i>" + "</br>" + "a kind of " + cell.plant.type)
+        .html(cell.plant.name + "   " + "[" + cell.plant.symbol + "]" + "</br>" 
+            + "</br>" + cell.plant.arabic + "</br>" +
+            "<i>" + cell.plant.latin + "</i>" + "</br>" + "a kind of " + cell.plant.type)
       
         if(cell.plant.notes !== '') $symbolInfo.append("</br> </br>" + cell.plant.notes)
       }
@@ -141,13 +144,14 @@ var generateGrid = new Promise( function(resolve, reject){
 
     for(var j=0; j<ynum; j++){
         for(var i=0; i<xnum; i++){
-            var zone = zones.zones[j*xnum + i];
+            var zone = zones[j*xnum + i];
             var plant;
             var substrate = getSubstrate(zone);
             var symbol = substrate.symbol;
             var color = substrate.color;
 
             var cellObjects = {};
+            cellObjects.zoneName = zoneNames[zone];
             cellObjects.substrate = substrate;
 
             var divClass = "square zone" + zone + " " + substrate.name.replace(/\s/g, '');

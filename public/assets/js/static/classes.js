@@ -1,7 +1,8 @@
 class Plant {
-  constructor(id, name, type, soil, water, temp, personality, speech, symbol, color, flowering, flowercolor) {
+  constructor(id, name, arabic, type, soil, water, temp, personality, speech, symbol, color, flowering, flowercolor) {
   	this.id = id;
   	this.name = name;
+  	this.arabic = arabic;
   	this.type = type;
   	this.soil = soil;
   	this.water = water;
