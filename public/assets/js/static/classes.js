@@ -8,7 +8,7 @@ class Plant {
   	this.water = water;
   	this.temp = temp;
   	this.personality = personality;
-  	this.speech = speech;
+  	this.speech = [speech];
   	this.symbol = symbol;
   	this.color = color;
   	this.flowering = flowering;
@@ -29,7 +29,7 @@ class Substrate {
   	this.depth = depth;
   	this.symbol = symbol;
   	this.color = color;
-  	this.speech = speech;
+  	this.speech = [speech];
   }
 
 }
@@ -42,10 +42,10 @@ class Animal {
     this.name = name;
     this.arabic = arabic;
     this.type = type;
-    this.personality = personality;
+    this.personality = personality
     this.symbol = symbol;
     this.color = color;
-    this.speech = speech;
+    this.speech = [speech];
     this.latin = '';    
     this.notes = '';
   }

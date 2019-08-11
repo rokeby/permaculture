@@ -1,33 +1,21 @@
 import { cells } from './grid.js';
 
 function printSpeech() {
-	var chosenAgent = false;
-	var speech, randCellNumber, randCell;
+	var speech;
+	var randCellNumber = Math.floor(Math.random()*60*110);
+	var randCell = cells[randCellNumber];
 
-	do{
-		//get a random cell
-		randCellNumber = Math.floor(Math.random()*60*110);
-		randCell = cells[randCellNumber];
+	//get a random cell
+	if(randCell.occupant){
+		speech = randCell.occupant.speech[randCell.occupant.speech.length-1];
+	}
 
-		if(randCell.occupant){
-			if(randCell.occupant.speech) {
-				chosenAgent = true
-				speech = randCell.occupant.speech;
-			}
-		}
-		else if(randCell.plant){
-			if(randCell.plant.speech) {
-				chosenAgent = true
-				speech = randCell.plant.speech;
-			}
-		}
-		else if(randCell.substrate.speech){
-			chosenAgent = true;
-			speech = randCell.substrate.speech;
-		}
-
-		//see if it has speech associated with it
-	} while(chosenAgent === false);
+	else if(randCell.plant){
+		speech = randCell.plant.speech[randCell.plant.speech.length-1];
+	}
+	else {
+		speech = randCell.substrate.speech[randCell.substrate.speech.length-1];
+	}
 
 	var cellPos = $("#"+randCellNumber).position();
 
@@ -51,11 +39,11 @@ function printSpeech() {
 function animalVisit(cellNumber) {
 
 	if(cells[cellNumber].plant){
-		cells[cellNumber].plant.speech =  "oo err";
+		cells[cellNumber].plant.speech.push("oo err");
 	}
 
 	else {
-		cells[cellNumber].substrate.speech =  "careful with those hooves";
+		cells[cellNumber].substrate.speech.push("careful with those hooves");
 	}
 }
 
