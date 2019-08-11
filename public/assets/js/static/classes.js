@@ -19,9 +19,10 @@ class Plant {
 }
 
 class Substrate {
-  constructor(name, type, personality, fertility, depth, symbol, color, speech) {
+  constructor(name, arabic, type, personality, fertility, depth, symbol, color, speech) {
   	this.id = '';
   	this.name = name;
+    this.arabic = arabic;
   	this.type = type;
   	this.personality = personality;
   	this.fertility = fertility;

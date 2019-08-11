@@ -65,7 +65,7 @@ function getSubstrate(zone) {
     //set substrate depth: random but as a function of zone
     var depth = setDepth(zone);
 
-    var substrate = new Substrate(substrateType.name, substrateType.type, substrateType.personality, 
+    var substrate = new Substrate(substrateType.name, substrateType.arabic, substrateType.type, substrateType.personality, 
         substrateType.fertility, substrateType.depth, substrateType.symbol, substrateType.color, substrateType.speech )
 
     return substrate;
@@ -103,7 +103,9 @@ function showInfo (cellID) {
         class: 'symbolinfo',
     })
     .appendTo($substrateInfo)
-    .html(cell.substrate.name + "   " + "[" + cell.substrate.symbol + "]" + "<br>" + "a kind of " + cell.substrate.type)
+    .html(cell.substrate.name + "   " + "[" + cell.substrate.symbol + "]" + "<br>" +
+     "<p class='artext' lang='ar'>" + cell.substrate.arabic + "</p>" + "<br>" +
+        "a kind of " + cell.substrate.type)
 
     if(cell.plant){
         var $plantInfo = $('<div/>', {
