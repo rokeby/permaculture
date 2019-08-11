@@ -7,11 +7,38 @@ body {
 #container {
 	overflow-x: scroll;
 	overflow-y: scroll;
-	height: 100%;
+	height: 100vh;
 }
 
 .square:hover {
 	background-color: orange;
+}
+
+.abouticon {
+	height: auto;
+	top: 2vh;
+	left: 2vh;
+	width: 50px;
+	height: 50px;
+	background-image: url('../img/question-mark.png');
+	background-size: cover;
+	/*background-color: blue;*/
+	position: fixed;
+	z-index: 10;
+}
+
+#about {
+	top: 250px;
+	width: 50vw;
+	height: 50vh;
+	min-width: 300px;
+	min-height: 300px;
+	overflow-y: scroll;
+	background-color:  #e6e6e6;
+	margin: 0 auto;
+	z-index: 10;
+	position: relative;
+	font-family: courier;
 }
 
 .infopanel {
