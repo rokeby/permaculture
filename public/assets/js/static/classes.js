@@ -61,9 +61,11 @@ class Animal {
 }
 
 class Speech {
-  constructor(sender, receiver, message, timestamp) {
+  constructor(sender, receiver, senderType, receiverType, message, timestamp) {
     this.sender = sender;
     this.receiver = receiver;
+    this.senderType = senderType;
+    this.receiverType = receiverType;
     this.message = message;
     this.timestamp = timestamp;
   }

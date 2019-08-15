@@ -42,7 +42,7 @@ function animalVisit(cellNumber) {
 	var receiver = cells[cellNumber].plant ? cells[cellNumber].plant : cells[cellNumber].substrate;
 	var message = cells[cellNumber].plant ? "oo err" : "careful with those hooves";
 
-	var speech = new Speech(sender, receiver, message, Date.now() );
+	var speech = new Speech(sender.name, receiver.name, sender.type, receiver.type, message, Date.now() );
 	receiver.speech.push(speech);
 	sender.speech.push(speech);
 
