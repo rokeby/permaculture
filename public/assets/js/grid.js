@@ -2,7 +2,7 @@ import { zones, zoneNames } from './static/zones.js';
 import plantNames from './static/plants.js';
 import substrateNames from './static/substrates.js';
 import { xnum, ynum } from './static/constants.js';
-import { Plant, Substrate } from './static/classes.js';
+import {Cell, Plant, Substrate} from './static/classes.js';
 import animation from './animation.js';
 import { showInfo } from './info.js';
 var cells = new Array(xnum*ynum);
@@ -67,7 +67,7 @@ function getSubstrate(zone) {
     var depth = setDepth(zone);
 
     var substrate = new Substrate(substrateType.name, substrateType.arabic, substrateType.type, substrateType.personality, 
-        substrateType.fertility, substrateType.depth, substrateType.symbol, substrateType.color, substrateType.speech )
+        substrateType.fertility, depth, substrateType.symbol, substrateType.color, substrateType.speech )
 
     return substrate;
 }
@@ -103,9 +103,9 @@ var generateGrid = new Promise( function(resolve, reject){
             var symbol = substrate.symbol;
             var color = substrate.color;
 
-            var cellObjects = {};
-            cellObjects.zoneName = zoneNames[zone];
-            cellObjects.substrate = substrate;
+            var zoneName = zoneNames[zone]
+            var id = j*xnum+i;
+            var cell = new Cell(id, zoneName, substrate);
 
             var divClass = "square zone" + zone + " " + substrate.name.replace(/\s/g, '');
 
@@ -114,11 +114,11 @@ var generateGrid = new Promise( function(resolve, reject){
                 symbol = plant.symbol;
                 divClass = divClass + " " + plant.name.replace(/\s/g, '');
                 
-                cellObjects.plant = plant;
+                cell.plant = plant;
 
                 var flower = getFlowers(plant);
 
-                color = flower ? plant.flowercolor : plant["color"];
+                color = flower ? plant.flowercolor : plant.color;
             }
 
             $('<div/>', {
@@ -136,7 +136,7 @@ var generateGrid = new Promise( function(resolve, reject){
             }).html(symbol)
             .appendTo( '#container' );
         
-        cells[j*xnum + i] = cellObjects;
+        cells[j*xnum + i] = cell;
         }
     }
 

@@ -1,3 +1,12 @@
+class Cell {
+  constructor(id, zoneName, substrate) {
+    this.id = id;
+    this.zoneName = zoneName;
+    this.substrate = substrate;
+    this.plant ='';
+  }
+}
+
 class Plant {
   constructor(name, arabic, type, soil, water, temp, personality, speech, symbol, color, flowering, flowercolor) {
   	this.id = '';
@@ -51,4 +60,4 @@ class Animal {
   }
 }
 
-export { Plant, Substrate, Animal };
+export {Cell, Plant, Substrate, Animal };
