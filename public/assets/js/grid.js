@@ -2,7 +2,7 @@ import { zones, zoneNames } from './static/zones.js';
 import plantNames from './static/plants.js';
 import substrateNames from './static/substrates.js';
 import { xnum, ynum } from './static/constants.js';
-import {Cell, Plant, Substrate} from './static/classes.js';
+import {Cell, Plant, Substrate, Speech} from './static/classes.js';
 import animation from './animation.js';
 import { showInfo } from './info.js';
 var cells = new Array(xnum*ynum);
@@ -63,11 +63,13 @@ function getSubstrate(zone) {
 
     var substrateType = entries[Math.floor(Math.random()*(entries.length))];
 
+    var speech = new Speech(substrateType.name, substrateType.name, substrateType.speech, Date.now());
+
     //set substrate depth: random but as a function of zone
     var depth = setDepth(zone);
 
     var substrate = new Substrate(substrateType.name, substrateType.arabic, substrateType.type, substrateType.personality, 
-        substrateType.fertility, depth, substrateType.symbol, substrateType.color, substrateType.speech )
+        substrateType.fertility, depth, substrateType.symbol, substrateType.color, speech )
 
     return substrate;
 }
@@ -80,8 +82,10 @@ function getPlant(zone) {
     var plantType = entries[Math.floor(Math.random()*(entries.length))];
     //here create new plant
 
+    var speech = new Speech(plantType.name, plantType.name, plantType.speech, Date.now());
+
     var plant = new Plant(plantType.name, plantType.arabic, plantType.type, plantType.soil, plantType.water, plantType.temp, 
-        plantType.personality, plantType.speech, plantType.symbol, plantType.color, plantType.flowering, plantType.flowercolor)
+        plantType.personality, speech, plantType.symbol, plantType.color, plantType.flowering, plantType.flowercolor)
 
     if(plantType.notes) plant.notes = plantType.notes;
     if(plantType.latin) plant.latin = plantType.latin;
