@@ -151,4 +151,4 @@ generateGrid.then(function(value) {
     animation.runMainLoop();
 });
 
-export { cells };
+export { cells, getEntries };

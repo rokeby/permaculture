@@ -10,10 +10,20 @@ var typeMapping = [
 		"messageType": "annoyance",
 	},
 	{
+		"senderType": "shrub",
+		"receiverType": "grazer",
+		"messageType": "fear",
+	},
+	{
 		"senderType": "crop",
 		"receiverType": "grazer",
 		"messageType": "fear",
 	},
+	{
+		"senderType": "herb",
+		"receiverType": "grazer",
+		"messageType": "fear",
+	},	
 	{
 		"senderType": "mycorrhizal",
 		"receiverType": "grazer",
@@ -40,7 +50,7 @@ var typeMapping = [
 		"messageType": "thanks",
 	},
 	{
-		"senderType": "water",
+		"senderType": "liquid",
 		"receiverType": "grazer",
 		"messageType": "curiosity",
 	},
@@ -55,10 +65,20 @@ var typeMapping = [
 		"messageType": "greeting",
 	},
 	{
+		"senderType": "shrub",
+		"receiverType": "tree",
+		"messageType": "greeting",
+	},
+	{
 		"senderType": "crop",
 		"receiverType": "tree",
 		"messageType": "greeting",
 	},
+	{
+		"senderType": "herb",
+		"receiverType": "tree",
+		"messageType": "greeting",
+	},	
 	{
 		"senderType": "mycorrhizal",
 		"receiverType": "tree",
@@ -85,10 +105,65 @@ var typeMapping = [
 		"messageType": "greeting",
 	},
 	{
-		"senderType": "water",
+		"senderType": "liquid",
 		"receiverType": "tree",
 		"messageType": "greeting",
 	},
+	{
+		"senderType": "grazer",
+		"receiverType": "shrub",
+		"messageType": "thanks",
+	},
+	{
+		"senderType": "tree",
+		"receiverType": "shrub",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "shrub",
+		"receiverType": "shrub",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "crop",
+		"receiverType": "shrub",
+		"messageType": "annoyance",
+	},
+	{
+		"senderType": "herb",
+		"receiverType": "shrub",
+		"messageType": "greeting",
+	},	
+	{
+		"senderType": "mycorrhizal",
+		"receiverType": "shrub",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "legume",
+		"receiverType": "shrub",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "vine",
+		"receiverType": "shrub",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "rock",
+		"receiverType": "shrub",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "soil",
+		"receiverType": "shrub",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "liquid",
+		"receiverType": "shrub",
+		"messageType": "greeting",
+	},	
 	{
 		"senderType": "grazer",
 		"receiverType": "crop",
@@ -100,10 +175,20 @@ var typeMapping = [
 		"messageType": "greeting",
 	},
 	{
+		"senderType": "shrub",
+		"receiverType": "crop",
+		"messageType": "greeting",
+	},
+	{
 		"senderType": "crop",
 		"receiverType": "crop",
 		"messageType": "greeting",
 	},
+	{
+		"senderType": "herb",
+		"receiverType": "crop",
+		"messageType": "greeting",
+	},	
 	{
 		"senderType": "mycorrhizal",
 		"receiverType": "crop",
@@ -130,10 +215,65 @@ var typeMapping = [
 		"messageType": "greeting",
 	},
 	{
-		"senderType": "water",
+		"senderType": "liquid",
 		"receiverType": "crop",
 		"messageType": "greeting",
 	},
+	{
+		"senderType": "grazer",
+		"receiverType": "herb",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "tree",
+		"receiverType": "herb",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "shrub",
+		"receiverType": "herb",
+		"messageType": "greeting",
+	},	
+	{
+		"senderType": "crop",
+		"receiverType": "herb",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "herb",
+		"receiverType": "herb",
+		"messageType": "greeting",
+	},	
+	{
+		"senderType": "mycorrhizal",
+		"receiverType": "herb",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "legume",
+		"receiverType": "herb",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "vine",
+		"receiverType": "herb",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "rock",
+		"receiverType": "herb",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "soil",
+		"receiverType": "herb",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "liquid",
+		"receiverType": "herb",
+		"messageType": "greeting",
+	},	
 	{
 		"senderType": "grazer",
 		"receiverType": "mycorrhizal",
@@ -145,10 +285,20 @@ var typeMapping = [
 		"messageType": "warmth",
 	},
 	{
+		"senderType": "shrub",
+		"receiverType": "mycorrhizal",
+		"messageType": "curiosity",
+	},
+	{
 		"senderType": "crop",
 		"receiverType": "mycorrhizal",
 		"messageType": "warmth",
 	},
+	{
+		"senderType": "herb",
+		"receiverType": "mycorrhizal",
+		"messageType": "warmth",
+	},	
 	{
 		"senderType": "mycorrhizal",
 		"receiverType": "mycorrhizal",
@@ -175,7 +325,7 @@ var typeMapping = [
 		"messageType": "curiosity",
 	},
 	{
-		"senderType": "water",
+		"senderType": "liquid",
 		"receiverType":"mycorrhizal" ,
 		"messageType": "curiosity",
 	},
@@ -190,10 +340,20 @@ var typeMapping = [
 		"messageType": "thanks",
 	},
 	{
+		"senderType": "shrub",
+		"receiverType": "legume",
+		"messageType": "thanks",
+	},
+	{
 		"senderType": "crop",
 		"receiverType": "legume",
 		"messageType": "thanks",
 	},
+	{
+		"senderType": "herb",
+		"receiverType": "legume",
+		"messageType": "thanks",
+	},	
 	{
 		"senderType": "mycorrhizal",
 		"receiverType": "legume",
@@ -220,7 +380,7 @@ var typeMapping = [
 		"messageType": "thanks",
 	},
 	{
-		"senderType": "water",
+		"senderType": "liquid",
 		"receiverType": "legume",
 		"messageType": "greeting",
 	},
@@ -235,10 +395,20 @@ var typeMapping = [
 		"messageType": "greeting",
 	},
 	{
+		"senderType": "shrub",
+		"receiverType": "vine",
+		"messageType": "greeting",
+	},
+	{
 		"senderType": "crop",
 		"receiverType": "vine",
 		"messageType": "greeting",
 	},
+	{
+		"senderType": "herb",
+		"receiverType": "vine",
+		"messageType": "greeting",
+	},	
 	{
 		"senderType": "mycorrhizal",
 		"receiverType": "vine",
@@ -265,7 +435,7 @@ var typeMapping = [
 		"messageType": "greeting",
 	},
 	{
-		"senderType": "water",
+		"senderType": "liquid",
 		"receiverType": "vine",
 		"messageType": "greeting",
 	},
@@ -280,10 +450,20 @@ var typeMapping = [
 		"messageType": "annoyance",
 	},
 	{
+		"senderType": "shrub",
+		"receiverType": "rock",
+		"messageType": "greeting",
+	},
+	{
 		"senderType": "crop",
 		"receiverType": "rock",
 		"messageType": "greeting",
 	},
+	{
+		"senderType": "herb",
+		"receiverType": "rock",
+		"messageType": "greeting",
+	},	
 	{
 		"senderType": "mycorrhizal",
 		"receiverType": "rock",
@@ -310,7 +490,7 @@ var typeMapping = [
 		"messageType": "greeting",
 	},
 	{
-		"senderType": "water",
+		"senderType": "liquid",
 		"receiverType": "rock",
 		"messageType": "greeting",
 	},
@@ -325,10 +505,20 @@ var typeMapping = [
 		"messageType": "warmth",
 	},
 	{
+		"senderType": "shrub",
+		"receiverType": "soil",
+		"messageType": "warmth",
+	},
+	{
 		"senderType": "crop",
 		"receiverType": "soil",
 		"messageType": "thanks",
 	},
+	{
+		"senderType": "herb",
+		"receiverType": "soil",
+		"messageType": "thanks",
+	},	
 	{
 		"senderType": "mycorrhizal",
 		"receiverType": "soil",
@@ -355,53 +545,63 @@ var typeMapping = [
 		"messageType": "greeting",
 	},
 	{
-		"senderType": "water",
+		"senderType": "liquid",
 		"receiverType": "soil",
 		"messageType": "greeting",
 	},
 	{
 		"senderType": "grazer",
-		"receiverType": "water",
+		"receiverType": "liquid",
 		"messageType": "thanks",
 	},
 	{
 		"senderType": "tree",
-		"receiverType": "water",
+		"receiverType": "liquid",
+		"messageType": "thanks",
+	},
+	{
+		"senderType": "shrub",
+		"receiverType": "liquid",
 		"messageType": "thanks",
 	},
 	{
 		"senderType": "crop",
-		"receiverType": "water",
+		"receiverType": "liquid",
 		"messageType": "thanks",
 	},
 	{
+		"senderType": "herb",
+		"receiverType": "liquid",
+		"messageType": "thanks",
+	},	
+	{
 		"senderType": "mycorrhizal",
-		"receiverType": "water",
+		"receiverType": "liquid",
 		"messageType": "thanks",
 	},
 	{
 		"senderType": "legume",
-		"receiverType": "water",
+		"receiverType": "liquid",
 		"messageType": "thanks",
 	},
 	{
 		"senderType": "vine",
-		"receiverType": "water",
+		"receiverType": "liquid",
 		"messageType": "thanks",
 	},
 	{
 		"senderType": "rock",
-		"receiverType": "water",
+		"receiverType": "liquid",
 		"messageType": "greeting",
 	},
 	{
 		"senderType": "soil",
-		"receiverType": "water",
+		"receiverType": "liquid",
 		"messageType": "warmth",
 	},
 	{
-		"senderType": "water",
-		"receiverType": "water",
+		"senderType": "liquid",
+		"receiverType": "liquid",
 		"messageType": "greeting",
 	},
 	// {
@@ -415,10 +615,19 @@ var typeMapping = [
 	// 	"messageType": ,
 	// },
 	// {
+	// 	"senderType": "shrub",
+	// 	"receiverType": ,
+	// 	"messageType": ,
+	// },	
+	// {
 	// 	"senderType": "crop",
 	// 	"receiverType": ,
 	// 	"messageType": ,
 	// },
+	// 	"senderType": "herb",
+	// 	"receiverType": ,
+	// 	"messageType": ,
+	// },	
 	// {
 	// 	"senderType": "mycorrhizal",
 	// 	"receiverType": ,
@@ -445,8 +654,11 @@ var typeMapping = [
 	// 	"messageType": ,
 	// },
 	// {
-	// 	"senderType": "water",
+	// 	"senderType": "liquid",
 	// 	"receiverType": ,
 	// 	"messageType": ,
-	// },			
+	// },		
 ]
+
+
+export {typeMapping};

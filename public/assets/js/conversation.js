@@ -1,5 +1,15 @@
-import { cells } from './grid.js';
+import { cells, getEntries } from './grid.js';
 import { Speech } from './static/classes.js';
+import { typeMapping } from './static/messages.js';
+
+function getMessageType (sender, receiver) {
+	//filters for message type from the sender type, and to the receiver type
+	var fromSender = getEntries(typeMapping, "senderType", sender);
+	var toReceiver = getEntries(fromSender, "receiverType", receiver);
+	var messageType = toReceiver[0].messageType;
+
+	return messageType;
+}
 
 function printSpeech() {
 	var message;
@@ -40,7 +50,9 @@ function printSpeech() {
 function animalVisit(cellNumber) {
 	var sender = cells[cellNumber].occupant;
 	var receiver = cells[cellNumber].plant ? cells[cellNumber].plant : cells[cellNumber].substrate;
-	var message = cells[cellNumber].plant ? "oo err" : "careful with those hooves";
+	//var message = cells[cellNumber].plant ? "oo err" : "careful with those hooves";
+
+	var message = getMessageType(sender.type, receiver.type);
 
 	var speech = new Speech(sender.name, receiver.name, sender.type, receiver.type, message, Date.now() );
 	receiver.speech.push(speech);
