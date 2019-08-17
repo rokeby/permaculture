@@ -81,7 +81,7 @@ async function goatEvent() {
 			var y = goatY - Math.floor(Math.random()*5);
 			var cellNumber = y*xnum+x;
 
-   			var speech = new Speech(animals.goat.name, animals.goat.name, animals.goat.type, animals.goat.type, animals.goat.speech, Date.now());
+   			var speech = new Speech(animals.goat, animals.goat, animals.goat.speech, Date.now());
 
 
 			var shade = goatShades[Math.floor(Math.random()*(goatShades.length))];

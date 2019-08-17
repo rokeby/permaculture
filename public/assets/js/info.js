@@ -6,12 +6,23 @@ function showSpeech (agent, offset) {
         class: 'speechpanel',
     })
     .css({'top': offset})
-    .html(agent.speech[0].message)
     .appendTo('#container')
+
+    for(var i=0; i<agent.speech.length; i++){
+        var offsetLeft = (agent.speech[i].sender === agent.speech[i].receiver) ? 50 : 10;
+
+        var $messageBox = $('<div/>', {
+            class: 'messagebox',
+        })
+        .css({'left': offsetLeft})
+        .html(agent.speech[i].sender.symbol + ': ' + agent.speech[i].message)
+        .appendTo($speechPanel)
+    }
+
+    $speechPanel.scrollTop($($speechPanel)[0].scrollHeight);
 }
 
 function hideSpeech () {
-    console.log('goodbye');
     $('.speechpanel').remove();
 }
 

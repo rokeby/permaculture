@@ -63,7 +63,7 @@ function getSubstrate(zone) {
 
     var substrateType = entries[Math.floor(Math.random()*(entries.length))];
 
-    var speech = new Speech(substrateType.name, substrateType.name, substrateType.type, substrateType.type, substrateType.speech, Date.now());
+    var speech = new Speech(substrateType, substrateType, substrateType.speech, Date.now());
 
     //set substrate depth: random but as a function of zone
     var depth = setDepth(zone);
@@ -82,7 +82,7 @@ function getPlant(zone) {
     var plantType = entries[Math.floor(Math.random()*(entries.length))];
     //here create new plant
 
-    var speech = new Speech(plantType.name, plantType.name, plantType.type, plantType.type, plantType.speech, Date.now());
+    var speech = new Speech(plantType, plantType, plantType.speech, Date.now());
 
     var plant = new Plant(plantType.name, plantType.arabic, plantType.type, plantType.soil, plantType.water, plantType.temp, 
         plantType.personality, speech, plantType.symbol, plantType.color, plantType.flowering, plantType.flowercolor)

@@ -58,7 +58,7 @@ function animalVisit(cellNumber) {
 
 	var message = getMessageType(sender.type, receiver.type);
 
-	var speech = new Speech(sender.name, receiver.name, sender.type, receiver.type, message, Date.now() );
+	var speech = new Speech(sender, receiver, message, Date.now() );
 	receiver.speech.push(speech);
 	sender.speech.push(speech);
 
