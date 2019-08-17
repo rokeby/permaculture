@@ -3,7 +3,7 @@ import plantNames from './static/plants.js';
 import substrateNames from './static/substrates.js';
 import { xnum, ynum } from './static/constants.js';
 import {Cell, Plant, Substrate, Speech} from './static/classes.js';
-import animation from './animation.js';
+import { runMainLoop } from './animation.js';
 import { showInfo } from './info.js';
 var cells = new Array(xnum*ynum);
 
@@ -148,7 +148,7 @@ var generateGrid = new Promise( function(resolve, reject){
 })
 
 generateGrid.then(function(value) {
-    animation.runMainLoop();
+    runMainLoop();
 });
 
 export { cells, getEntries };

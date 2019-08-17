@@ -44,8 +44,8 @@ class Substrate {
 }
 
 class Animal {
-  constructor(x, y, name, arabic, type, personality, symbol, color, speech) {
-    this.id = '';
+  constructor(id, x, y, name, arabic, type, personality, symbol, color, speech) {
+    this.id = id;
     this.x = x;
     this.y = y;
     this.name = name;

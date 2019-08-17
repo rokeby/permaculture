@@ -3,6 +3,8 @@ import animals from './static/animals.js';
 import { Animal } from './static/classes.js';
 import { xnum, ynum } from './static/constants.js'
 import { printSpeech, animalVisit } from './conversation.js';
+var goatZero = true;
+var goats = [];
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -56,6 +58,7 @@ function moveAnimals(animals) {
 }
 
 async function goatEvent() {
+	goatZero = false;
 	console.log('goat time');
 	//select a spawn cell from the bottom row
 	var cellNumber = (ynum-1)*xnum + Math.floor(Math.random()*90);
@@ -65,7 +68,6 @@ async function goatEvent() {
 	var goatX = cellNumber - (ynum-1)*xnum;
 	var goatY = ynum-1;
 
-	var goats = [];
 	//populate cells within 20 squares of the spawn cell with goats
 	var goatShades = animals.goat.shades;
 
@@ -75,7 +77,7 @@ async function goatEvent() {
 			var cellNumber = y*xnum+x;
 
 			var shade = goatShades[Math.floor(Math.random()*(goatShades.length))];
-			var goat = new Animal(x, y, "damascus goat", animals.goat.arabic, 
+			var goat = new Animal(i, x, y, "damascus goat", animals.goat.arabic, 
 				animals.goat.type, animals.goat.personality, animals.goat.symbol, shade, animals.goat.speech);
 
 			goats.push(goat);
@@ -92,6 +94,7 @@ async function goatEvent() {
 	} while(goats.length > 0);
 
 	console.log('goat zero we have reached goat zero', goats.length)
+	goatZero = true;
 }
 
 function reset() {
@@ -103,7 +106,7 @@ function eachHour() {
 }
 
 function eachMinute() {
-	goatEvent();
+	if(goatZero) goatEvent();
 }
 
 function eachTenSeconds() {
@@ -147,4 +150,4 @@ async function runMainLoop(){
 	}
 }
 
-export default {goatEvent, runMainLoop};
+export {goats, goatEvent, runMainLoop};

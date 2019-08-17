@@ -1,4 +1,5 @@
 import { cells, getEntries } from './grid.js';
+import { goats } from './animation.js';
 import { Speech } from './static/classes.js';
 import { typeMapping } from './static/messages.js';
 
@@ -51,7 +52,8 @@ function printSpeech() {
 }
 
 function animalVisit(cellNumber) {
-	var sender = cells[cellNumber].occupant;
+	var senderID = cells[cellNumber].occupant.id;
+	var sender = goats[senderID];
 	var receiver = cells[cellNumber].plant ? cells[cellNumber].plant : cells[cellNumber].substrate;
 	//var message = cells[cellNumber].plant ? "oo err" : "careful with those hooves";
 
