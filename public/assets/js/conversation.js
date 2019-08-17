@@ -12,20 +12,23 @@ function getMessageType (sender, receiver) {
 }
 
 function printSpeech() {
-	var message;
+	var message, symbol;
 	var randCellNumber = Math.floor(Math.random()*60*110);
 	var randCell = cells[randCellNumber];
 
 	//get a random cell
 	if(randCell.occupant){
 		message = randCell.occupant.speech[randCell.occupant.speech.length-1].message;
+		symbol = randCell.occupant.symbol;
 	}
 
 	else if(randCell.plant){
 		message = randCell.plant.speech[randCell.plant.speech.length-1].message;
+		symbol = randCell.plant.symbol;
 	}
 	else {
 		message = randCell.substrate.speech[randCell.substrate.speech.length-1].message;
+		symbol = randCell.substrate.symbol;
 	}
 
 	var cellPos = $("#"+randCellNumber).position();
@@ -39,10 +42,10 @@ function printSpeech() {
 			class: "speechbox",
 		})
 		.css({
-			left: cellPos.left-10,
-			top: cellPos.top-10,
+			left: cellPos.left,
+			top: cellPos.top-20,
 		})
-		.html(message)
+		.html('['+symbol+'] '+message)
 		.appendTo('#container')
 
 }

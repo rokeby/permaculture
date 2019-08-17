@@ -72,7 +72,7 @@ body {
 
 .speechbox {
 	background-color: white;
-	width: 60px;
+	max-width: 150px;
 	z-index: 5;
 	position: absolute;
 	font-family: courier;
