@@ -1,4 +1,5 @@
 import { cells } from './grid.js';
+import { goats } from './animation.js';
 
 function showSpeech (agent, offset) {
     console.log('hovering', agent, offset);
@@ -56,6 +57,8 @@ function showInfo (cellID) {
       }
 
     if(cell.occupant){
+        var occupant = cell.occupant.parentArray[cell.occupant.id];
+
         var $occupantInfo = $('<div/>', {
             class: 'infobox',
         }).appendTo('.infopanel')
@@ -64,7 +67,7 @@ function showInfo (cellID) {
             class: 'symbolinfo',
         })
         .appendTo($occupantInfo)
-        .mouseenter(function() { showSpeech(cell.occupant, ($occupantInfo).offset().top)})
+        .mouseenter(function() { showSpeech(occupant, ($occupantInfo).offset().top)})
         .mouseleave(function() { hideSpeech()})
         .html(cell.occupant.name + "   " + "[" + cell.occupant.symbol + "]" + "<br>" +
             "<p class='artext' lang='ar'>" + cell.occupant.arabic + "</p>" + "<br>" +

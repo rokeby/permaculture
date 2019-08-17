@@ -1,5 +1,6 @@
 var animals = {
 	"goat":{
+		"name": "damascus goat",
 		"arabic": "ماعز دمشقي",
 		"latin": 'capra aegagrus hircus',
 		"symbol": '羊',
