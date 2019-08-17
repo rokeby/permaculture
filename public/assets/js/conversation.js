@@ -55,7 +55,6 @@ function animalVisit(cellNumber) {
 	var senderID = cells[cellNumber].occupant.id;
 	var sender = goats[senderID];
 	var receiver = cells[cellNumber].plant ? cells[cellNumber].plant : cells[cellNumber].substrate;
-	//var message = cells[cellNumber].plant ? "oo err" : "careful with those hooves";
 
 	var message = getMessageType(sender.type, receiver.type);
 

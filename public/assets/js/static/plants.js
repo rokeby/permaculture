@@ -1066,6 +1066,7 @@ var plantNames = [
 		'water': 'dry',
 		'temp': 'warm',
 		'personality': 'blunt',
+		'speech': 'oo hi',
 		'flowering': [0], 
 		'symbol': '۳',
 		'color': '#228B22',

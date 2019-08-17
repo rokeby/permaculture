@@ -2,7 +2,6 @@ import { cells } from './grid.js';
 import { goats } from './animation.js';
 
 function showSpeech (agent, offset) {
-    console.log('hovering', agent, offset);
     var $speechPanel =  $('<div/>', {
         class: 'speechpanel',
     })

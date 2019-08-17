@@ -25,40 +25,45 @@ function regrowCell(cellNumber){
 
 function moveAnimals(animals) {
 
+	if(animals.every(element => element === undefined)) goatZero = true;
+
 	for(var i=0; i<animals.length; i++){
-		regrowCell(animals[i].y*xnum+animals[i].x);
+		if(animals[i]){
+			regrowCell(animals[i].y*xnum+animals[i].x);
 
-		var nextX, nextY, newCellNumber;
-		var nextStep = false;
+			var nextX, nextY, newCellNumber;
+			var nextStep = false;
 
-		do {
-			nextX = animals[i].x + Math.floor(Math.random()*3)-1;
-			nextY = animals[i].y + Math.floor(Math.random()*2)-1;
+			do {
+				nextX = animals[i].x + Math.floor(Math.random()*3)-1;
+				nextY = animals[i].y + Math.floor(Math.random()*2)-1;
 
-			newCellNumber = nextY*xnum + nextX;
+				newCellNumber = nextY*xnum + nextX;
 
-			if(newCellNumber > ynum*xnum || newCellNumber < 0)  nextStep = true
-			else if(!cells[newCellNumber].occupant) nextStep = true
+				if(newCellNumber > ynum*xnum || newCellNumber < 0)  nextStep = true
+				else if(!cells[newCellNumber].occupant) nextStep = true
 
-		} while (nextStep === false)
+			} while (nextStep === false)
 
-		animals[i].x = nextX;
-		animals[i].y = nextY;
+			animals[i].x = nextX;
+			animals[i].y = nextY;
 
-		//if goat goes offscreen
-		if(newCellNumber > ynum*xnum || newCellNumber < 0)
-			animals.splice(i, 1);
+			//if goat goes offscreen
+			if(newCellNumber > ynum*xnum || newCellNumber < 0)
+				delete animals[i];
 
-		else{
-			cells[newCellNumber].occupant = animals[i];
-			$('#'+newCellNumber).html(animals[i].symbol).css({'color': animals[i].color})
-			animalVisit(newCellNumber);
+			else{
+				cells[newCellNumber].occupant = animals[i];
+				$('#'+newCellNumber).html(animals[i].symbol).css({'color': animals[i].color})
+				animalVisit(newCellNumber);
+			}
 		}
 	}
 }
 
 async function goatEvent() {
 	goatZero = false;
+	goats = [];
 	console.log('goat time');
 	//select a spawn cell from the bottom row
 	var cellNumber = (ynum-1)*xnum + Math.floor(Math.random()*90);
@@ -94,10 +99,7 @@ async function goatEvent() {
 	do{
 		moveAnimals(goats);
 		await sleep(1000);
-	} while(goats.length > 0);
-
-	console.log('goat zero we have reached goat zero', goats.length)
-	goatZero = true;
+	} while(goatZero === false);
 }
 
 function reset() {
