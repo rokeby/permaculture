@@ -357,7 +357,7 @@ var plantNames = [
 		'arabic': 'عنب',
 		'1': 'none',
 		'2': 'low',
-		'3': 'low',
+		'3': 'med',
 		'4': 'none',
 		'soil': 'med',
 		'type': 'vine',

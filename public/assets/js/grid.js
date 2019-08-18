@@ -107,7 +107,7 @@ var generateGrid = new Promise( function(resolve, reject){
             cellObjects.zoneName = zoneNames[zone];
             cellObjects.substrate = substrate;
 
-            var divClass = "square zone" + zone + " " + substrate.name.replace(/\s/g, '');
+            var divClass = "square zone" + zone + " " + cellObjects.substrate.name.replace(/\s/g, '');
 
             if(Math.random() < substrate.fertility && zone !== 5){
                 plant = getPlant(zone);
