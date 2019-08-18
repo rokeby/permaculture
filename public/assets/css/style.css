@@ -38,7 +38,13 @@ body {
 	margin: 0 auto;
 	z-index: 10;
 	position: relative;
+	font-size: 20px;
 	font-family: courier;
+}
+
+.abouttext {
+	padding: 30px;
+	margin-bottom: 30px;
 }
 
 .infopanel {

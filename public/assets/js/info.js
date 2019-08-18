@@ -3,25 +3,25 @@ import { goats } from './animation.js';
 
 function showSpeech (agent, offset) {
     hideSpeech();
-    var $speechPanel =  $('<div/>', {
-        class: 'speechpanel',
-    })
-    .css({'top': offset})
-    .mouseleave(function() { hideSpeech()})
-    .appendTo('#container')
+    // var $speechPanel =  $('<div/>', {
+    //     class: 'speechpanel',
+    // })
+    // .css({'top': offset})
+    // .mouseleave(function() { hideSpeech()})
+    // .appendTo('#container')
 
-    for(var i=0; i<agent.speech.length; i++){
-        var offsetLeft = (agent.speech[i].sender === agent.speech[i].receiver) ? 50 : 10;
+    // for(var i=0; i<agent.speech.length; i++){
+    //     var offsetLeft = (agent.speech[i].sender === agent.speech[i].receiver) ? 50 : 10;
 
-        var $messageBox = $('<div/>', {
-            class: 'messagebox',
-        })
-        .css({'left': offsetLeft})
-        .html(agent.speech[i].sender.symbol + ': ' + agent.speech[i].message)
-        .appendTo($speechPanel)
-    }
+    //     var $messageBox = $('<div/>', {
+    //         class: 'messagebox',
+    //     })
+    //     .css({'left': offsetLeft})
+    //     .html(agent.speech[i].sender.symbol + ': ' + agent.speech[i].message)
+    //     .appendTo($speechPanel)
+    // }
 
-    $speechPanel.scrollTop($($speechPanel)[0].scrollHeight);
+    // $speechPanel.scrollTop($($speechPanel)[0].scrollHeight);
 }
 
 function hideSpeech () {

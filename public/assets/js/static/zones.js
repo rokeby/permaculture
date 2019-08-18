@@ -6,7 +6,7 @@ var zoneNames = {
 	"3": "a patch of trees",
 	"4": "a farmed terrace",
 	"5": "a winding path",
-	"6": "a winter stream",
+	"6": "a cool spring",
 }
 
 export {zones, zoneNames}
