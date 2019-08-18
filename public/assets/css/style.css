@@ -43,14 +43,38 @@ body {
 
 .infopanel {
 	height: auto;
-	top: 4vh;
-	right: 4vh;
+	top: 20px;
+	right: 20px;
 	width: 350px;
 	position: fixed;
 	background-color:  #e6e6e6;
 	z-index: 10;
 	font-size: 20px;
 	font-family: courier;	
+}
+
+.speechpanel {
+	height: 200px;
+	right: 390px;
+	width: 250px;
+	position: fixed;
+	background-color: #e6e6e6;
+	z-index: 10;
+	font-size: 20px;
+	padding: 20px;
+	font-family: courier;	
+	overflow-y: scroll;
+}
+
+
+.messagebox {
+	position: relative;
+	width: 70%;
+	padding: 10px;
+	border: 3px solid white;
+	margin-top: 10px;
+	margin-left: 4%;
+	margin-bottom: 4%;
 }
 
 .infotitle {
@@ -72,7 +96,7 @@ body {
 
 .speechbox {
 	background-color: white;
-	width: 60px;
+	max-width: 150px;
 	z-index: 5;
 	position: absolute;
 	font-family: courier;

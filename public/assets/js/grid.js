@@ -2,8 +2,8 @@ import { zones, zoneNames } from './static/zones.js';
 import plantNames from './static/plants.js';
 import substrateNames from './static/substrates.js';
 import { xnum, ynum } from './static/constants.js';
-import { Plant, Substrate } from './static/classes.js';
-import animation from './animation.js';
+import {Cell, Plant, Substrate, Speech} from './static/classes.js';
+import { runMainLoop } from './animation.js';
 import { showInfo } from './info.js';
 var cells = new Array(xnum*ynum);
 
@@ -63,11 +63,13 @@ function getSubstrate(zone) {
 
     var substrateType = entries[Math.floor(Math.random()*(entries.length))];
 
+    var speech = new Speech(substrateType, substrateType, substrateType.speech, Date.now());
+
     //set substrate depth: random but as a function of zone
     var depth = setDepth(zone);
 
     var substrate = new Substrate(substrateType.name, substrateType.arabic, substrateType.type, substrateType.personality, 
-        substrateType.fertility, substrateType.depth, substrateType.symbol, substrateType.color, substrateType.speech )
+        substrateType.fertility, depth, substrateType.symbol, substrateType.color, speech )
 
     return substrate;
 }
@@ -80,8 +82,10 @@ function getPlant(zone) {
     var plantType = entries[Math.floor(Math.random()*(entries.length))];
     //here create new plant
 
+    var speech = new Speech(plantType, plantType, plantType.speech, Date.now());
+
     var plant = new Plant(plantType.name, plantType.arabic, plantType.type, plantType.soil, plantType.water, plantType.temp, 
-        plantType.personality, plantType.speech, plantType.symbol, plantType.color, plantType.flowering, plantType.flowercolor)
+        plantType.personality, speech, plantType.symbol, plantType.color, plantType.flowering, plantType.flowercolor)
 
     if(plantType.notes) plant.notes = plantType.notes;
     if(plantType.latin) plant.latin = plantType.latin;
@@ -103,9 +107,9 @@ var generateGrid = new Promise( function(resolve, reject){
             var symbol = substrate.symbol;
             var color = substrate.color;
 
-            var cellObjects = {};
-            cellObjects.zoneName = zoneNames[zone];
-            cellObjects.substrate = substrate;
+            var zoneName = zoneNames[zone]
+            var id = j*xnum+i;
+            var cell = new Cell(id, zoneName, substrate);
 
             var divClass = "square zone" + zone + " " + cellObjects.substrate.name.replace(/\s/g, '');
 
@@ -114,11 +118,11 @@ var generateGrid = new Promise( function(resolve, reject){
                 symbol = plant.symbol;
                 divClass = divClass + " " + plant.name.replace(/\s/g, '');
                 
-                cellObjects.plant = plant;
+                cell.plant = plant;
 
                 var flower = getFlowers(plant);
 
-                color = flower ? plant.flowercolor : plant["color"];
+                color = flower ? plant.flowercolor : plant.color;
             }
 
             $('<div/>', {
@@ -136,7 +140,7 @@ var generateGrid = new Promise( function(resolve, reject){
             }).html(symbol)
             .appendTo( '#container' );
         
-        cells[j*xnum + i] = cellObjects;
+        cells[j*xnum + i] = cell;
         }
     }
 
@@ -144,7 +148,7 @@ var generateGrid = new Promise( function(resolve, reject){
 })
 
 generateGrid.then(function(value) {
-    animation.runMainLoop();
+    runMainLoop();
 });
 
-export { cells };
+export { cells, getEntries };

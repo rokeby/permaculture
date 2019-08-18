@@ -1,8 +1,10 @@
 import { cells } from './grid.js';
 import animals from './static/animals.js';
-import { Animal } from './static/classes.js';
+import { Animal, Speech } from './static/classes.js';
 import { xnum, ynum } from './static/constants.js'
 import { printSpeech, animalVisit } from './conversation.js';
+var goatZero = true;
+var goats = [];
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -23,39 +25,45 @@ function regrowCell(cellNumber){
 
 function moveAnimals(animals) {
 
+	if(animals.every(element => element === undefined)) goatZero = true;
+
 	for(var i=0; i<animals.length; i++){
-		regrowCell(animals[i].y*xnum+animals[i].x);
+		if(animals[i]){
+			regrowCell(animals[i].y*xnum+animals[i].x);
 
-		var nextX, nextY, newCellNumber;
-		var nextStep = false;
+			var nextX, nextY, newCellNumber;
+			var nextStep = false;
 
-		do {
-			nextX = animals[i].x + Math.floor(Math.random()*3)-1;
-			nextY = animals[i].y + Math.floor(Math.random()*2)-1;
+			do {
+				nextX = animals[i].x + Math.floor(Math.random()*3)-1;
+				nextY = animals[i].y + Math.floor(Math.random()*2)-1;
 
-			newCellNumber = nextY*xnum + nextX;
+				newCellNumber = nextY*xnum + nextX;
 
-			if(newCellNumber > ynum*xnum || newCellNumber < 0)  nextStep = true
-			else if(!cells[newCellNumber].occupant) nextStep = true
+				if(newCellNumber > ynum*xnum || newCellNumber < 0)  nextStep = true
+				else if(!cells[newCellNumber].occupant) nextStep = true
 
-		} while (nextStep === false)
+			} while (nextStep === false)
 
-		animals[i].x = nextX;
-		animals[i].y = nextY;
+			animals[i].x = nextX;
+			animals[i].y = nextY;
 
-		//if goat goes offscreen
-		if(newCellNumber > ynum*xnum || newCellNumber < 0)
-			animals.splice(i, 1);
+			//if goat goes offscreen
+			if(newCellNumber > ynum*xnum || newCellNumber < 0)
+				delete animals[i];
 
-		else{
-			cells[newCellNumber].occupant = animals[i];
-			$('#'+newCellNumber).html(animals[i].symbol).css({'color': animals[i].color})
-			animalVisit(newCellNumber);
+			else{
+				cells[newCellNumber].occupant = animals[i];
+				$('#'+newCellNumber).html(animals[i].symbol).css({'color': animals[i].color})
+				animalVisit(newCellNumber);
+			}
 		}
 	}
 }
 
 async function goatEvent() {
+	goatZero = false;
+	goats = [];
 	console.log('goat time');
 	//select a spawn cell from the bottom row
 	var cellNumber = (ynum-1)*xnum + Math.floor(Math.random()*90);
@@ -65,7 +73,6 @@ async function goatEvent() {
 	var goatX = cellNumber - (ynum-1)*xnum;
 	var goatY = ynum-1;
 
-	var goats = [];
 	//populate cells within 20 squares of the spawn cell with goats
 	var goatShades = animals.goat.shades;
 
@@ -74,9 +81,12 @@ async function goatEvent() {
 			var y = goatY - Math.floor(Math.random()*5);
 			var cellNumber = y*xnum+x;
 
+   			var speech = new Speech(animals.goat, animals.goat, animals.goat.speech, Date.now());
+
+
 			var shade = goatShades[Math.floor(Math.random()*(goatShades.length))];
-			var goat = new Animal(x, y, "damascus goat", animals.goat.arabic, 
-				animals.goat.type, animals.goat.personality, animals.goat.symbol, shade, animals.goat.speech);
+			var goat = new Animal(i, goats, x, y, animals.goat.name, animals.goat.arabic, 
+				animals.goat.type, animals.goat.personality, animals.goat.symbol, shade, speech);
 
 			goats.push(goat);
 			cells[cellNumber].occupant = goat;
@@ -89,9 +99,7 @@ async function goatEvent() {
 	do{
 		moveAnimals(goats);
 		await sleep(1000);
-	} while(goats.length > 0);
-
-	console.log('goat zero we have reached goat zero', goats.length)
+	} while(goatZero === false);
 }
 
 function reset() {
@@ -103,7 +111,7 @@ function eachHour() {
 }
 
 function eachMinute() {
-	goatEvent();
+	if(goatZero) goatEvent();
 }
 
 function eachTenSeconds() {
@@ -147,4 +155,4 @@ async function runMainLoop(){
 	}
 }
 
-export default {goatEvent, runMainLoop};
+export {goats, goatEvent, runMainLoop};

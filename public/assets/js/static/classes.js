@@ -1,3 +1,12 @@
+class Cell {
+  constructor(id, zoneName, substrate) {
+    this.id = id;
+    this.zoneName = zoneName;
+    this.substrate = substrate;
+    this.plant ='';
+  }
+}
+
 class Plant {
   constructor(name, arabic, type, soil, water, temp, personality, speech, symbol, color, flowering, flowercolor) {
   	this.id = '';
@@ -35,8 +44,9 @@ class Substrate {
 }
 
 class Animal {
-  constructor(x, y, name, arabic, type, personality, symbol, color, speech) {
-    this.id = '';
+  constructor(id, parentArray, x, y, name, arabic, type, personality, symbol, color, speech) {
+    this.id = id;
+    this.parentArray = parentArray;
     this.x = x;
     this.y = y;
     this.name = name;
@@ -51,4 +61,13 @@ class Animal {
   }
 }
 
-export { Plant, Substrate, Animal };
+class Speech {
+  constructor(sender, receiver, message, timestamp) {
+    this.sender = sender;
+    this.receiver = receiver;
+    this.message = message;
+    this.timestamp = timestamp;
+  }
+}
+
+export {Cell, Plant, Substrate, Animal, Speech };
