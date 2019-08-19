@@ -17,6 +17,22 @@ function getMessage (type, personality) {
 	return message;
 }
 
+
+function conversation(sender, receiver) {
+	var messageType = getMessageType(sender.type, receiver.type);
+	var responseType = getMessageType(receiver.type, sender.type);
+	var message = getMessage(messageType, sender.personality);
+	var response = getMessage(responseType, receiver.personality);
+
+	var messageSpeech = new Speech(sender, receiver, message, Date.now() );
+	var responseSpeech = new Speech(receiver, sender, response, Date.now() );
+
+	receiver.speech.push(messageSpeech);
+	receiver.speech.push(responseSpeech);
+	sender.speech.push(messageSpeech);
+	sender.speech.push(responseSpeech);	
+}
+
 function printSpeech() {
 	var message, symbol;
 	var randCellNumber = Math.floor(Math.random()*60*110);
@@ -61,20 +77,9 @@ function animalVisit(cellNumber) {
 	var sender = goats[senderID];
 	var receiver = cells[cellNumber].plant ? cells[cellNumber].plant : cells[cellNumber].substrate;
 
-	var messageType = getMessageType(sender.type, receiver.type);
-	var responseType = getMessageType(receiver.type, sender.type);
-	var message = getMessage(messageType, sender.personality);
-	var response = getMessage(responseType, receiver.personality);
-
-	var messageSpeech = new Speech(sender, receiver, message, Date.now() );
-	var responseSpeech = new Speech(receiver, sender, response, Date.now() );
-
-	receiver.speech.push(messageSpeech);
-	receiver.speech.push(responseSpeech);
-	sender.speech.push(messageSpeech);
-	sender.speech.push(responseSpeech);
+	conversation(sender, receiver);
 
 }
 
 
-export { animalVisit, printSpeech };
+export { animalVisit, printSpeech, conversation };

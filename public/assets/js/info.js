@@ -46,7 +46,7 @@ function showInfo (cellID) {
     })
     .appendTo($substrateInfo)
     .mouseenter(function() { showSpeech(cell.substrate, ($substrateInfo).offset().top)})
-    .html(cell.substrate.name + "   " + "[" + cell.substrate.symbol + "]" + "<br>" +
+    .html(cell.substrate.name + "   " + "[<font color= "+ cell.substrate.color +">" + cell.substrate.symbol + "</font>]" + "<br>" +
      "<p class='artext' lang='ar'>" + cell.substrate.arabic + "</p>" + "<br>" +
         "a kind of " + cell.substrate.type)
 
@@ -61,7 +61,7 @@ function showInfo (cellID) {
         .appendTo($plantInfo)
         .mouseenter(function() { showSpeech(cell.plant, ($plantInfo).offset().top)})
         //.mouseleave(function() { hideSpeech()})
-        .html(cell.plant.name + "   " + "[" + cell.plant.symbol + "]" + "<br>" +
+        .html(cell.plant.name + "   " + "[<font color= "+ cell.plant.color +">" + cell.plant.symbol + "</font>]" + "<br>" +
             "<p class='artext' lang='ar'>" + cell.plant.arabic + "</p>" + "<br>" +
             "<i>" + cell.plant.latin + "</i>" + "</br>" + "a kind of " + cell.plant.type)
       
@@ -81,7 +81,7 @@ function showInfo (cellID) {
         .appendTo($occupantInfo)
         .mouseenter(function() { showSpeech(occupant, ($occupantInfo).offset().top)})
         //.mouseleave(function() { hideSpeech()})
-        .html(cell.occupant.name + "   " + "[" + cell.occupant.symbol + "]" + "<br>" +
+        .html(cell.occupant.name + "   " + "[<font color= "+ cell.occupant.color +">" + cell.occupant.symbol + "</font>]" + "<br>" +
             "<p class='artext' lang='ar'>" + cell.occupant.arabic + "</p>" + "<br>" +
             "</br>" + "a kind of " + cell.occupant.type)
 
