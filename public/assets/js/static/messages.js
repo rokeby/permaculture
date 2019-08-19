@@ -47,7 +47,7 @@ var typeMapping = [
 	{
 		"senderType": "soil",
 		"receiverType": "grazer",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},
 	{
 		"senderType": "liquid",
@@ -112,7 +112,7 @@ var typeMapping = [
 	{
 		"senderType": "grazer",
 		"receiverType": "shrub",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},
 	{
 		"senderType": "tree",
@@ -167,7 +167,7 @@ var typeMapping = [
 	{
 		"senderType": "grazer",
 		"receiverType": "crop",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},
 	{
 		"senderType": "tree",
@@ -332,27 +332,27 @@ var typeMapping = [
 	{
 		"senderType": "grazer",
 		"receiverType": "legume",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},
 	{
 		"senderType": "tree",
 		"receiverType": "legume",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},
 	{
 		"senderType": "shrub",
 		"receiverType": "legume",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},
 	{
 		"senderType": "crop",
 		"receiverType": "legume",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},
 	{
 		"senderType": "herb",
 		"receiverType": "legume",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},	
 	{
 		"senderType": "mycorrhizal",
@@ -377,7 +377,7 @@ var typeMapping = [
 	{
 		"senderType": "soil",
 		"receiverType": "legume",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},
 	{
 		"senderType": "liquid",
@@ -387,7 +387,7 @@ var typeMapping = [
 	{
 		"senderType": "grazer",
 		"receiverType": "vine",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},
 	{
 		"senderType": "tree",
@@ -512,12 +512,12 @@ var typeMapping = [
 	{
 		"senderType": "crop",
 		"receiverType": "soil",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},
 	{
 		"senderType": "herb",
 		"receiverType": "soil",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},	
 	{
 		"senderType": "mycorrhizal",
@@ -552,42 +552,42 @@ var typeMapping = [
 	{
 		"senderType": "grazer",
 		"receiverType": "liquid",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},
 	{
 		"senderType": "tree",
 		"receiverType": "liquid",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},
 	{
 		"senderType": "shrub",
 		"receiverType": "liquid",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},
 	{
 		"senderType": "crop",
 		"receiverType": "liquid",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},
 	{
 		"senderType": "herb",
 		"receiverType": "liquid",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},	
 	{
 		"senderType": "mycorrhizal",
 		"receiverType": "liquid",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},
 	{
 		"senderType": "legume",
 		"receiverType": "liquid",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},
 	{
 		"senderType": "vine",
 		"receiverType": "liquid",
-		"messageType": "thanks",
+		"messageType": "warmth",
 	},
 	{
 		"senderType": "rock",
@@ -661,4 +661,96 @@ var typeMapping = [
 ]
 
 
-export {typeMapping};
+var messageMapping = {
+	"greeting": {
+		"pithy": ["hi"],
+		"wise": ["hello"],
+		"sweet": ["hello friend!!"],
+		"moody": ["hm."],
+		"funny": ["beep beep"],
+		"flighty": ["hellooo"],
+		"shalllow": ["oh hi"],
+		"spiky": ["oh hi"],
+		"timid": ["um, hello"],
+		"grim": ["hi."],
+		"sulky": ["hi."],
+		"friendly": ["hello friend!!"],
+		"chatty": ["hello yes!! what's up?!"],
+		"solemn": ["good day"],
+		"mean": ["hm."],
+	},
+
+	"warmth": {
+		"pithy": ["nice to see you, I guess"],
+		"wise": ["how's it going, little friend?"],
+		"sweet": ["oohhhh I love you sooooo"],
+		"moody": ["hmph"],
+		"funny": ["hhaha awww nice to see you"],
+		"flighty": ["oo! nice!"],
+		"shalllow": ["omggg you're the best"],
+		"spiky": ["mmmmm"],
+		"timid": ["ooo that's nice"],
+		"grim": ["nice to see you, I guess"],
+		"sulky": ["hmph"],
+		"friendly": ["oohhhh I love you sooooo", "cheers babe xoxox"],
+		"chatty": ["tell me more little friend!!"],
+		"solemn": ["nice to see you"],
+		"mean": ["ugh well, it's good to see you"],
+	},
+	
+	"annoyance": {
+		"pithy": ["give it a rest"],
+		"wise": ["really, this is very undignified"],
+		"sweet": ["um, could you not?"],
+		"moody": ["um, could you not?"],
+		"funny": ["aha, stop that!"],
+		"flighty": ["mm bye"],
+		"shalllow": ["uh bye"],
+		"spiky": ["go away!"],
+		"timid": ["no thanks!"],
+		"grim": ["leave me be"],
+		"sulky": ["just leave me alone"],
+		"friendly": ["mmmm no thanks honey"],
+		"chatty": ["yes yes very interesting"],
+		"solemn": ["enough please"],
+		"mean": ["get lost"],
+	},
+	
+	"fear": {
+		"pithy": ["oof"],
+		"wise": ["oh no, this again"],
+		"sweet": ["oooh, could you not?"],
+		"moody": ["omg no"],
+		"funny": ["eek! eek! eek! eek!"],
+		"flighty": ["oh! oh no no"],
+		"shalllow": ["oo watch it"],
+		"spiky": ["get away!!"],
+		"timid": ["eeeeeeek!!"],
+		"grim": ["oh no, this again"],
+		"sulky": ["get off me or I bite you"],
+		"friendly": ["I mean, I'd rather you didn't, you know..."],
+		"chatty": ["aaa!!! I mean, how are you?!"],
+		"solemn": ["please stop"],
+		"mean": ["get off me or I bite you"],
+	},
+
+	"curiosity": {
+		"pithy": ["what <i>are</i> you?"],
+		"wise": ["well, I've never seen <i>that</i> before"],		
+		"sweet": ["owo what's this?"],
+		"moody": ["ew, what are those things"],
+		"funny": ["haha! what a strange creature"],
+		"flighty": ["never seen one of those before..."],
+		"shalllow": ["never seen one of those before..."],
+		"spiky": ["what! is that!?"],
+		"timid": ["oo, that's interesting"],
+		"grim": ["not sure what you are, and not sure I like it"],
+		"sulky": ["hmph, you're weird"],
+		"friendly": ["wow, what an interesting creature"],
+		"chatty": ["ooh talk to me!"],
+		"solemn": ["who is this?"],
+		"mean": ["eh, who are you?"],
+	},
+}
+
+export {typeMapping, messageMapping};
