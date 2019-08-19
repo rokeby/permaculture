@@ -80,7 +80,7 @@ var substrateNames = [
 		'5': 'med',
 		'6': 'none',
 		'type': 'soil',
-		'personality': 'clingy',
+		'personality': 'solemn', //add clingy back?
 		'fertility': 0.3,
 		'symbol': '."',
 		'color': '#e6e600',

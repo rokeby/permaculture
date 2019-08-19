@@ -1,7 +1,7 @@
 import { cells, getEntries } from './grid.js';
 import { goats } from './animation.js';
 import { Speech } from './static/classes.js';
-import { typeMapping } from './static/messages.js';
+import { typeMapping, messageMapping } from './static/messages.js';
 
 function getMessageType (sender, receiver) {
 	//filters for message type from the sender type, and to the receiver type
@@ -10,6 +10,11 @@ function getMessageType (sender, receiver) {
 	var messageType = toReceiver[0].messageType;
 
 	return messageType;
+}
+
+function getMessage (type, personality) {
+	var message = messageMapping[type][personality];
+	return message;
 }
 
 function printSpeech() {
@@ -56,11 +61,18 @@ function animalVisit(cellNumber) {
 	var sender = goats[senderID];
 	var receiver = cells[cellNumber].plant ? cells[cellNumber].plant : cells[cellNumber].substrate;
 
-	var message = getMessageType(sender.type, receiver.type);
+	var messageType = getMessageType(sender.type, receiver.type);
+	var responseType = getMessageType(receiver.type, sender.type);
+	var message = getMessage(messageType, sender.personality);
+	var response = getMessage(responseType, receiver.personality);
 
-	var speech = new Speech(sender, receiver, message, Date.now() );
-	receiver.speech.push(speech);
-	sender.speech.push(speech);
+	var messageSpeech = new Speech(sender, receiver, message, Date.now() );
+	var responseSpeech = new Speech(receiver, sender, response, Date.now() );
+
+	receiver.speech.push(messageSpeech);
+	receiver.speech.push(responseSpeech);
+	sender.speech.push(messageSpeech);
+	sender.speech.push(responseSpeech);
 
 }
 
