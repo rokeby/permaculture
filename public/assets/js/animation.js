@@ -2,7 +2,7 @@ import { cells } from './grid.js';
 import animals from './static/animals.js';
 import { Animal, Speech } from './static/classes.js';
 import { xnum, ynum } from './static/constants.js'
-import { printSpeech, animalVisit } from './conversation.js';
+import { printSpeech, ambientSpeech, animalVisit } from './conversation.js';
 var goatZero = true;
 var goats = [];
 
@@ -103,7 +103,7 @@ async function goatEvent() {
 }
 
 function reset() {
-	console.log('gd morning friends')
+	console.log('gd morning friends');
 }
 
 function eachHour() {
@@ -124,7 +124,9 @@ function eachSecond() {
 	$('.water').each( function() {
 		var wave = $( this ).html() === "~" ? '≈' : "~"
 		$( this ).html(wave);
-	})	
+	})
+
+	ambientSpeech();
 }
 
 //queries the time every second, runs regular events
@@ -141,11 +143,11 @@ async function runMainLoop(){
 			eachMinute();
 		}
 
-		if(today.getMinutes() === 0){
+		if(today.getMinutes() === 0 && today.getSeconds() === 0){
 			eachHour();
 		}
 
-		if(today.getHours() === 0){
+		if(today.getHours() === 0 && today.getMinutes() === 0 && today.getSeconds() === 0){
 			reset();
 		}
 

@@ -1,6 +1,7 @@
 import { cells, getEntries } from './grid.js';
 import { goats } from './animation.js';
 import { Speech } from './static/classes.js';
+import { xnum, ynum } from './static/constants.js';
 import { typeMapping, messageMapping } from './static/messages.js';
 
 function getMessageType (sender, receiver) {
@@ -13,7 +14,9 @@ function getMessageType (sender, receiver) {
 }
 
 function getMessage (type, personality) {
-	var message = messageMapping[type][personality];
+	console.log(type, personality);
+	var messageArr = messageMapping[type][personality];
+	var message = messageArr[Math.floor(Math.random()*messageArr.length)];
 	return message;
 }
 
@@ -27,15 +30,88 @@ function conversation(sender, receiver) {
 	var messageSpeech = new Speech(sender, receiver, message, Date.now() );
 	var responseSpeech = new Speech(receiver, sender, response, Date.now() );
 
-	receiver.speech.push(messageSpeech);
+// /	receiver.speech.push(messageSpeech);
 	receiver.speech.push(responseSpeech);
 	sender.speech.push(messageSpeech);
-	sender.speech.push(responseSpeech);	
+//	sender.speech.push(responseSpeech);
+
+	console.log(message, response);
+}
+
+function getReceiver(cellNumber, sender) {
+	var chosenCell = false;
+	var randX, randY;
+	var x = cellNumber%xnum;
+	var y = Math.floor(cellNumber/xnum);
+
+	//pick a cell in the surrounding 9x9 area
+	do {
+		randX = x + Math.round(Math.random()*9)-4;
+		randY = y + Math.round(Math.random()*9)-4;
+
+		//check in bounds
+		if(cells[randY*xnum + randX]){
+			chosenCell = true;
+		}
+
+	} while(chosenCell === false)
+
+	return cells[randY*xnum + randX];
+}
+
+function ambientSpeech() {
+	var sender;
+	var randCellNumber = Math.floor(Math.random()*ynum*xnum);
+	var randCell = cells[randCellNumber];
+
+	//get a random cell
+	if(randCell.occupant){
+		sender = randCell.occupant;
+	}
+	else if(randCell.plant){
+		sender = randCell.plant;
+	}
+	else {
+		sender = randCell.substrate;
+	}
+
+	var receiverCell = getReceiver(randCellNumber, sender);
+	var receiver = receiverCell.plant ? receiverCell.plant : receiverCell.substrate;
+
+	conversation(sender, receiver);
+
+
+	//comment out for now: ambient speach printing
+	// var senderCellPos = $("#"+randCellNumber).position();
+	// var receiverCellPos = $("#"+receiverCell.id).position();
+
+	// //$('.speechbox').remove()
+	// //put speech above cell
+	// $('<div/>', {
+	// 		class: "speechbox",
+	// 	})
+	// 	.css({
+	// 		left: senderCellPos.left,
+	// 		top: senderCellPos.top-20,
+	// 	})
+	// 	.html('['+sender.symbol+'] '+ sender.speech[sender.speech.length-1].message)
+	// 	.appendTo('#container')
+
+	// $('<div/>', {
+	// 		class: "speechbox",
+	// 	})
+	// 	.css({
+	// 		left: receiverCellPos.left,
+	// 		top: receiverCellPos.top-20,
+	// 	})
+	// 	.html('['+receiver.symbol+'] '+ receiver.speech[receiver.speech.length-1].message)
+	// 	.appendTo('#container')
+
 }
 
 function printSpeech() {
 	var message, symbol;
-	var randCellNumber = Math.floor(Math.random()*60*110);
+	var randCellNumber = Math.floor(Math.random()*ynum*xnum);
 	var randCell = cells[randCellNumber];
 
 	//get a random cell
@@ -54,9 +130,6 @@ function printSpeech() {
 	}
 
 	var cellPos = $("#"+randCellNumber).position();
-
-	// console.log('rand cell is', randCell)
-	// $("#"+randCellNumber).css({'background-color': 'pink'})
 
 	$('.speechbox').remove()
 	//put speech above cell
@@ -82,4 +155,4 @@ function animalVisit(cellNumber) {
 }
 
 
-export { animalVisit, printSpeech, conversation };
+export { animalVisit, printSpeech, ambientSpeech, conversation };
