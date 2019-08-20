@@ -10,6 +10,6 @@ $ node index.js
 ````
 to run the simulation on port 3000.
 
-To modify the code for your own ecosystem, edit `plants.js`, `animals.js`, `zones.js` and `substrates.js`. If you'd like to make a simulation with a different topography, instructions are in the folder `scripts`.
+To modify the code for your own ecosystem, edit `plants.js`, `animals.js`, `zones.js` and `substrates.js`. If you'd like to make a simulation with a different topography, instructions are in the folder [`scripts`](https://github.com/rokeby/permaculture/tree/master/scripts).
 
 Instructions for sensors/weather data coming soon! This is a work in progress
