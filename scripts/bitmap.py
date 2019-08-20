@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 import sys
 
-im = Image.open("../bitmap/5-zone.bmp")
+im = Image.open("./5-zone.bmp")
 # print(im.format, im.size, im.mode)
 
 p = np.array(im)
