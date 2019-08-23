@@ -3,6 +3,7 @@ import { goats } from './animation.js';
 import { Speech } from './static/classes.js';
 import { xnum, ynum } from './static/constants.js';
 import { typeMapping, messageMapping } from './static/messages.js';
+import { addConversation } from './narrative.js'
 
 function getMessageType (sender, receiver) {
 	//filters for message type from the sender type, and to the receiver type
@@ -14,7 +15,6 @@ function getMessageType (sender, receiver) {
 }
 
 function getMessage (type, personality) {
-	console.log(type, personality);
 	var messageArr = messageMapping[type][personality];
 	var message = messageArr[Math.floor(Math.random()*messageArr.length)];
 	return message;
@@ -30,12 +30,10 @@ function conversation(sender, receiver) {
 	var messageSpeech = new Speech(sender, receiver, message, Date.now() );
 	var responseSpeech = new Speech(receiver, sender, response, Date.now() );
 
-// /	receiver.speech.push(messageSpeech);
-	receiver.speech.push(responseSpeech);
 	sender.speech.push(messageSpeech);
-//	sender.speech.push(responseSpeech);
+	receiver.speech.push(responseSpeech);
 
-	console.log(message, response);
+	addConversation(sender, receiver, messageType, responseType);
 }
 
 function getReceiver(cellNumber, sender) {
@@ -79,34 +77,6 @@ function ambientSpeech() {
 	var receiver = receiverCell.plant ? receiverCell.plant : receiverCell.substrate;
 
 	conversation(sender, receiver);
-
-
-	//comment out for now: ambient speach printing
-	// var senderCellPos = $("#"+randCellNumber).position();
-	// var receiverCellPos = $("#"+receiverCell.id).position();
-
-	// //$('.speechbox').remove()
-	// //put speech above cell
-	// $('<div/>', {
-	// 		class: "speechbox",
-	// 	})
-	// 	.css({
-	// 		left: senderCellPos.left,
-	// 		top: senderCellPos.top-20,
-	// 	})
-	// 	.html('['+sender.symbol+'] '+ sender.speech[sender.speech.length-1].message)
-	// 	.appendTo('#container')
-
-	// $('<div/>', {
-	// 		class: "speechbox",
-	// 	})
-	// 	.css({
-	// 		left: receiverCellPos.left,
-	// 		top: receiverCellPos.top-20,
-	// 	})
-	// 	.html('['+receiver.symbol+'] '+ receiver.speech[receiver.speech.length-1].message)
-	// 	.appendTo('#container')
-
 }
 
 function printSpeech() {

@@ -5,6 +5,7 @@ import { xnum, ynum } from './static/constants.js';
 import {Cell, Plant, Substrate, Speech} from './static/classes.js';
 import { runMainLoop } from './animation.js';
 import { showInfo } from './info.js';
+import { generateNarrative } from './narrative.js';
 var cells = new Array(xnum*ynum);
 
 function getEntries(array, type, val) {
@@ -112,6 +113,7 @@ var generateGrid = new Promise( function(resolve, reject){
             var cell = new Cell(id, zoneName, substrate);
 
             var divClass = "square zone" + zone + " " + cell.substrate.name.replace(/\s/g, '');
+            generateNarrative(substrate);
 
             if(Math.random() < substrate.fertility && zone !== 5){
                 plant = getPlant(zone);
@@ -123,6 +125,7 @@ var generateGrid = new Promise( function(resolve, reject){
                 var flower = getFlowers(plant);
 
                 color = flower ? plant.flowercolor : plant.color;
+                generateNarrative(plant);
             }
 
             $('<div/>', {

@@ -24,6 +24,7 @@ class Plant {
   	this.flowercolor = flowercolor;
   	this.notes = '';
   	this.latin = '';
+    this.narrative = '';    
   }
 }
 
@@ -39,6 +40,7 @@ class Substrate {
   	this.symbol = symbol;
   	this.color = color;
   	this.speech = [speech];
+    this.narrative = '';    
   }
 
 }
@@ -58,6 +60,7 @@ class Animal {
     this.speech = [speech];
     this.latin = '';    
     this.notes = '';
+    this.narrative = '';    
   }
 }
 

@@ -6,20 +6,10 @@ function showSpeech (agent, offset) {
     var $speechPanel =  $('<div/>', {
         class: 'speechpanel',
     })
-    .css({'top': offset})
+    .css({'top': offset-30})
     .mouseleave(function() { hideSpeech()})
     .appendTo('#container')
-
-    for(var i=0; i<agent.speech.length; i++){
-        var offsetLeft = (agent.speech[i].sender === agent.speech[i].receiver) ? 50 : 10;
-
-        var $messageBox = $('<div/>', {
-            class: 'messagebox',
-        })
-        .css({'left': offsetLeft})
-        .html(agent.speech[i].sender.symbol + ': ' + agent.speech[i].message)
-        .appendTo($speechPanel)
-    }
+    .html(agent.narrative)
 
     $speechPanel.scrollTop($($speechPanel)[0].scrollHeight);
 }
