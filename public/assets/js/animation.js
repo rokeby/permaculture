@@ -55,7 +55,8 @@ function moveAnimals(animals) {
 			else{
 				cells[newCellNumber].occupant = animals[i];
 				$('#'+newCellNumber).html(animals[i].symbol).css({'color': animals[i].color})
-				animalVisit(newCellNumber);
+				
+				if (Math.random() < 0.1) animalVisit(newCellNumber); //1 in 10 chance of conversation
 			}
 		}
 	}
@@ -125,8 +126,9 @@ function eachSecond() {
 		var wave = $( this ).html() === "~" ? '≈' : "~"
 		$( this ).html(wave);
 	})
-
-	ambientSpeech();
+	for(var i=0; i<100; i++){
+		ambientSpeech();
+	}
 }
 
 //queries the time every second, runs regular events
