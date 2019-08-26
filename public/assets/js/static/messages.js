@@ -663,21 +663,21 @@ var typeMapping = [
 
 var messageMapping = {
 	"greeting": {
-		"pithy": ["hi"],
+		"pithy": ["hi", "hello"],
 		"wise": ["hello"],
-		"sweet": ["hello friend!!"],
-		"moody": ["hm."],
-		"funny": ["beep beep"],
+		"sweet": ["hello friend!!", "hello hello!", "so nice to see you!!"],
+		"moody": ["hm.", "hi."],
+		"funny": ["beep beep", "hi hi!"],
 		"flighty": ["hellooo"],
 		"shallow": ["oh hi"],
 		"spiky": ["oh hi"],
-		"timid": ["um, hello"],
-		"grim": ["hi."],
-		"sulky": ["hi."],
-		"friendly": ["hello friend!!"],
-		"chatty": ["hello yes!! what's up?!"],
+		"timid": ["um, hello", "oo, hi!"],
+		"grim": ["hi.", "hm."],
+		"sulky": ["hi.", "hm."],
+		"friendly": ["hello friend!!", "hello hello!", "so nice to see you!!"],
+		"chatty": ["hello yes!! what's up?!", "what's going on?!"],
 		"solemn": ["good day"],
-		"mean": ["hm."],
+		"mean": ["hm.", "hi."],
 	},
 
 	"warmth": {
