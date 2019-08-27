@@ -1,6 +1,8 @@
-var animals = {
+var animalNames = {
 	"goat":{
 		"name": "damascus goat",
+		"zones": [1, 2, 3, 4, 5, 6],
+		"number": 30,
 		"arabic": "ماعز دمشقي",
 		"latin": 'capra aegagrus hircus',
 		"symbol": '羊',
@@ -12,6 +14,8 @@ var animals = {
 
 	"cat":{
 		"name": "cat",
+		"zones": [1, 2, 3, 4, 5],
+		"number": 4,
 		"arabic": "بس",
 		"latin": 'felis catus',
 		"symbol": '猫',
@@ -23,6 +27,8 @@ var animals = {
 
 	"donkey":{
 		"name": "donkey",
+		"zones": [1, 2, 3, 4, 5],
+		"number": 4,
 		"arabic": "حمار",
 		"latin": 'equus africanus asinus',
 		"symbol": '驴',
@@ -34,6 +40,8 @@ var animals = {
 
 	"boar":{
 		"name": "wild boar",
+		"zones": [1, 2, 3, 4, 5, 6],
+		"number": 3,
 		"arabic": "خنزير",
 		"latin": 'sus scrofa',
 		"symbol": '猪',
@@ -43,19 +51,23 @@ var animals = {
 		"type": "grazer"
 	},
 
-	"beetle":{
-		"name": "longhorn beetle",
-		"arabic": "خنفساء",
-		"latin": 'lamiinae',
-		"symbol": '̈́ ',
-		"shades": ["#333333", "#404040"],
-		"personality": "friendly",
-		"speech": ' ',
-		"type": " "
-	},
+	// "beetle":{
+	// 	"name": "longhorn beetle",
+	// 	"zones": [1, 2, 3],
+	// 	"number": 75,
+	// 	"arabic": "خنفساء",
+	// 	"latin": 'lamiinae',
+	// 	"symbol": '̈́ ',
+	// 	"shades": ["#333333", "#404040"],
+	// 	"personality": "friendly",
+	// 	"speech": ' ',
+	// 	"type": " "
+	// },
 
 	"bee":{
 		"name": "honey bee",
+		"zones": [2, 3, 4],
+		"number": 100,
 		"arabic": "نحلة",
 		"latin": 'apis mellifica',
 		"symbol": '͚ ',
@@ -67,6 +79,8 @@ var animals = {
 
 	"worm":{
 		"name": "earthworm",
+		"zones": [2, 3, 4],
+		"number": 100,
 		"arabic": "دودة",
 		"latin": 'eisenia fetida',
 		"symbol": '̫',
@@ -75,6 +89,20 @@ var animals = {
 		"speech": 'wheeee',
 		"type": "parasite"
 	},
+
+	"nematode":{
+		"name": "nematode",
+		"zones": [2, 3, 4],
+		"number": 100,
+		"arabic": "ديدان أسطوانية",
+		"latin": 'caenorhabditis elegans',
+		"symbol": '¸',
+		"shades": ["#9cabc9"],
+		"personality": "moody",
+		"speech": 'hmmmm',
+		"type": "parasite"
+	},
+
 
 	// "mosquito":{
 	// 	"name": "mosquito",
@@ -89,6 +117,8 @@ var animals = {
 
 	"human":{
 		"name": "human",
+		"zones": [4, 5],
+		"number": 10,
 		"arabic": "إنسان",
 		"latin": 'homo sapiens',
 		"symbol": '人',
@@ -100,6 +130,8 @@ var animals = {
 
 	"dog":{
 		"name": "dog",
+		"zones": [1, 2, 3, 5],
+		"number": 3,
 		"arabic": "كلب",
 		"latin": 'canis lupus familiaris',
 		"symbol": '狗',
@@ -110,7 +142,9 @@ var animals = {
 	},	
 
 	"frog":{
-		"name": "savigny's treefrog,",
+		"name": "savigny's treefrog",
+		"zones": [6],
+		"number": 20,
 		"arabic": "ضفدع الشجر",
 		"latin": 'hyla savignyi',
 		"symbol": '͖ ',
@@ -119,8 +153,7 @@ var animals = {
 		"speech": 'bip bip',
 		"type": "amphibian"
 	},
-
 }
 
 
-export default animals;
+export default animalNames;

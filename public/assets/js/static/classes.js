@@ -1,6 +1,7 @@
 class Cell {
-  constructor(id, zoneName, substrate) {
+  constructor(id, zone, zoneName, substrate) {
     this.id = id;
+    this.zone = zone;    
     this.zoneName = zoneName;
     this.substrate = substrate;
     this.plant ='';
@@ -46,13 +47,14 @@ class Substrate {
 }
 
 class Animal {
-  constructor(id, parentArray, x, y, name, arabic, type, personality, symbol, color, speech) {
+  constructor(id, parentArray, x, y, name, arabic, zones, type, personality, symbol, color, speech) {
     this.id = id;
     this.parentArray = parentArray;
     this.x = x;
     this.y = y;
     this.name = name;
     this.arabic = arabic;
+    this.zones = zones;    
     this.type = type;
     this.personality = personality
     this.symbol = symbol;

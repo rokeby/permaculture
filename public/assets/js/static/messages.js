@@ -5,6 +5,26 @@ var typeMapping = [
 		"messageType": "greeting",
 	},
 	{
+		"senderType": "predator",
+		"receiverType": "grazer",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "pollinator",
+		"receiverType": "grazer",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "parasite",
+		"receiverType": "grazer",
+		"messageType": "warmth",
+	},
+	{
+		"senderType": "amphibian",
+		"receiverType": "grazer",
+		"messageType": "fear",
+	},
+	{
 		"senderType": "tree",
 		"receiverType": "grazer",
 		"messageType": "annoyance",
@@ -60,6 +80,26 @@ var typeMapping = [
 		"messageType": "greeting",
 	},
 	{
+		"senderType": "predator",
+		"receiverType": "tree",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "pollinator",
+		"receiverType": "tree",
+		"messageType": "warmth",
+	},
+	{
+		"senderType": "parasite",
+		"receiverType": "tree",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "amphibian",
+		"receiverType": "tree",
+		"messageType": "greeting",
+	},
+	{
 		"senderType": "tree",
 		"receiverType": "tree",
 		"messageType": "greeting",
@@ -113,6 +153,26 @@ var typeMapping = [
 		"senderType": "grazer",
 		"receiverType": "shrub",
 		"messageType": "warmth",
+	},
+	{
+		"senderType": "predator",
+		"receiverType": "shrub",
+		"messageType": "annoyance",
+	},
+	{
+		"senderType": "pollinator",
+		"receiverType": "shrub",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "parasite",
+		"receiverType": "shrub",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "amphibian",
+		"receiverType": "shrub",
+		"messageType": "greeting",
 	},
 	{
 		"senderType": "tree",
@@ -170,6 +230,26 @@ var typeMapping = [
 		"messageType": "warmth",
 	},
 	{
+		"senderType": "predator",
+		"receiverType": "crop",
+		"messageType": "warmth",
+	},
+	{
+		"senderType": "pollinator",
+		"receiverType": "crop",
+		"messageType": "warmth",
+	},
+	{
+		"senderType": "parasite",
+		"receiverType": "crop",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "amphibian",
+		"receiverType": "crop",
+		"messageType": "greeting",
+	},
+	{
 		"senderType": "tree",
 		"receiverType": "crop",
 		"messageType": "greeting",
@@ -221,6 +301,26 @@ var typeMapping = [
 	},
 	{
 		"senderType": "grazer",
+		"receiverType": "herb",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "predator",
+		"receiverType": "herb",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "pollinator",
+		"receiverType": "herb",
+		"messageType": "warmth",
+	},
+	{
+		"senderType": "parasite",
+		"receiverType": "herb",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "amphibian",
 		"receiverType": "herb",
 		"messageType": "greeting",
 	},
@@ -278,6 +378,26 @@ var typeMapping = [
 		"senderType": "grazer",
 		"receiverType": "mycorrhizal",
 		"messageType": "curiosity",
+	},
+	{
+		"senderType": "predator",
+		"receiverType": "mycorrhizal",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "pollinator",
+		"receiverType": "mycorrhizal",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "parasite",
+		"receiverType": "mycorrhizal",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "amphibian",
+		"receiverType": "mycorrhizal",
+		"messageType": "greeting",
 	},
 	{
 		"senderType": "tree",
@@ -335,6 +455,26 @@ var typeMapping = [
 		"messageType": "warmth",
 	},
 	{
+		"senderType": "predator",
+		"receiverType": "legume",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "pollinator",
+		"receiverType": "legume",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "parasite",
+		"receiverType": "legume",
+		"messageType": "warmth",
+	},
+	{
+		"senderType": "amphibian",
+		"receiverType": "legume",
+		"messageType": "curiosity",
+	},
+	{
 		"senderType": "tree",
 		"receiverType": "legume",
 		"messageType": "warmth",
@@ -388,6 +528,26 @@ var typeMapping = [
 		"senderType": "grazer",
 		"receiverType": "vine",
 		"messageType": "warmth",
+	},
+	{
+		"senderType": "predator",
+		"receiverType": "vine",
+		"messageType": "annoyance",
+	},
+	{
+		"senderType": "pollinator",
+		"receiverType": "vine",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "parasite",
+		"receiverType": "vine",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "amphibian",
+		"receiverType": "vine",
+		"messageType": "greeting",
 	},
 	{
 		"senderType": "tree",
@@ -445,6 +605,26 @@ var typeMapping = [
 		"messageType": "greeting",
 	},
 	{
+		"senderType": "predator",
+		"receiverType": "rock",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "pollinator",
+		"receiverType": "rock",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "parasite",
+		"receiverType": "rock",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "amphibian",
+		"receiverType": "rock",
+		"messageType": "annoyance",
+	},
+	{
 		"senderType": "tree",
 		"receiverType": "rock",
 		"messageType": "annoyance",
@@ -500,6 +680,26 @@ var typeMapping = [
 		"messageType": "greeting",
 	},
 	{
+		"senderType": "predator",
+		"receiverType": "soil",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "pollinator",
+		"receiverType": "soil",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "parasite",
+		"receiverType": "soil",
+		"messageType": "warmth",
+	},
+	{
+		"senderType": "amphibian",
+		"receiverType": "soil",
+		"messageType": "greeting",
+	},
+	{
 		"senderType": "tree",
 		"receiverType": "soil",
 		"messageType": "warmth",
@@ -555,6 +755,26 @@ var typeMapping = [
 		"messageType": "warmth",
 	},
 	{
+		"senderType": "predator",
+		"receiverType": "liquid",
+		"messageType": "fear",
+	},
+	{
+		"senderType": "pollinator",
+		"receiverType": "liquid",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "parasite",
+		"receiverType": "liquid",
+		"messageType": "fear",
+	},
+	{
+		"senderType": "amphibian",
+		"receiverType": "liquid",
+		"messageType": "warmth",
+	},
+	{
 		"senderType": "tree",
 		"receiverType": "liquid",
 		"messageType": "warmth",
@@ -604,6 +824,306 @@ var typeMapping = [
 		"receiverType": "liquid",
 		"messageType": "greeting",
 	},
+	{
+		"senderType": "grazer",
+		"receiverType": "predator",
+		"messageType": "fear",
+	},
+	{
+		"senderType": "predator",
+		"receiverType": "predator",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "pollinator",
+		"receiverType": "predator",
+		"messageType": "fear",
+	},
+	{
+		"senderType": "parasite",
+		"receiverType": "predator",
+		"messageType": "fear",
+	},
+	{
+		"senderType": "amphibian",
+		"receiverType": "predator",
+		"messageType": "fear",
+	},
+	{
+		"senderType": "tree",
+		"receiverType": "predator",
+		"messageType": "annoyance",
+	},
+	{
+		"senderType": "shrub",
+		"receiverType": "predator",
+		"messageType": "annoyance",
+	},	
+	{
+		"senderType": "crop",
+		"receiverType": "predator",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "herb",
+		"receiverType": "predator",
+		"messageType": "greeting",
+	},	
+	{
+		"senderType": "mycorrhizal",
+		"receiverType": "predator",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "legume",
+		"receiverType": "predator",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "vine",
+		"receiverType": "predator",
+		"messageType": "fear",
+	},
+	{
+		"senderType": "rock",
+		"receiverType": "predator",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "soil",
+		"receiverType": "predator",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "liquid",
+		"receiverType": "predator",
+		"messageType": "curiosity",
+	},	
+	{
+		"senderType": "grazer",
+		"receiverType": "parasite",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "predator",
+		"receiverType": "parasite",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "pollinator",
+		"receiverType": "parasite",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "parasite",
+		"receiverType": "parasite",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "amphibian",
+		"receiverType": "parasite",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "tree",
+		"receiverType": "parasite",
+		"messageType": "warmth",
+	},
+	{
+		"senderType": "shrub",
+		"receiverType": "parasite",
+		"messageType": "warmth",
+	},	
+	{
+		"senderType": "crop",
+		"receiverType": "parasite",
+		"messageType": "warmth",
+	},
+	{
+		"senderType": "herb",
+		"receiverType": "parasite",
+		"messageType": "warmth",
+	},	
+	{
+		"senderType": "mycorrhizal",
+		"receiverType": "parasite",
+		"messageType": "warmth",
+	},
+	{
+		"senderType": "legume",
+		"receiverType": "parasite",
+		"messageType": "warmth",
+	},
+	{
+		"senderType": "vine",
+		"receiverType": "parasite",
+		"messageType": "warmth",
+	},
+	{
+		"senderType": "rock",
+		"receiverType": "parasite",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "soil",
+		"receiverType": "parasite",
+		"messageType": "warmth",
+	},
+	{
+		"senderType": "liquid",
+		"receiverType": "parasite",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "grazer",
+		"receiverType": "pollinator",
+		"messageType": "fear",
+	},
+	{
+		"senderType": "predator",
+		"receiverType": "pollinator",
+		"messageType": "fear",
+	},
+	{
+		"senderType": "pollinator",
+		"receiverType": "pollinator",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "parasite",
+		"receiverType": "pollinator",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "amphibian",
+		"receiverType": "pollinator",
+		"messageType": "fear",
+	},
+	{
+		"senderType": "tree",
+		"receiverType": "pollinator",
+		"messageType": "warmth",
+	},
+	{
+		"senderType": "shrub",
+		"receiverType": "pollinator",
+		"messageType": "warmth",
+	},	
+	{
+		"senderType": "crop",
+		"receiverType": "pollinator",
+		"messageType": "warmth",
+	},
+	{
+		"senderType": "herb",
+		"receiverType": "pollinator",
+		"messageType": "warmth",
+	},	
+	{
+		"senderType": "mycorrhizal",
+		"receiverType": "pollinator",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "legume",
+		"receiverType": "pollinator",
+		"messageType": "warmth",
+	},
+	{
+		"senderType": "vine",
+		"receiverType": "pollinator",
+		"messageType": "warmth",
+	},
+	{
+		"senderType": "rock",
+		"receiverType": "pollinator",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "soil",
+		"receiverType": "pollinator",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "liquid",
+		"receiverType": "pollinator",
+		"messageType": "curiosity",
+	},	
+		{
+		"senderType": "grazer",
+		"receiverType": "amphibian",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "predator",
+		"receiverType": "amphibian",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "pollinator",
+		"receiverType": "amphibian",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "parasite",
+		"receiverType": "amphibian",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "amphibian",
+		"receiverType": "amphibian",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "tree",
+		"receiverType": "amphibian",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "shrub",
+		"receiverType": "amphibian",
+		"messageType": "curiosity",
+	},	
+	{
+		"senderType": "crop",
+		"receiverType": "amphibian",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "herb",
+		"receiverType": "amphibian",
+		"messageType": "curiosity",
+	},	
+	{
+		"senderType": "mycorrhizal",
+		"receiverType": "amphibian",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "legume",
+		"receiverType": "amphibian",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "vine",
+		"receiverType": "amphibian",
+		"messageType": "curiosity",
+	},
+	{
+		"senderType": "rock",
+		"receiverType": "amphibian",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "soil",
+		"receiverType": "amphibian",
+		"messageType": "greeting",
+	},
+	{
+		"senderType": "liquid",
+		"receiverType": "amphibian",
+		"messageType": "greeting",
+	},	
 	// {
 	// 	"senderType": "grazer",
 	// 	"receiverType": ,

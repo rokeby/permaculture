@@ -1,12 +1,14 @@
 import { zones, zoneNames } from './static/zones.js';
 import plantNames from './static/plants.js';
+import animalNames from './static/animals.js';
 import substrateNames from './static/substrates.js';
 import { xnum, ynum } from './static/constants.js';
-import {Cell, Plant, Substrate, Speech} from './static/classes.js';
+import {Cell, Plant, Animal, Substrate, Speech} from './static/classes.js';
 import { runMainLoop } from './animation.js';
 import { showInfo } from './info.js';
 import { generateNarrative } from './narrative.js';
 var cells = new Array(xnum*ynum);
+var animals = [];
 
 function getEntries(array, type, val) {
   return array.filter(function (el) {
@@ -34,6 +36,31 @@ function setDepth(zone) {
     else level = 'deep';
 
     return level;
+}
+
+function distributeAnimals(){
+
+    for (var index in animalNames){
+        var animal = animalNames[index]
+        if(animal.name !== "damascus goat"){
+            console.log("notta goat")
+
+            for(var i=0; i<animal.number; i++){
+                var randCellNumber = Math.floor(Math.random()*ynum*xnum);
+                var x = randCellNumber%ynum;
+                var y = Math.floor(randCellNumber/xnum);
+                var color = animal.shades[Math.floor(Math.random()*animal.shades.length)];
+                var speech = new Speech(animal.name, animal.name, animal.speech, Date.now);
+
+                var occupant = new Animal(index + '' + i, animals, x, y, animal.name, animal.arabic, animal.zones, 
+                    animal.type, animal.personality, animal.symbol, color, speech);
+                occupant.latin = animal.latin;
+            
+                cells[randCellNumber].occupant = occupant;
+                animals.push(occupant);
+            }
+        }
+    }
 }
 
 function getFlowers(plant) {
@@ -110,7 +137,7 @@ var generateGrid = new Promise( function(resolve, reject){
 
             var zoneName = zoneNames[zone]
             var id = j*xnum+i;
-            var cell = new Cell(id, zoneName, substrate);
+            var cell = new Cell(id, zone, zoneName, substrate);
 
             var divClass = "square zone" + zone + " " + cell.substrate.name.replace(/\s/g, '');
             generateNarrative(substrate);
@@ -146,7 +173,7 @@ var generateGrid = new Promise( function(resolve, reject){
         cells[j*xnum + i] = cell;
         }
     }
-
+    distributeAnimals();
     resolve('generated grid!!'); 
 })
 
@@ -154,4 +181,4 @@ generateGrid.then(function(value) {
     runMainLoop();
 });
 
-export { cells, getEntries };
+export { cells, getEntries, animals };
