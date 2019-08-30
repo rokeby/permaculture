@@ -2,7 +2,7 @@ import { zones, zoneNames } from './static/zones.js';
 import plantNames from './static/plants.js';
 import animalNames from './static/animals.js';
 import substrateNames from './static/substrates.js';
-import { xnum, ynum } from './static/constants.js';
+import { xnum, ynum, squareSize } from './static/constants.js';
 import {Cell, Plant, Animal, Substrate, Speech} from './static/classes.js';
 import { runMainLoop } from './animation.js';
 import { showInfo } from './info.js';
@@ -136,7 +136,6 @@ function getPlant(zone) {
 
 var generateGrid = new Promise( function(resolve, reject){
     //subdivide the document into 10x10 squares to use as co-ordinate system
-    var squareSize = 18;
     var leftMargin = ($(document).width() - Math.floor($(document).width()/squareSize)*squareSize)/2;
     var topMargin = ($(document).height() - Math.floor($(document).height()/squareSize)*squareSize)/2;
 

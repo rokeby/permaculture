@@ -122,7 +122,7 @@ var animalNames = {
 		"arabic": "إنسان",
 		"latin": 'homo sapiens',
 		"symbol": '人',
-		"shades": ["#ffe0bd", "#d2b48c", "#d2b48c"],
+		"shades": ["#d2b48c", "#bf8040", "#b38600"],
 		"personality": "friendly",
 		"speech": 'hi!',
 		"type": "predator"
