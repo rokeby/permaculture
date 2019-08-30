@@ -43,12 +43,22 @@ function distributeAnimals(){
     for (var index in animalNames){
         var animal = animalNames[index]
         if(animal.name !== "damascus goat"){
-            console.log("notta goat")
 
             for(var i=0; i<animal.number; i++){
-                var randCellNumber = Math.floor(Math.random()*ynum*xnum);
-                var x = randCellNumber%ynum;
+                var cellPicked = false;
+                var randCellNumber = 0;
+
+                do{
+                    randCellNumber = Math.floor(Math.random()*ynum*xnum);
+                    if(!cells[randCellNumber].occupant && animal.zones.some(zone => cells[randCellNumber].zone === zone)) {
+                        cellPicked = true;
+                        //console.log("zone picking initial", i, animal.name, animal.zones, cells[randCellNumber].zone);
+                    }
+                } while (cellPicked === false);
+
                 var y = Math.floor(randCellNumber/xnum);
+                var x = randCellNumber - y*xnum;
+
                 var color = animal.shades[Math.floor(Math.random()*animal.shades.length)];
                 var speech = new Speech(animal.name, animal.name, animal.speech, Date.now);
 
@@ -170,7 +180,7 @@ var generateGrid = new Promise( function(resolve, reject){
             }).html(symbol)
             .appendTo( '#container' );
         
-        cells[j*xnum + i] = cell;
+            cells[j*xnum + i] = cell;
         }
     }
     distributeAnimals();

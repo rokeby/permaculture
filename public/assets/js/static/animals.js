@@ -66,8 +66,8 @@ var animalNames = {
 
 	"bee":{
 		"name": "honey bee",
-		"zones": [2, 3, 4],
-		"number": 100,
+		"zones": [1, 2, 3, 4, 5],
+		"number": 10,
 		"arabic": "نحلة",
 		"latin": 'apis mellifica',
 		"symbol": '͚ ',
@@ -80,7 +80,7 @@ var animalNames = {
 	"worm":{
 		"name": "earthworm",
 		"zones": [2, 3, 4],
-		"number": 100,
+		"number": 10,
 		"arabic": "دودة",
 		"latin": 'eisenia fetida',
 		"symbol": '̫',
@@ -93,7 +93,7 @@ var animalNames = {
 	"nematode":{
 		"name": "nematode",
 		"zones": [2, 3, 4],
-		"number": 100,
+		"number": 10,
 		"arabic": "ديدان أسطوانية",
 		"latin": 'caenorhabditis elegans',
 		"symbol": '¸',
@@ -118,7 +118,7 @@ var animalNames = {
 	"human":{
 		"name": "human",
 		"zones": [4, 5],
-		"number": 10,
+		"number": 3,
 		"arabic": "إنسان",
 		"latin": 'homo sapiens',
 		"symbol": '人',
@@ -144,7 +144,7 @@ var animalNames = {
 	"frog":{
 		"name": "savigny's treefrog",
 		"zones": [6],
-		"number": 20,
+		"number": 5,
 		"arabic": "ضفدع الشجر",
 		"latin": 'hyla savignyi',
 		"symbol": '͖ ',

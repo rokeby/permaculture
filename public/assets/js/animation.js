@@ -1,4 +1,4 @@
-import { cells } from './grid.js';
+import { cells, animals } from './grid.js';
 import animalNames from './static/animals.js';
 import { Animal, Speech } from './static/classes.js';
 import { xnum, ynum } from './static/constants.js'
@@ -25,7 +25,6 @@ function regrowCell(cellNumber){
 
 //for noodling animals
 function moveAnimals(animals) {
-
 	for(var i=0; i<animals.length; i++){
 		if(animals[i]){
 			regrowCell(animals[i].y*xnum+animals[i].x);
@@ -38,10 +37,11 @@ function moveAnimals(animals) {
 				nextY = (animals[i].y + Math.floor(Math.random()*3)-1)%ynum;
 
 				newCellNumber = nextY*xnum + nextX;
-				console.log('zones', animals[i].zones)
 
-				if(!cells[newCellNumber].occupants && animals[i].zones.some(zone => cells[newCellNumber].zone === zone)) 
-					nextStep = true;
+				if(cells[newCellNumber])
+				{
+					if(!cells[newCellNumber].occupant && animals[i].zones.some(zone => cells[newCellNumber].zone === zone)) nextStep = true;
+				}
 
 			} while (nextStep === false)
 
@@ -55,7 +55,7 @@ function moveAnimals(animals) {
 			else{
 				cells[newCellNumber].occupant = animals[i];
 				$('#'+newCellNumber).html(animals[i].symbol).css({'color': animals[i].color})
-				if (Math.random() < 0.1) animalVisit(newCellNumber); //1 in 10 chance of conversation
+					//if (Math.random() < 0.05) animalVisit(newCellNumber); //1 in 20 chance of conversation
 			}
 		}
 	}
@@ -78,7 +78,6 @@ function moveFlock(flock) {
 				nextY = flock[i].y + Math.floor(Math.random()*2)-1;
 
 				newCellNumber = nextY*xnum + nextX;
-				console.log('zones', flock[i].zones)
 
 				if(!cells[newCellNumber]) nextStep = true;  //can wander off
 				else if(!cells[newCellNumber].occupants && flock[i].zones.some(zone => cells[newCellNumber].zone === zone)) 
@@ -159,7 +158,6 @@ function eachMinute() {
 function eachTenSeconds() {
 	//find some animalNames/plant's speech and print it
 	printSpeech();
-
 }
 
 function eachSecond() {
@@ -167,6 +165,8 @@ function eachSecond() {
 		var wave = $( this ).html() === "~" ? '≈' : "~"
 		$( this ).html(wave);
 	})
+	
+	moveAnimals(animals);
 	for(var i=0; i<100; i++){
 		ambientSpeech();
 	}

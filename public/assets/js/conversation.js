@@ -39,8 +39,8 @@ function conversation(sender, receiver) {
 function getReceiver(cellNumber, sender) {
 	var chosenCell = false;
 	var randX, randY;
-	var x = cellNumber%xnum;
-	var y = Math.floor(cellNumber/xnum);
+    var y = Math.floor(cellNumber/xnum);
+    var x = cellNumber - y*xnum;
 
 	//pick a cell in the surrounding 9x9 area
 	do {
