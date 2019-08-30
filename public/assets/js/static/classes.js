@@ -62,7 +62,7 @@ class Animal {
     this.speech = [speech];
     this.latin = '';    
     this.notes = '';
-    this.narrative = '';    
+    this.narrative = '';
   }
 }
 

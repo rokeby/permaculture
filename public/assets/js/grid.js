@@ -39,7 +39,7 @@ function setDepth(zone) {
 }
 
 function distributeAnimals(){
-
+    var animalID = 0;
     for (var index in animalNames){
         var animal = animalNames[index]
         if(animal.name !== "damascus goat"){
@@ -62,12 +62,15 @@ function distributeAnimals(){
                 var color = animal.shades[Math.floor(Math.random()*animal.shades.length)];
                 var speech = new Speech(animal.name, animal.name, animal.speech, Date.now);
 
-                var occupant = new Animal(index + '' + i, animals, x, y, animal.name, animal.arabic, animal.zones, 
+                var occupant = new Animal(animalID, animals, x, y, animal.name, animal.arabic, animal.zones, 
                     animal.type, animal.personality, animal.symbol, color, speech);
                 occupant.latin = animal.latin;
             
+                generateNarrative(occupant);
+
                 cells[randCellNumber].occupant = occupant;
                 animals.push(occupant);
+                animalID+=1;
             }
         }
     }

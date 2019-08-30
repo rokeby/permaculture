@@ -95,8 +95,7 @@ function moveFlock(flock) {
 			else{
 				cells[newCellNumber].occupant = flock[i];
 				$('#'+newCellNumber).html(flock[i].symbol).css({'color': flock[i].color})
-				
-				if (Math.random() < 0.1) animalVisit(newCellNumber); //1 in 10 chance of conversation
+					if (Math.random() < 0.1) animalVisit(newCellNumber); //1 in 10 chance of conversation
 			}
 		}
 	}
