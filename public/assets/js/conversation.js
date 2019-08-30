@@ -115,9 +115,9 @@ function printSpeech() {
 
 }
 
-function animalVisit(cellNumber) {
+function animalVisit(cellNumber, parentArray) {
 	var senderID = cells[cellNumber].occupant.id;
-	var sender = goats[senderID];
+	var sender = parentArray[senderID];
 	var receiver = cells[cellNumber].plant ? cells[cellNumber].plant : cells[cellNumber].substrate;
 
 	conversation(sender, receiver);

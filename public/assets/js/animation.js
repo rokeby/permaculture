@@ -55,7 +55,7 @@ function moveAnimals(animals) {
 			else{
 				cells[newCellNumber].occupant = animals[i];
 				$('#'+newCellNumber).html(animals[i].symbol).css({'color': animals[i].color})
-					//if (Math.random() < 0.05) animalVisit(newCellNumber); //1 in 20 chance of conversation
+					if (Math.random() < 0.05) animalVisit(newCellNumber, animals); //1 in 20 chance of conversation
 			}
 		}
 	}
@@ -95,7 +95,7 @@ function moveFlock(flock) {
 			else{
 				cells[newCellNumber].occupant = flock[i];
 				$('#'+newCellNumber).html(flock[i].symbol).css({'color': flock[i].color})
-					if (Math.random() < 0.1) animalVisit(newCellNumber); //1 in 10 chance of conversation
+					if (Math.random() < 0.1) animalVisit(newCellNumber, flock); //1 in 10 chance of conversation
 			}
 		}
 	}
