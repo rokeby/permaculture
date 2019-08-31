@@ -8,7 +8,16 @@ function checkCompanions(plant) {
 
 // for now, just do soil depth
 function checkPlantComfort(cell) {
-	return false;
+
+	if(cell.plant.soil === 'deep')
+		if(cell.substrate.depth === 'shallow' || cell.substrate.depth === 'med') return 'this soil is too shallow! ';
+		else return false;
+
+	else if(cell.plant.soil === 'med')		
+		if(cell.substrate.depth === 'shallow') return 'this soil is too shallow! ';
+		else return false;
+
+	else return false;
 }
 
 function expressComfort() {
@@ -16,7 +25,7 @@ function expressComfort() {
 }
 
 function expressDiscomfort(discomfort) {
-	return "not good"
+	return discomfort
 }
 
 
@@ -42,6 +51,7 @@ function haveThoughts() {
 	}
 
 	addThought(thinker, thought)
+	//$('#'+randCellNumber).css({'background-color': 'lightblue'})
 }
 
 export { haveThoughts };

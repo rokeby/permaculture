@@ -29,13 +29,15 @@ function rollDice() {
     return level;
 }
 
-function setDepth(zone) {
+function setDepth(zone, substrateType) {
     var depth = (4-zone)/3*Math.random();
     var level;
 
     if(depth < 0.5) level = 'shallow';
     else if(depth < 0.8) level = 'med';
     else level = 'deep';
+
+    if(substrateType === 'rock') level = 'shallow'; 
 
     return level;
 }
@@ -109,7 +111,7 @@ function getSubstrate(zone) {
     var speech = new Speech(substrateType, substrateType, substrateType.speech, Date.now());
 
     //set substrate depth: random but as a function of zone
-    var depth = setDepth(zone);
+    var depth = setDepth(zone, substrateType.type);
 
     var substrate = new Substrate(substrateType.name, substrateType.arabic, substrateType.type, substrateType.personality, 
         substrateType.fertility, depth, substrateType.symbol, substrateType.color, speech )
