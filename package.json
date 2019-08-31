@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/rokeby/permaculture#readme",
   "dependencies": {
+    "dark-sky-api": "^0.6.32",
+    "darkskyjs": "^0.2.1",
     "express": "^4.17.1"
   }
 }

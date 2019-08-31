@@ -7,6 +7,8 @@ import {Cell, Plant, Animal, Substrate, Speech} from './static/classes.js';
 import { runMainLoop } from './animation.js';
 import { showInfo } from './info.js';
 import { generateNarrative } from './narrative.js';
+import { getWeatherData } from './darksky.js';
+
 var cells = new Array(xnum*ynum);
 var animals = [];
 
@@ -188,6 +190,10 @@ var generateGrid = new Promise( function(resolve, reject){
     distributeAnimals();
     resolve('generated grid!!'); 
 })
+
+getWeatherData.then(function(value) {
+    console.log(value);
+});
 
 generateGrid.then(function(value) {
     runMainLoop();
