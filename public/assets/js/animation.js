@@ -2,6 +2,7 @@ import { cells, animals } from './grid.js';
 import { haveThoughts } from './thoughts.js';
 import animalNames from './static/animals.js';
 import { Animal, Speech } from './static/classes.js';
+import { getWeatherData } from './darksky.js';
 import { xnum, ynum } from './static/constants.js'
 import { printSpeech, ambientSpeech, animalVisit } from './conversation.js';
 var goatZero = true;
@@ -158,6 +159,11 @@ function eachMinute() {
 function eachTenSeconds() {
 	//find some animalNames/plant's speech and print it
 	printSpeech();
+	getWeatherData.then(function(weatherData) {
+		for(var j=0; j<100; j++){
+			haveThoughts(weatherData);
+		}
+	});
 }
 
 function eachSecond() {
@@ -169,7 +175,6 @@ function eachSecond() {
 	moveAnimals(animals);
 	for(var i=0; i<100; i++){
 		ambientSpeech();
-		haveThoughts();	
 	}
 }
 
