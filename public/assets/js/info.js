@@ -6,7 +6,7 @@ function showSpeech (agent, offset) {
     var $speechPanel =  $('<div/>', {
         class: 'speechpanel',
     })
-    .css({'top': offset-30})
+    .css({'top': offset-$(window).scrollTop()})
     .mouseleave(function() { hideSpeech()})
     .appendTo('#container')
     .html(agent.narrative)

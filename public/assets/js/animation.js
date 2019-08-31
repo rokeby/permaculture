@@ -1,4 +1,5 @@
 import { cells, animals } from './grid.js';
+import { haveThoughts } from './thoughts.js';
 import animalNames from './static/animals.js';
 import { Animal, Speech } from './static/classes.js';
 import { xnum, ynum } from './static/constants.js'
@@ -168,6 +169,7 @@ function eachSecond() {
 	moveAnimals(animals);
 	for(var i=0; i<100; i++){
 		ambientSpeech();
+		haveThoughts();	
 	}
 }
 

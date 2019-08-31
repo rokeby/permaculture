@@ -25,7 +25,8 @@ class Plant {
   	this.flowercolor = flowercolor;
   	this.notes = '';
   	this.latin = '';
-    this.narrative = '';    
+    this.narrative = '';
+    this.thoughts = [];
   }
 }
 
@@ -41,7 +42,8 @@ class Substrate {
   	this.symbol = symbol;
   	this.color = color;
   	this.speech = [speech];
-    this.narrative = '';    
+    this.narrative = '';
+    this.thoughts = [];
   }
 
 }
@@ -63,6 +65,7 @@ class Animal {
     this.latin = '';    
     this.notes = '';
     this.narrative = '';
+    this.thoughts = [];
   }
 }
 
@@ -72,7 +75,16 @@ class Speech {
     this.receiver = receiver;
     this.message = message;
     this.timestamp = timestamp;
-  }
+  }  
+}
+
+
+class Thought {
+  constructor(thinker, thought, timestamp) {
+    this.thinker = thinker;
+    this.thought = thought;
+    this.timestamp = timestamp;
+  }  
 }
 
 export {Cell, Plant, Substrate, Animal, Speech };
