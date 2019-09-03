@@ -1,5 +1,23 @@
+import { xnum, ynum } from './static/constants.js';
 import { cells } from './grid.js';
 import { goats } from './animation.js';
+
+function getCloseCompanions(cell) {
+    var y = Math.floor(cell.id/xnum);
+    var x = cell.id - y*xnum;
+    for(var i=-4; i<5; i++){
+        for(var j=-4; j<5; j++){
+            if(!cells[(y+j)*xnum+x+i]) console.log('no dice')
+            else if(!cells[(y+j)*xnum+x+i].plant) console.log('still no dice')
+            else {
+                if(cell.plant.companions.some(c => c === cells[(y+j)*xnum+x+i].plant.name)) 
+                    {
+                        $(`#${(y+j)*xnum+x+i}`).css({'background-color': 'lightblue'});
+                    }
+            }
+        }
+    }
+}
 
 function showSpeech (agent, offset) {
     hideSpeech();
@@ -21,6 +39,7 @@ function hideSpeech () {
 function showInfo (cellID) {
     hideSpeech();
     var cell = cells[cellID];
+    getCloseCompanions(cell);
     $('.infopanel').children().remove()
     $('.infopanel').toggle()
     

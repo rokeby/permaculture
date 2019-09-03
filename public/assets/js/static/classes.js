@@ -9,7 +9,7 @@ class Cell {
 }
 
 class Plant {
-  constructor(name, arabic, type, soil, water, temp, personality, speech, symbol, color, flowering, flowercolor) {
+  constructor(name, arabic, type, soil, water, temp, personality, speech, symbol, color, flowering, flowercolor, companions) {
   	this.id = '';
   	this.name = name;
   	this.arabic = arabic;
@@ -27,6 +27,7 @@ class Plant {
   	this.latin = '';
     this.narrative = '';
     this.thoughts = [];
+    this.companions = companions;
   }
 }
 

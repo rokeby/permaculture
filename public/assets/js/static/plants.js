@@ -21,7 +21,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ["grapevine"],
 	},
 
 	{
@@ -46,7 +46,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -71,7 +71,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -96,7 +96,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -121,7 +121,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ['gallipoli rose'],
 	},
 
 	{
@@ -146,13 +146,13 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ['pink rock rose'],
 	},
 
 	{
 		'name': 'sage', 
 		'latin': 'salvia fruticosa mill.',
-		'arabic': 'ميرامية يونانية',
+		'arabic': 'مريمية',
 		'1': 'high',
 		'2': 'med',
 		'3': 'med',
@@ -171,7 +171,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ["tomato"],
 	},
 
 	{
@@ -196,7 +196,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -221,7 +221,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -246,7 +246,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -271,7 +271,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 
@@ -297,7 +297,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 
@@ -323,7 +323,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -348,7 +348,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -373,7 +373,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ['palestinian vetch', 'sainfoin',  'purple broad bean', 'wild pea', 'medick', 'eastern star clover', 'helmet clover', 'arrowleaf clover', 'hairy yellow vetch', "oak"],
 	},
 
 	{
@@ -398,7 +398,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -423,7 +423,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -448,7 +448,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -473,7 +473,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -498,7 +498,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -523,7 +523,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -548,7 +548,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ['tomato',],
+		'companions': ['tomato', "walnut", "grapevine"],
 	},
 
 	{
@@ -573,11 +573,11 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ['tomato', "walnut", "grapevine"],
 	},
 
 	{
-		'name': 'arrowleaf clover',
+		'name': 'arrowleaf clover', 
 		'latin': 'trifolium clusii godr. & gren.',
 		'arabic': 'نفل',
 		'1': 'med',
@@ -598,11 +598,11 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ["grapevine", "peppers"],
 	},
 
 	{
-		'name': 'helmet clover',
+		'name': 'helmet clover', 
 		'latin': 'trifolium clypeatum',
 		'arabic': 'النفل المدرع',
 		'1': 'med',
@@ -623,11 +623,11 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ["grapevine", "peppers"],
 	},
 
 	{
-		'name': 'eastern star clover',
+		'name': 'eastern star clover', 
 		'latin': 'trifolium dasyurum',
 		'arabic': 'النفل الداسيوري',
 		'1': 'med',
@@ -648,11 +648,11 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ["grapevine", "peppers"],
 	},
 
 	{
-		'name': 'medick',
+		'name': 'medick', 
 		'latin': 'medicago turbinata',
 		'arabic': 'برسيم',
 		'1': 'med',
@@ -673,7 +673,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ["grapevine"],
 	},
 
 	{
@@ -698,7 +698,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -723,11 +723,11 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
-		'name': 'wild pea',
+		'name': 'wild pea', 
 		'latin': 'pisum fulvum',
 		'arabic': 'نفل',
 		'1': 'med',
@@ -748,11 +748,11 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ["cucumber", "watermelon", 'grapevine'],
 	},
 
 	{
-		'name': 'purple broad bean',
+		'name': 'purple broad bean', 
 		'latin': 'vicia narbonensis',
 		'arabic': 'البيقية النربونية',
 		'1': 'med',
@@ -773,11 +773,11 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ["peppers", "cucumber", "watermelon", "tomato", "sage", "aubergine", "grapevine"],
 	},
 
 	{
-		'name': 'sainfoin',
+		'name': 'sainfoin', 
 		'latin': 'onobrychis',
 		'arabic': 'عنبريس',
 		'1': 'med',
@@ -798,7 +798,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ["peppers", "cucumber", "watermelon", "tomato", "sage", "aubergine", "grapevine"],
 	},
 
 
@@ -824,7 +824,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ["tomato"],
 	},
 
 	{
@@ -849,7 +849,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ['palestinian vetch', 'sainfoin',  'purple broad bean', 'wild pea', 'medick', 'eastern star clover', 'helmet clover', 'arrowleaf clover', 'hairy yellow vetch', 'grapevine'],
 	},
 
 	{
@@ -874,7 +874,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ['palestinian vetch', 'sainfoin',  'purple broad bean', 'wild pea', 'medick', 'eastern star clover', 'helmet clover', 'arrowleaf clover', 'hairy yellow vetch', 'grapevine'],
 	},
 
 	{
@@ -899,7 +899,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ["watermelon"],
 	},			
 
 	{
@@ -920,12 +920,12 @@ var plantNames = [
 		'symbol': '෴',
 		'color': '#cccc00',
 		'flowercolor': '#ff9933',
-		'notes': 'a hateful plant'
+		'notes': 'a hateful plant',
 		// 'flower-symbol': ,
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -950,7 +950,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 		{
@@ -975,7 +975,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 		{
@@ -1000,7 +1000,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -1025,7 +1025,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -1050,8 +1050,34 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		'companion': 'lemon verbena',
+		'companions': ['lemon verbena', 'prickly asparagus', "aubergine", 'palestinian vetch', 'sainfoin',  'purple broad bean', 'wild pea', 'medick', 'eastern star clover', 'helmet clover', 'arrowleaf clover', 'hairy yellow vetch', "cucumber", "grapevine", "peppers"],
 	},
+
+	{
+		'name': 'peppers',
+		'latin': 'capsicum annuum',
+		'arabic': 'فلفل',
+		'1': 'none',
+		'2': 'low',
+		'3': 'low',
+		'4': 'high',
+		'soil': 'med',
+		'type': 'crop',
+		'water': 'moist',
+		'temp': 'warm',
+		'personality': 'funny',
+		'speech': 'oo hi',
+		'flowering': [0], 
+		'symbol': 'გ',
+		'color': '#ff0000',
+		'flowercolor': '#ffffcc',
+		// 'flower-symbol': ,
+		// 'fruiting': ,
+		// 'fruit-color': ,
+		// 'fruit-symbol': ,
+		'companions': ["tomato", "purple broad bean", "hoary mustard", 'black mustard'],
+	},
+
 
 	{
 		'name': 'lemon verbena',
@@ -1075,7 +1101,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		'companion': 'tomato',
+		'companions': ['tomato'],
 	},
 
 	{
@@ -1100,7 +1126,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -1125,7 +1151,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': [],
 	},
 
 	{
@@ -1150,7 +1176,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ['palestinian vetch', 'sainfoin',  'purple broad bean', 'wild pea', 'medick', 'eastern star clover', 'helmet clover', 'arrowleaf clover', 'hairy yellow vetch'],
 	},
 
 	{
@@ -1175,7 +1201,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ["purple broad bean", "tomato"],  //passion fruit
 	},
 
 	{
@@ -1200,7 +1226,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		// 'companion': ,
+		'companions': ["milk thistle"],
 	},
 
 ]

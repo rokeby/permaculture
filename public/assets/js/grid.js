@@ -130,7 +130,7 @@ function getPlant(zone) {
     var speech = new Speech(plantType, plantType, plantType.speech, Date.now());
 
     var plant = new Plant(plantType.name, plantType.arabic, plantType.type, plantType.soil, plantType.water, plantType.temp, 
-        plantType.personality, speech, plantType.symbol, plantType.color, plantType.flowering, plantType.flowercolor)
+        plantType.personality, speech, plantType.symbol, plantType.color, plantType.flowering, plantType.flowercolor, plantType.companions)
 
     if(plantType.notes) plant.notes = plantType.notes;
     if(plantType.latin) plant.latin = plantType.latin;
