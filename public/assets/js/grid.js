@@ -82,8 +82,7 @@ function distributeAnimals(){
 
 function getFlowers(plant) {
     var today = new Date();
-    plant.flower = true;
-
+    
     //month +1 as zero index
     var flowering = plant.flowering.some(x => x === today.getMonth() + 1 );
     return flowering;
@@ -91,7 +90,6 @@ function getFlowers(plant) {
 
 function getFruits(plant) {
     var today = new Date();
-    plant.fruit = true;
 
     //month +1 as zero index
     var fruiting = plant.fruiting.some(x => x === today.getMonth() + 1 );

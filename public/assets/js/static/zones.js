@@ -9,4 +9,6 @@ var zoneNames = {
 	"6": "a cool spring",
 }
 
-export {zones, zoneNames}
+var zoneColors = ['#999999', '#737373', '#535353', '#4d1933', '#d9d9bf', '#617dd1']
+
+export {zones, zoneNames, zoneColors}

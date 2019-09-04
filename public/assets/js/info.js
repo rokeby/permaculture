@@ -1,4 +1,5 @@
 import { xnum, ynum } from './static/constants.js';
+import { zoneColors } from './static/zones.js';
 import { cells } from './grid.js';
 import { goats } from './animation.js';
 
@@ -7,14 +8,23 @@ function getCloseCompanions(cell) {
     var x = cell.id - y*xnum;
     for(var i=-4; i<5; i++){
         for(var j=-4; j<5; j++){
-            if(!cells[(y+j)*xnum+x+i]) console.log('no dice')
-            else if(!cells[(y+j)*xnum+x+i].plant) console.log('still no dice')
-            else {
-                if(cell.plant.companions.some(c => c === cells[(y+j)*xnum+x+i].plant.name)) 
-                    {
-                        $(`#${(y+j)*xnum+x+i}`).css({'background-color': 'lightblue'});
-                    }
+            if(cells[(y+j)*xnum+x+i]) {
+                if(cells[(y+j)*xnum+x+i].plant && cell.plant)  {
+                    if(cell.plant.companions.some(c => c === cells[(y+j)*xnum+x+i].plant.name)) 
+                        {
+                            $(`#${(y+j)*xnum+x+i}`).css({'background-color': 'lightblue'});
+                        }
+                }
             }
+        }
+    }
+}
+
+function revertCompanions() {
+    for(var i=0; i<xnum; i++){
+        for(var j=0; j<ynum; j++){
+            var color = zoneColors[cells[j*xnum + i].zone - 1];
+            $(`#${j*xnum + i}`).css({'background-color': color});                
         }
     }
 }
@@ -39,10 +49,10 @@ function hideSpeech () {
 function showInfo (cellID) {
     hideSpeech();
     var cell = cells[cellID];
-    getCloseCompanions(cell);
+    $('.infopanel').is(":visible") ? revertCompanions() : getCloseCompanions(cell) 
     $('.infopanel').children().remove()
     $('.infopanel').toggle()
-    
+
     $('.infopanel').html("<p style='padding:20px'> in " + cell.zoneName + "...</p>")
 
     var $substrateInfo =  $('<div/>', {

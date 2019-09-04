@@ -598,7 +598,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		'companions': ["grapevine", "peppers"],
+		'companions': ["grapevine", "pepper"],
 	},
 
 	{
@@ -623,7 +623,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		'companions': ["grapevine", "peppers"],
+		'companions': ["grapevine", "pepper"],
 	},
 
 	{
@@ -648,7 +648,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		'companions': ["grapevine", "peppers"],
+		'companions': ["grapevine", "pepper"],
 	},
 
 	{
@@ -773,7 +773,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		'companions': ["peppers", "cucumber", "watermelon", "tomato", "sage", "aubergine", "grapevine"],
+		'companions': ["pepper", "cucumber", "watermelon", "tomato", "sage", "aubergine", "grapevine"],
 	},
 
 	{
@@ -798,7 +798,7 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		'companions': ["peppers", "cucumber", "watermelon", "tomato", "sage", "aubergine", "grapevine"],
+		'companions': ["pepper", "cucumber", "watermelon", "tomato", "sage", "aubergine", "grapevine"],
 	},
 
 
@@ -1050,11 +1050,11 @@ var plantNames = [
 		// 'fruiting': ,
 		// 'fruit-color': ,
 		// 'fruit-symbol': ,
-		'companions': ['lemon verbena', 'prickly asparagus', "aubergine", 'palestinian vetch', 'sainfoin',  'purple broad bean', 'wild pea', 'medick', 'eastern star clover', 'helmet clover', 'arrowleaf clover', 'hairy yellow vetch', "cucumber", "grapevine", "peppers"],
+		'companions': ['lemon verbena', 'prickly asparagus', "aubergine", 'palestinian vetch', 'sainfoin',  'purple broad bean', 'wild pea', 'medick', 'eastern star clover', 'helmet clover', 'arrowleaf clover', 'hairy yellow vetch', "cucumber", "grapevine", "pepper"],
 	},
 
 	{
-		'name': 'peppers',
+		'name': 'pepper',
 		'latin': 'capsicum annuum',
 		'arabic': 'فلفل',
 		'1': 'none',
@@ -1068,8 +1068,8 @@ var plantNames = [
 		'personality': 'funny',
 		'speech': 'oo hi',
 		'flowering': [0], 
-		'symbol': 'გ',
-		'color': '#ff0000',
+		'symbol': 'ฤ',
+		'color': '#b0ff33',
 		'flowercolor': '#ffffcc',
 		// 'flower-symbol': ,
 		// 'fruiting': ,
@@ -1106,8 +1106,8 @@ var plantNames = [
 
 	{
 		'name': 'mallow',
-		'latin': 'malva pusilla',
-		'arabic': 'خبيزة',
+		'latin': 'corchorus olitorius',
+		'arabic': 'ملوخية‎',
 		'1': 'none',
 		'2': 'low',
 		'3': 'med',
