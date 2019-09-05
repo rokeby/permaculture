@@ -14,14 +14,13 @@ function getCloseCompanions(cell) {
                     if(cell.plant.companions.some(c => c === cells[(y+j)*xnum+x+i].plant.name)) 
                         {
                             $(`#${(y+j)*xnum+x+i}`).css({'background-color': 'lightblue'});
-                            if(companions.includes(cells[(y+j)*xnum+x+i].plant.name) === false)
-                                companions.push(cells[(y+j)*xnum+x+i].plant.name)
+                            if(!(companions.some(d => d.plant.name === cells[(y+j)*xnum+x+i].plant.name)))
+                                companions.push(cells[(y+j)*xnum+x+i])
                         }
                 }
             }
         }
     }
-    console.log(companions)
     return companions;
 }
 
@@ -95,7 +94,13 @@ function showInfo (cellID) {
         if(companions.length !== 0) {
             $symbolInfo.append("</br> </br> nearby companions: </br>")
             for(var i=0; i<companions.length; i++){
-                $symbolInfo.append(companions[i]+"</br>")
+                var $companion = $('<span/>', {
+                    id: companions[i].id,
+                    class: 'companion',
+                    click: (function(){  $('.infopanel').toggle(), showInfo(this.id) } ),
+                }).html(companions[i].plant.name +"</br>")
+
+                $symbolInfo.append($companion)
             }
         }
       }
