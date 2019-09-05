@@ -102,7 +102,8 @@ function showInfo (cellID) {
                     click: (function(){   $('.infopanel').toggle(), showInfo(this.id.substring(4)) } ),
                 }).html(companions[i].plant.name +"</br>")
                 .mouseenter(function(friend) { 
-                    showSpeech(cells[this.id.substring(4)].plant, $(this).offset().top-10), 
+                    //showSpeech(cells[this.id.substring(4)].plant, $(this).offset().top-10),
+                    hideSpeech();
                     $(`#${this.id.substring(4)}`).css({'background-color': 'orange'});
                     })
                 .mouseleave(function() { 
