@@ -6,6 +6,7 @@ import { goats } from './animation.js';
 function getCloseCompanions(cell) {
     var y = Math.floor(cell.id/xnum);
     var x = cell.id - y*xnum;
+    $(`#${cell.id}`).css({'background-color': 'orange'});
     var companions = [];
     for(var i=-4; i<5; i++){
         for(var j=-4; j<5; j++){
@@ -31,7 +32,6 @@ function revertCompanions() {
             $(`#${j*xnum + i}`).css({'background-color': color});                
         }
     }
-    return [];
 }
 
 function showSpeech (agent, offset) {
@@ -54,7 +54,7 @@ function hideSpeech () {
 function showInfo (cellID) {
     hideSpeech();
     var cell = cells[cellID];
-    var companions = $('.infopanel').is(":visible") ? revertCompanions() : getCloseCompanions(cell) 
+    revertCompanions();
     $('.infopanel').children().remove()
     $('.infopanel').toggle()
 
@@ -74,7 +74,8 @@ function showInfo (cellID) {
      "<p class='artext' lang='ar'>" + cell.substrate.arabic + "</p>" + "<br>" +
         "a kind of " + cell.substrate.type)
 
-    if(cell.plant){
+    if(cell.plant && $('.infopanel').is(":visible")){
+        var companions = getCloseCompanions(cell);
         var $plantInfo = $('<div/>', {
             class: 'infobox',
         }).appendTo('.infopanel')
@@ -94,10 +95,13 @@ function showInfo (cellID) {
         if(companions.length !== 0) {
             $symbolInfo.append("</br> </br> nearby companions: </br>")
             for(var i=0; i<companions.length; i++){
+                var id = companions[i].id;
                 var $companion = $('<span/>', {
-                    id: companions[i].id,
+                    //this is soooo bad and hacky but you can't give things cell ids without all kinds
+                    //of bad stuff happening so this is the solution xoxo
+                    id: 'comp'+companions[i].id,
                     class: 'companion',
-                    click: (function(){  $('.infopanel').toggle(), showInfo(this.id) } ),
+                    click: (function(){   $('.infopanel').toggle(), showInfo(this.id.substring(4)) } ),
                 }).html(companions[i].plant.name +"</br>")
 
                 $symbolInfo.append($companion)
