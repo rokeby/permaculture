@@ -6,6 +6,7 @@ import { goats } from './animation.js';
 function getCloseCompanions(cell) {
     var y = Math.floor(cell.id/xnum);
     var x = cell.id - y*xnum;
+    var companions = [];
     for(var i=-4; i<5; i++){
         for(var j=-4; j<5; j++){
             if(cells[(y+j)*xnum+x+i]) {
@@ -13,11 +14,15 @@ function getCloseCompanions(cell) {
                     if(cell.plant.companions.some(c => c === cells[(y+j)*xnum+x+i].plant.name)) 
                         {
                             $(`#${(y+j)*xnum+x+i}`).css({'background-color': 'lightblue'});
+                            if(companions.includes(cells[(y+j)*xnum+x+i].plant.name) === false)
+                                companions.push(cells[(y+j)*xnum+x+i].plant.name)
                         }
                 }
             }
         }
     }
+    console.log(companions)
+    return companions;
 }
 
 function revertCompanions() {
@@ -27,6 +32,7 @@ function revertCompanions() {
             $(`#${j*xnum + i}`).css({'background-color': color});                
         }
     }
+    return [];
 }
 
 function showSpeech (agent, offset) {
@@ -49,7 +55,7 @@ function hideSpeech () {
 function showInfo (cellID) {
     hideSpeech();
     var cell = cells[cellID];
-    $('.infopanel').is(":visible") ? revertCompanions() : getCloseCompanions(cell) 
+    var companions = $('.infopanel').is(":visible") ? revertCompanions() : getCloseCompanions(cell) 
     $('.infopanel').children().remove()
     $('.infopanel').toggle()
 
@@ -85,6 +91,13 @@ function showInfo (cellID) {
             "<i>" + cell.plant.latin + "</i>" + "</br>" + "a kind of " + cell.plant.type)
       
         if(cell.plant.notes !== '') $symbolInfo.append("</br> </br>" + cell.plant.notes)
+      
+        if(companions.length !== 0) {
+            $symbolInfo.append("</br> </br> nearby companions: </br>")
+            for(var i=0; i<companions.length; i++){
+                $symbolInfo.append(companions[i]+"</br>")
+            }
+        }
       }
 
     if(cell.occupant){
