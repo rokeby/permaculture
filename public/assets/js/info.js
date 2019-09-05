@@ -85,7 +85,6 @@ function showInfo (cellID) {
         })
         .appendTo($plantInfo)
         .mouseenter(function() { showSpeech(cell.plant, ($plantInfo).offset().top)})
-        //.mouseleave(function() { hideSpeech()})
         .html(cell.plant.name + "   " + "[<font color= "+ cell.plant.color +">" + cell.plant.symbol + "</font>]" + "<br>" +
             "<p class='artext' lang='ar'>" + cell.plant.arabic + "</p>" + "<br>" +
             "<i>" + cell.plant.latin + "</i>" + "</br>" + "a kind of " + cell.plant.type)
@@ -95,7 +94,6 @@ function showInfo (cellID) {
         if(companions.length !== 0) {
             $symbolInfo.append("</br> </br> nearby companions: </br>")
             for(var i=0; i<companions.length; i++){
-                var id = companions[i].id;
                 var $companion = $('<span/>', {
                     //this is soooo bad and hacky but you can't give things cell ids without all kinds
                     //of bad stuff happening so this is the solution xoxo
@@ -103,6 +101,14 @@ function showInfo (cellID) {
                     class: 'companion',
                     click: (function(){   $('.infopanel').toggle(), showInfo(this.id.substring(4)) } ),
                 }).html(companions[i].plant.name +"</br>")
+                .mouseenter(function(friend) { 
+                    showSpeech(cells[this.id.substring(4)].plant, $(this).offset().top-10), 
+                    $(`#${this.id.substring(4)}`).css({'background-color': 'orange'});
+                    })
+                .mouseleave(function() { 
+                    showSpeech(cell.plant, ($plantInfo).offset().top-10),
+                    $(`#${this.id.substring(4)}`).css({'background-color': 'lightblue'})
+                    })
 
                 $symbolInfo.append($companion)
             }
@@ -121,7 +127,6 @@ function showInfo (cellID) {
         })
         .appendTo($occupantInfo)
         .mouseenter(function() { showSpeech(occupant, ($occupantInfo).offset().top)})
-        //.mouseleave(function() { hideSpeech()})
         .html(cell.occupant.name + "   " + "[<font color= "+ cell.occupant.color +">" + cell.occupant.symbol + "</font>]" + "<br>" +
             "<p class='artext' lang='ar'>" + cell.occupant.arabic + "</p>" + "<br>" +
             "</br>" + "a kind of " + cell.occupant.type)
