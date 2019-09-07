@@ -617,7 +617,7 @@ var plantNames = [
 		'speech': 'oo hi',
 		'flowering': [3, 4], 
 		'symbol': '♣',
-		'color': '#339966',
+		'color': '#349965',
 		'flowercolor': '#ffe6ff',
 		// 'flower-symbol': ,
 		// 'fruiting': ,
