@@ -75,7 +75,6 @@ function haveThoughts(weatherData) {
 	}
 
 	addThought(thinker, thought)
-	//$('#'+randCellNumber).css({'background-color': 'lightblue'})
 }
 
 export { haveThoughts };

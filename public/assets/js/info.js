@@ -34,17 +34,20 @@ function revertCompanions() {
     }
 }
 
-function showSpeech (agent, offset) {
-    hideSpeech();
-    var $speechPanel =  $('<div/>', {
-        class: 'speechpanel',
-    })
-    .css({'top': offset-$(window).scrollTop()})
-    .mouseleave(function() { hideSpeech()})
-    .appendTo('#container')
-    .html(agent.narrative)
+function showSpeech (agent) {
+    if ( $('.speechpanel').is(":visible") ){
+        hideSpeech();
+    }
 
-    $speechPanel.scrollTop($($speechPanel)[0].scrollHeight);
+    else{
+        var $speechPanel =  $('<div/>', {
+            class: 'speechpanel',
+        })
+        .appendTo('#container')
+        .html(agent.narrative)
+
+        $speechPanel.scrollTop($($speechPanel)[0].scrollHeight);
+    }
 }
 
 function hideSpeech () {
@@ -69,10 +72,15 @@ function showInfo (cellID) {
         class: 'symbolinfo',
     })
     .appendTo($substrateInfo)
-    .mouseenter(function() { showSpeech(cell.substrate, ($substrateInfo).offset().top)})
     .html(cell.substrate.name + "   " + "[<font color= "+ cell.substrate.color +">" + cell.substrate.symbol + "</font>]" + "<br>" +
      "<p class='artext' lang='ar'>" + cell.substrate.arabic + "</p>" + "<br>" +
-        "a kind of " + cell.substrate.type)
+        "a kind of " + cell.substrate.type + "</br> </br>")
+
+    $('<span/>', {
+        class: 'companion',
+        click: (function(){   showSpeech(cell.substrate) }),
+    }).appendTo($symbolInfo)
+    .html("show narrative")
 
     if(cell.plant && $('.infopanel').is(":visible")){
         var companions = getCloseCompanions(cell);
@@ -84,12 +92,17 @@ function showInfo (cellID) {
             class: 'symbolinfo',
         })
         .appendTo($plantInfo)
-        .mouseenter(function() { showSpeech(cell.plant, ($plantInfo).offset().top)})
         .html(cell.plant.name + "   " + "[<font color= "+ cell.plant.color +">" + cell.plant.symbol + "</font>]" + "<br>" +
             "<p class='artext' lang='ar'>" + cell.plant.arabic + "</p>" + "<br>" +
-            "<i>" + cell.plant.latin + "</i>" + "</br>" + "a kind of " + cell.plant.type)
+            "<i>" + cell.plant.latin + "</i>" + "</br>" + "a kind of " + cell.plant.type + "</br></br>")
       
-        if(cell.plant.notes !== '') $symbolInfo.append("</br> </br>" + cell.plant.notes)
+        if(cell.plant.notes !== '') $symbolInfo.append(cell.plant.notes + "</br> </br>" )
+
+        $('<span/>', {
+            class: 'companion',
+            click: (function(){ showSpeech(cell.plant) } ),
+        }).appendTo($symbolInfo)
+        .html("show narrative")
       
         if(companions.length !== 0) {
             $symbolInfo.append("</br> </br> nearby companions: </br>")
@@ -102,19 +115,18 @@ function showInfo (cellID) {
                     click: (function(){   $('.infopanel').toggle(), showInfo(this.id.substring(4)) } ),
                 }).html(companions[i].plant.name +"</br>")
                 .mouseenter(function(friend) { 
-                    //showSpeech(cells[this.id.substring(4)].plant, $(this).offset().top-10),
                     hideSpeech();
                     $(`#${this.id.substring(4)}`).css({'background-color': 'orange'});
                     })
                 .mouseleave(function() { 
-                    showSpeech(cell.plant, ($plantInfo).offset().top-10),
                     $(`#${this.id.substring(4)}`).css({'background-color': 'lightblue'})
                     })
 
                 $symbolInfo.append($companion)
             }
         }
-      }
+
+    }
 
     if(cell.occupant){
         var occupant = cell.occupant.parentArray[cell.occupant.id];
@@ -127,11 +139,15 @@ function showInfo (cellID) {
             class: 'symbolinfo',
         })
         .appendTo($occupantInfo)
-        .mouseenter(function() { showSpeech(occupant, ($occupantInfo).offset().top)})
         .html(cell.occupant.name + "   " + "[<font color= "+ cell.occupant.color +">" + cell.occupant.symbol + "</font>]" + "<br>" +
             "<p class='artext' lang='ar'>" + cell.occupant.arabic + "</p>" + "<br>" +
-            "</br>" + "a kind of " + cell.occupant.type)
+            "</br>" + "a kind of " + cell.occupant.type + "</br></br>")
 
+        $('<span/>', {
+            class: 'companion',
+            click: (function(){   showSpeech(occupant) } ),
+        }).appendTo($symbolInfo)
+        .html("show narrative")
     }
 
 }
