@@ -14,7 +14,7 @@ function getCloseCompanions(cell) {
                 if(cells[(y+j)*xnum+x+i].plant && cell.plant)  {
                     if(cell.plant.companions.some(c => c === cells[(y+j)*xnum+x+i].plant.name)) 
                         {
-                            $(`#${(y+j)*xnum+x+i}`).css({'background-color': 'lightblue'});
+                            //$(`#${(y+j)*xnum+x+i}`).css({'background-color': 'lightblue'});
                             if(!(companions.some(d => d.plant.name === cells[(y+j)*xnum+x+i].plant.name)))
                                 companions.push(cells[(y+j)*xnum+x+i])
                         }
@@ -119,7 +119,9 @@ function showInfo (cellID) {
                     $(`#${this.id.substring(4)}`).css({'background-color': 'orange'});
                     })
                 .mouseleave(function() { 
-                    $(`#${this.id.substring(4)}`).css({'background-color': 'lightblue'})
+                    var color = zoneColors[cells[this.id.substring(4)].zone - 1];  
+                    $(`#${this.id.substring(4)}`).css({'background-color': color})
+                    //$(`#${this.id.substring(4)}`).css({'background-color': 'lightblue'})
                     })
 
                 $symbolInfo.append($companion)
